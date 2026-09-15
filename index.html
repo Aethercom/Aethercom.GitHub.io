@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aethercom</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="profile-btn" onclick="openProfile(event)">
+                <img src="assets/images/me.jpg" class="profile-pic">
+            </div>
+            <div class="brand-font"><a href="index.html" class="normal-link"><img src="assets/svg/Aethercom Text.svg" class="logo-text"></a></div>
+            <!-- Search Button -->
+            <button
+                class="aether-search-btn"
+                id="aetherSearchButton"
+                type="button"
+                aria-label="Search"
+                title="Search"
+                aria-controls="aetherSearchPanel"
+                aria-expanded="false"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle
+                        cx="10.8"
+                        cy="10.8"
+                        r="6.8"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    />
+                    <path
+                        d="M16 16L21 21"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </button>
+
+            <!-- Search Overlay -->
+            <div
+                class="aether-search-overlay"
+                id="aetherSearchOverlay"
+                aria-hidden="true"
+            ></div>
+
+            <!-- Search Panel -->
+            <aside
+                class="aether-search-panel"
+                id="aetherSearchPanel"
+                aria-hidden="true"
+            >
+
+                <div class="aether-search-inner">
+
+                    <!-- Search Header -->
+                    <div class="aether-search-header">
+
+                        <div class="aether-search-heading">
+                            <span class="aether-search-heading-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </span>
+
+                            <div>
+                                <h2>Search</h2>
+                                <p>Explore Aethercom</p>
+                            </div>
+                        </div>
+
+                        <!-- Close -->
+                        <button
+                            class="aether-search-close"
+                            id="aetherSearchClose"
+                            type="button"
+                            aria-label="Close Search"
+                            title="Close"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M6 6L18 18M18 6L6 18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="aether-search-input-wrapper">
+
+                        <svg
+                            class="aether-search-input-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="10.8"
+                                cy="10.8"
+                                r="6.8"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                            <path
+                                d="M16 16L21 21"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+
+                        <input
+                            id="aetherSearchInput"
+                            class="aether-search-input"
+                            type="search"
+                            placeholder="Search Aethercom..."
+                            autocomplete="off"
+                            spellcheck="false"
+                            aria-label="Search Aethercom"
+                        />
+
+                        <button
+                            id="aetherSearchClear"
+                            class="aether-search-clear"
+                            type="button"
+                            aria-label="Clear search"
+                            title="Clear"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M6 6L18 18M18 6L6 18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Search Hint -->
+                    <div class="aether-search-hint">
+                        <span>Press</span>
+                        <kbd>ESC</kbd>
+                        <span>to close</span>
+                    </div>
+
+                    <!-- Results -->
+                    <div
+                        class="aether-search-results"
+                        id="aetherSearchResults"
+                        aria-live="polite"
+                    >
+
+                        <!-- Initial State -->
+                        <div class="aether-search-state" id="aetherSearchInitial">
+
+                            <div class="aether-search-state-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <h3>Search Aethercom</h3>
+                            <p>
+                                Find pages, projects and other content.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+        </header>
+        <!--Slider up-->
+        <div class="slider">
+     <div class="slides">
+        <div class="slide active">
+            <img src="assets/images/Aethercom.png" alt="Slide 1">
+            <div class="slide-text">
+                <h2 data-i18n="title-slide">Aethercom</h2>
+                <p  data-i18n="sub-slide">Connecting Worlds, Creating Futures.</p>
+            </div>
+        </div>
+
+        <a href="News/Qualcomm announces its next two flagship chips on September 22.html"><div class="slide">
+            <img src="assets/images/snapdragon summit 2026 qulity.png" alt="Slide 2">
+            <div class="slide-text">
+                <h2  data-i18n="title2-slide">Snapdragon Summit 2026</h2>
+                <p data-i18n="title2-sub">Qualcomm has confirmed that it will unveil two flagship chips of the 8 Elite series at Snapdragon Summit 2026. The company has not yet announced the names of the chips, but rumors have reported the 6th generation Snapdragon 8 and the higher-end version with the Pro extension, which are probably designed for flagship and ultra phones.</p>
+            </div>
+        </div></a>
+
+        <div class="slide">
+            <img src="assets/images/meta-apps.jpg" alt="Slide 3">
+            <div class="slide-text">
+                <h2 data-i18n="title3-slide">Meta apps collect data from users three times as much as Microsoft and Apple</h2>
+                <p data-i18n="title3-sub">A new study shows that meta applications collect an average of 25 types of 35 possible data categories; This number is more than three times the average of Microsoft and Apple. 7 of the 10 applications that collect the most data also belong to Meta.</p>
+            </div>
+        </div>
+
+           </div>
+
+     <!-- Keys -->
+       <button class="slider-btn prev" onclick="previousSlide()">❮</button>
+       <button class="slider-btn next" onclick="nextSlide()">❯</button>
+
+       <!-- Dots -->
+       <div class="dots">
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+         </div>
+        </div>
+        <!--Slider buttom-->
+        <!--Story Start-->
+        <div class="stories">
+            <div class="story" onclick="openStory('story1')">
+                <div class="story-ring">
+                    <img src="assets/images/Story 1.jpg" alt="code">
+                </div>
+                <span>Coding</span>
+            </div>
+            <div class="story" onclick="openStory('story3')">
+                <div class="story-ring">
+                    <img src="assets/images/Aethercom Studio.png" alt="aethercom studio">
+                </div>
+                <span>Studio</span>
+            </div>
+            <a href="https://t.me/AKR_chatbot?start=start" class="normal-link">
+            <div class="story" onclick="openStory('story4')">
+                <div class="story-ring">
+                    <img src="assets/images/bot.jpg" alt="ai bot">
+                </div>
+                <span>AI Assistant</span>
+            </div>
+            </a>
+            <a href="https://t.me/Musicaland_bot?start=start" class="normal-link">
+            <div class="story" onclick="openStory('story5')">
+                <div class="story-ring">
+                    <img src="assets/images/Musicom.jpg" alt="Musicaland">
+                </div>
+                <span>Musicaland</span>
+            </div>
+            </a>
+        </div>
+        <!--Story End-->
+        <!--Card Start-->
+        <section class="service-cards">
+
+    <a href="" class="service-card">
+        <img src="assets/images/windows-white.jpg" alt="Web Development">
+
+        <div class="card-gradient"></div>
+
+        <div class="card-content">
+            <h3>Web Development</h3>
+            <p>
+                Designing and developing modern digital websites and experiencses
+            </p>
+        </div>
+    </a>
+
+    <a href="" class="service-card">
+        <img src="assets/images/window-sun.jpg" alt="Software">
+
+        <div class="card-gradient"></div>
+
+        <div class="card-content">
+            <h3>Beams of the idea</h3>
+            <p>
+               developing software and digital tools for ideas beyond the stars
+            </p>
+        </div>
+    </a>
+
+    <a href="" class="service-card">
+        <img src="assets/images/lenovo-fron-back-laptop.jpg" alt="Digital Media">
+
+        <div class="card-gradient"></div>
+
+        <div class="card-content">
+            <h3>Digital Media</h3>
+            <p>
+                Production and development of digita content, media and interactive experiencses
+            </p>
+        </div>
+    </a>
+
+    <a href="" class="service-card">
+        <img src="assets/images/ai-image.jpg" alt="Artificial Intelligence">
+
+        <div class="card-gradient"></div>
+
+        <div class="card-content">
+            <h3>Innovation & AI</h3>
+            <p>
+                Exploring and developing new ideas in Tech and AI
+            </p>
+        </div>
+    </a>
+</section>
+        <!--Card End-->
+        <!--News Start-->
+        <section class="news-feed">
+            <div class="feed-header">
+                <h2 class="brand-font">Aethercom NEWS</h2>
+            </div>
+            <div class="news-list">
+        <!--news1-->
+            <article class="news-card">
+            <div class="news-background"
+                 style="background-image: url('assets/images/Aethercom low quality.jpg');">
+            </div>
+            <div class="news-content">
+
+                <img
+                    src="assets/images/Aethercom low quality.jpg"
+                    alt="aethercom"
+                    class="news-image"
+                >
+
+                <div class="news-info">
+                    <h3><svg
+  class="hot-fire"
+  width="42"
+  height="42"
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="hot news"
+>
+  <defs>
+    <linearGradient id="fireGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2a00"/>
+      <stop offset="55%" stop-color="#ff6a00"/>
+      <stop offset="100%" stop-color="#ffd000"/>
+    </linearGradient>
+
+    <filter id="fireGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- orgin fire -->
+  <path
+    class="flame"
+    fill="url(#fireGradient)"
+    filter="url(#fireGlow)"
+    d="
+      M50 94
+      C28 94 16 80 19 62
+      C21 48 31 40 39 30
+      C43 25 44 17 43 10
+      C58 20 64 32 61 45
+      C68 39 72 31 70 24
+      C84 39 87 53 81 68
+      C75 85 65 94 50 94 Z
+    "
+  />
+
+  <!-- core fire -->
+  <path
+    class="inner-flame"
+    fill="#fff2a6"
+    d="
+      M50 86
+      C39 86 32 78 34 68
+      C35 60 42 54 47 48
+      C50 45 51 40 50 36
+      C59 43 63 51 61 59
+      C66 55 68 50 67 46
+      C73 55 74 65 70 73
+      C66 82 60 86 50 86 Z
+    "
+  />
+</svg> Aethercom website has been introduced</h3>
+
+                    <time>20 August 2026 | 21:54</time>
+
+                    <p>
+                        In this post, we want to introduce the website and goals of Aethercom
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!--news2-->
+        <article class="news-card">
+
+            <div class="news-background"
+                 style="background-image: url('assets/images/meta-ai.jpg');">
+            </div>
+
+            <div class="news-content">
+
+                <img
+                    src="assets/images/meta-ai.jpg"
+                    alt="meta ai"
+                    class="news-image"
+                >
+
+                <div class="news-info">
+
+                    <h3>The proprietary Meta AI artificial intelligence application was introduced for the Mac</h3>
+
+                    <time>20 August 2026 | 22:05</time>
+
+                    <p>
+                        The standalone Meta AI desktop application on Mac has features such as viewing part of the screen and providing more detailed instructions to the user. By connecting to professional Facebook, Instagram and Google Workspace accounts, this tool can help businesses analyze data, advertising and content production.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!--news3-->
+        <article class="news-card">
+
+            <div class="news-background"
+                 style="background-image: url('assets/images/android-17.jpg');">
+            </div>
+
+            <div class="news-content">
+
+                <img
+                    src="assets/images/android-17.jpg"
+                    alt="android 17"
+                    class="news-image"
+                >
+
+                <div class="news-info">
+
+                    <h3>Google on Android 17 makes the RAM usage limit stricter</h3>
+
+                    <time>20 August 2026 | 21:45</time>
+
+                    <p>
+                        With this change of heavy programs, they can not disrupt the performance of the entire device by over-using memory. These restrictions, which first implemented on Pixel phones, will reach more devices with 4 to more than 16 GB of RAM next year.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <!--news4-->
+        <a href="News/Qualcomm announces its next two flagship chips on September 22.html" class="normal-link">
+        <article class="news-card">
+            <div class="news-background"
+                 style="background-image: url('assets/images/snapdragon-summit-2026.jpg');">
+            </div>
+
+            <div class="news-content">
+
+                <img
+                    src="assets/images/snapdragon-summit-2026.jpg"
+                    alt="snapdragon summit 2026"
+                    class="news-image"
+                >
+                <div class="news-info">
+
+                    <h3>Qualcomm announces its next two flagship chips on September 22</h3>
+
+                    <time>20 August 2026 | 21:42</time>
+
+                    <p>
+                        Qualcomm has confirmed that it will unveil two flagship chips of the 8 Elite series at Snapdragon Summit 2026. The company has not yet announced the names of the chips, but rumors have reported the 6th generation Snapdragon 8 and the higher-end version with the Pro extension, which are probably designed for flagship and ultra phones.
+                    </p>
+                </div>
+            </div>
+        </article></a>
+
+        <!--news5-->
+        <article class="news-card">
+
+            <div class="news-background"
+                 style="background-image: url('assets/images/google-laptop.jpg');">
+            </div>
+
+            <div class="news-content">
+
+                <img
+                    src="assets/images/google-laptop.jpg"
+                    alt="google laptop"
+                    class="news-image"
+                >
+
+                <div class="news-info">
+
+                    <h3>Google will introduce new Google Books and their operating system on September 15</h3>
+
+                    <time>20 August 2026 | 21:18</time>
+
+                    <p>
+                        Google Books come in a variety of sizes and designs with premium hardware, and all will be equipped with a common Glowbar feature. Asus, HP, Lenovo and Dell are the first hardware partners of Google, and reporters will have the opportunity to test and run benchmarks on devices at this event.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+        
+        <article class="news-card">
+
+            <div class="news-background"
+                 style="background-image: url('assets/images/galaxy-s26-fe.jpg');">
+            </div>
+
+            <div class="news-content">
+
+                <img
+                    src="assets/images/galaxy-s26-fe.jpg"
+                    alt="galaxy s26 fe"
+                    class="news-image"
+                >
+
+                <div class="news-info">
+
+                    <h3>Samsung Galaxy S26 FE has been released</h3>
+
+                    <time>20 August 2026 | 21:02</time>
+
+                    <p>
+                        Samsung has scheduled its next event for August 27. The Galaxy S26 FE is expected to be unveiled at the event.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+    </div>
+
+</section>
+        <!--News End-->
+        <!--Papers-->
+        <div class="papers">
+            <div class="feed-header">
+                <h2 class="brand-font">
+                    Aethercom Papers
+                </h2>
+            </div>
+            <div class="paper-list">
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI? read more about Aethercom AI and SoDoCo AI of Aethercom by Ali Rahimi</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img src="assets/images/Story 2.jpg" class="cover-paper">
+                    <p>How learn Languages with AI?</p>
+                </div>
+                <div class="paper">
+                    <img>
+                    <p></p>
+                </div>
+                <div class="paper">
+                    <img>
+                    <p></p>
+                </div>
+                <div class="paper">
+                    <img>
+                    <p></p>
+                </div>
+                <div class="paper">
+                    <img>
+                    <p></p>
+                </div>
+                <div class="paper">
+                    <img>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!--Telegram Ad-->
+        <a href="https://t.me/AethercomHub" class="normal-link">
+        <div data-i18n="telegram-ad" class="hero">Follow Aethercom on Telegram</div>
+        </a>
+        <!-- Aethercom Front-end Admin Panel -->
+        <div class="aether-admin-overlay" id="aetherAdminOverlay" aria-hidden="true"></div>
+        <aside class="aether-admin-panel" id="aetherAdminPanel" aria-hidden="true">
+            <div class="aether-admin-inner">
+                <div class="aether-admin-header">
+                    <div>
+                        <span class="aether-admin-eyebrow">AETHERCOM</span>
+                        <h2>Admin Panel</h2>
+                        <p>News management · Front-end demo</p>
+                    </div>
+                    <button class="aether-admin-close" id="adminCloseButton" type="button" aria-label="Close Admin Panel">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6L18 18M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                </div>
+                <div class="aether-admin-note"><strong>Front-end mode</strong><span>Posts are saved only in this browser with localStorage. This is not secure authentication; connect it to a real backend before public deployment.</span></div>
+                <div class="aether-admin-grid">
+                    <section class="aether-admin-editor">
+                        <div class="admin-section-heading"><div><span class="admin-section-kicker">EDITOR</span><h3 id="adminFormTitle">Create News</h3></div><button class="admin-reset-button" id="adminNewButton" type="button">New</button></div>
+                        <form id="adminNewsForm" autocomplete="off">
+                            <input type="hidden" id="adminNewsId">
+                            <div class="admin-field"><label for="adminTitle">Title</label><input id="adminTitle" type="text" maxlength="180" placeholder="News headline..." required></div>
+                            <div class="admin-field-row">
+                                <div class="admin-field"><label for="adminCategory">Category</label><select id="adminCategory"><option>Technology</option><option>AI</option><option>Software</option><option>Hardware</option><option>Mobile</option><option>Science</option><option>Aethercom</option></select></div>
+                                <div class="admin-field"><label for="adminStatus">Status</label><select id="adminStatus"><option value="published">Published</option><option value="draft">Draft</option></select></div>
+                            </div>
+                            <div class="admin-field"><label for="adminImage">Cover image URL / path</label><input id="adminImage" type="text" placeholder="assets/images/news-image.jpg"></div>
+                            <div class="admin-field"><label for="adminSummary">Summary</label><textarea id="adminSummary" rows="3" maxlength="500" placeholder="Short description of the news..." required></textarea></div>
+                            <div class="admin-field"><label for="adminContent">Content</label><textarea id="adminContent" rows="10" placeholder="Write the full news here. Separate paragraphs with a blank line..." required></textarea></div>
+                            <div class="admin-field-row">
+                                <div class="admin-field"><label for="adminTags">Tags</label><input id="adminTags" type="text" placeholder="AI, Technology, Aethercom"></div>
+                                <div class="admin-field"><label for="adminReadingTime">Reading time</label><input id="adminReadingTime" type="text" value="2 min" maxlength="20"></div>
+                            </div>
+                            <div class="admin-field-row">
+                                <div class="admin-field"><label for="adminDate">Date & time</label><input id="adminDate" type="datetime-local"></div>
+                                <div class="admin-field"><label for="adminSource">Source</label><input id="adminSource" type="text" value="Aethercom" maxlength="100"></div>
+                            </div>
+                            <label class="admin-checkbox"><input id="adminHot" type="checkbox"><span>Mark as Hot News</span></label>
+                            <div class="admin-form-actions"><button class="admin-secondary-button" id="adminDraftButton" type="button">Save Draft</button><button class="admin-primary-button" id="adminPublishButton" type="submit">Publish News</button></div>
+                            <p class="admin-form-status" id="adminFormStatus" aria-live="polite"></p>
+                        </form>
+                    </section>
+                    <section class="aether-admin-preview">
+                        <div class="admin-section-heading"><div><span class="admin-section-kicker">PREVIEW</span><h3>Live Preview</h3></div></div>
+                        <article class="admin-preview-card" id="adminPreviewCard">
+                            <div class="admin-preview-image-wrap"><img id="adminPreviewImage" src="" alt=""></div>
+                            <div class="admin-preview-body"><div class="admin-preview-meta"><span id="adminPreviewCategory">Technology</span><span id="adminPreviewDate">Today</span></div><h4 id="adminPreviewTitle">Your headline will appear here</h4><p id="adminPreviewSummary">Your news summary will appear here.</p><div class="admin-preview-content" id="adminPreviewContent"><p>Your full article preview will appear here.</p></div><div class="admin-preview-tags" id="adminPreviewTags"></div></div>
+                        </article>
+                    </section>
+                </div>
+                <section class="aether-admin-library"><div class="admin-section-heading"><div><span class="admin-section-kicker">LIBRARY</span><h3>Your News</h3></div><span class="admin-library-count" id="adminLibraryCount">0 posts</span></div><div class="admin-news-list" id="adminNewsList"></div></section>
+            </div>
+        </aside>
+
+        <footer class="site-footer">
+            <!-- Main Footer Brand -->
+            <div class="footer-brand">
+                <!-- Aethercom Logo -->
+                <div class="footer-logo" aria-label="Aethercom">
+                    <img src="assets/svg/Aethercom.svg" title="Aethercom" alt="Aethercom logo">
+                </div>
+                <img src="assets/svg/Aethercom Text.svg" title="Aethercom Brand" alt="aethercom" class="logo-text">
+                <p class="footer-slogan">Beyond the Stars</p>
+                <!-- Social Icons -->
+                <div class="footer-socials">
+                    <!-- Telegram -->
+                    <a href="#" class="social-link" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.04-3.72-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.41-.36-.09-.56-.64-.2L5.38 13.49.43 11.94c-1.08-.34-1.1-1.08.23-1.59L20.02 3.08c.88-.32 1.65.2 1.48.42Z"/>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="5"
+                                fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="4"
+                                    fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+                        </svg>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0c2.1-1.4 3.1-1.1 3.1-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.7 1 .7 1.9v2.8c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:hello@aethercom.com" class="social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="5" width="18" height="14" rx="2"
+                                fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="m4 7 8 6 8-6"
+                                fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Footer Navigation -->
+            <div class="footer-navigation">
+
+                <!-- Explore -->
+                <div class="footer-column explore-column">
+                    <h3>Explore</h3>
+
+                    <nav class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="about.html">About</a>
+                        <a href="support.html">Support</a>
+                        <a href="profile.html">Profile</a>
+                    </nav>
+                </div>
+
+                <!-- Settings -->
+                <div class="footer-column settings-column">
+                    <h3>Settings</h3>
+
+                    <div class="settings-list">
+
+                        <!-- Language -->
+                        <div class="setting-row">
+                            <span class="setting-label">Language</span>
+
+                            <div class="language-box">
+
+                                <span class="language-flag" id="languageFlag" aria-hidden="true"></span>
+                                <select id="languageSelect">
+                                    <option value="en">English</option>
+                                    <option value="fa">فارسی</option>
+                                    <option value="da">دری</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <!-- Light Mode -->
+                        <div class="setting-row">
+                            <span class="setting-label">Light Mode</span>
+
+                            <button
+                                class="toggle-switch"
+                                id="themeToggle"
+                                type="button"
+                                aria-label="Toggle Light Mode"
+                                aria-pressed="false"
+                            >
+                                <span class="toggle-circle"></span>
+                            </button>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="setting-row">
+                            <span class="setting-label">Notifications</span>
+
+                            <button
+                                class="icon-setting-btn"
+                                id="notificationToggle"
+                                type="button"
+                                aria-label="Toggle Notifications"
+                                aria-pressed="false"
+                            >
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Custom Setting -->
+                        <div class="setting-row">
+                            <span class="setting-label">Interface</span>
+
+                            <button
+                                class="icon-setting-btn"
+                                id="interfaceButton"
+                                type="button"
+                                aria-label="Interface Settings"
+                            >
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                    />
+                                    <path
+                                        d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.8 1.8-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V20h-2.55v-.1a1.7 1.7 0 0 0-1.03-1.56 1.7 1.7 0 0 0-1.88.34l-.06.06-1.8-1.8.06-.06A1.7 1.7 0 0 0 8.1 15a1.7 1.7 0 0 0-1.56-1.03H6.4v-2.55h.14A1.7 1.7 0 0 0 8.1 10.4a1.7 1.7 0 0 0-.34-1.88L7.7 8.46l1.8-1.8.06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1.03-1.56V5.4h2.55v.1a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06 1.8 1.8-.06.06A1.7 1.7 0 0 0 19.4 10.4a1.7 1.7 0 0 0 1.56 1.03h.1v2.55h-.1A1.7 1.7 0 0 0 19.4 15Z"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.3"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <button class="admin-open-button" id="adminOpenButton" type="button" aria-label="Open Aethercom Admin Panel">
+                        <span class="admin-open-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 3v18M3 12h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <span>Admin Panel</span>
+                    </button>
+                </div>
+
+            </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© 2026 Aethercom. All rights reserved.</p>
+            </div>
+        </footer>
+    <!--JavaScript-->
+    <div id="page-transition"></div>
+    <script src="js/script.js"></script>
+    <div id="story-viewer" class="story-viewer">
+        <button class="story-close" onclick="closeStory()">×</button>
+        <div class="story-progress"></div>
+        <img id="story-image" src="" alt="">
+        <video id="story-video" controls></video>
+        </div>
+    </body>
+</html>

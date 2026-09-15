@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#01010f">
+  <meta name="robots" content="noindex">
+  <title>404 — Aethercom</title>
+  <style>
+    :root {
+      --muted: #a9afc4;
+      --border: #39415e;
+      --green: #01db8d;
+      --blue: #02618d;
+      --glass: rgba(8, 11, 30, 0.66);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      color: white;
+      background: #01010f;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+    }
+    .page {
+      position: relative;
+      width: min(720px, 100%);
+      text-align: center;
+      isolation: isolate;
+    }
+    .content {
+      position: relative;
+      padding: 48px 34px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 18px;
+      color: #dce1ee;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .number {
+      position: relative;
+      display: inline-block;
+      margin: 2px 0 8px;
+      font-size: 150px;
+      font-weight: bolder;
+      color: rgb(255, 112, 112);
+    }
+    h1 {
+      margin-top: 18px;
+      font-size: 30px;
+      line-height: 1.2;
+      color: #c6cbde;
+    }
+
+    .description {
+      max-width: 520px;
+      margin: 14px auto 0;
+      color: rgb(198, 198, 198);
+      font-size: 16px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .button {
+      min-width: 145px;
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      border: 2px dashed;
+      border-radius: 30px;
+      color: white;
+      background: rgb(255, 112, 112);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .footer-note {
+      margin-top: 25px;
+      color: #69718a;
+      font-size: 12px;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 15px;
+      }
+
+      .content {
+        padding: 38px 20px;
+        border-radius: 23px;
+      }
+
+      .description {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" aria-labelledby="error-title">
+  <section class="content">
+      <div class="brand">
+        Aethercom!
+      </div>
+
+      <div class="number" aria-label="404">404</div>
+
+      <h1 id="error-title">This page drifted beyond the Aethercom.</h1>
+
+      <p class="description">
+        The page you're looking for doesn't exist, has moved,
+        or the address may have been entered incorrectly.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="index.html">Back to Home</a>
+
+        <button class="button" type="button" onclick="history.back()">
+          Go Back
+        </button>
+      </div>
+      <p class="footer-note">
+        © 2026 Aethercom · Beyond the Stars
+      </p>
+    </section>
+  </main>
+</body>
+</html>
