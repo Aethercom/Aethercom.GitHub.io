@@ -4,45 +4,52 @@
   <url>
     <loc>https://aethercom.github.io/</loc>
   </url>
-
   <url>
     <loc>https://aethercom.github.io/about.html</loc>
   </url>
-
   <url>
     <loc>https://aethercom.github.io/projects.html</loc>
   </url>
-
   <url>
     <loc>https://aethercom.github.io/services.html</loc>
   </url>
-
   <url>
     <loc>https://aethercom.github.io/support.html</loc>
   </url>
-
   <url>
     <loc>https://aethercom.github.io/terms.html</loc>
   </url>
-
   <url>
     <loc>https://aethercom.github.io/profile.html</loc>
   </url>
 
+  <!-- بخش اخبار و مقالات -->
   <url>
     <loc>https://aethercom.github.io/news/Satellite-Internet-from-space-relays-to-a-global-broadband-race.html</loc>
   </url>
-
   <url>
     <loc>https://aethercom.github.io/news/Top-10-Movies-Coding-and-Hacking.html</loc>
   </url>
-
   <url>
     <loc>https://aethercom.github.io/news/Aethercom-1.5.1-Alpha.html</loc>
   </url>
-
   <url>
-    <loc>https://aethercom.github.io/news/Qualcomm%20announces%20its%20next%20two%20flagship%20chips%20on%20September%2022.html</loc>
+    <loc>https://github.io</loc>
+  </url>
+  <url>
+    <loc>https://github.io</loc>
+  </url>
+  <url>
+    <loc>https://github.io</loc>
+  </url>
+  <url>
+    <loc>https://github.io</loc>
+  </url>
+  <url>
+    <loc>https://github.io</loc>
+  </url>
+  <url>
+    <loc>https://github.io</loc>
   </url>
 
 </urlset>
