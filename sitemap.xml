@@ -4,17 +4,42 @@
 
   <url>
        <loc>https://aethercom.github.io/</loc>
-       <lastmod>2026-09-28T07:08:21+00:00</lastmod>
+       <lastmod>2026-10-02T14:23:30+00:00</lastmod>
        <priority>1.0000</priority>
   </url>
   <url>
-       <loc>https://aethercom.github.io/index.html</loc>
-       <lastmod>2026-09-28T07:08:21+00:00</lastmod>
+       <loc>https://aethercom.github.io/news/Aethercom-1.5.1-Alpha.html</loc>
+       <lastmod>2026-10-02T14:23:30+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
   <url>
-       <loc>https://aethercom.github.io/profile.html</loc>
-       <lastmod>2026-09-28T07:08:21+00:00</lastmod>
+       <loc>https://aethercom.github.io/news/Top-10-Movies-Coding-and-Hacking.html</loc>
+       <lastmod>2026-10-02T14:23:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://aethercom.github.io/news/Satellite-Internet-from-space-relays-to-a-global-broadband-race.html</loc>
+       <lastmod>2026-10-02T14:23:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://aethercom.github.io/services.html</loc>
+       <lastmod>2026-10-02T14:23:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://aethercom.github.io/terms.html</loc>
+       <lastmod>2026-10-02T14:23:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://aethercom.github.io/support.html</loc>
+       <lastmod>2026-10-02T14:23:30+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://aethercom.github.io/about.html</loc>
+       <lastmod>2026-10-02T14:23:30+00:00</lastmod>
        <priority>0.8000</priority>
   </url>
 </urlset>
