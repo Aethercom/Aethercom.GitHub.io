@@ -2,7 +2,77 @@
    AETHERCOM CORE JAVASCRIPT
    ========================================= */
 
-/* ---------- Page transition ---------- */
+/* =========================================
+   Aethercom Paper Media
+   ========================================= */
+
+const papers = [
+
+        {
+        title: "Aethercom 1.5.1 Alpha; Whats new?",
+        cover: "../assets/images/Aethercom-1-5-1-Alpha-cover.avif",
+        link: "../news/Aethercom-1.5.1-Alpha.html"
+    },
+
+    {
+        title: "Aethercom now is online!",
+        cover: "../assets/images/Aethercom-now-is-online.avif",
+        link: "https://Aethercom.github.io"
+    },
+
+    {
+        title: "10 Best Movies About Coding",
+        cover: "../assets/images/top10-movies-movies-for-coding-and-hacking.avif",
+        link: "../news/Top-10-Movies-Coding-and-Hacking.html"
+    },
+
+    {
+        title: "What is the Satellite Internet?",
+        cover: "../assets/images/satellite-internet.avif",
+        link: "../News/Satellite-Internet-from-space-relays-to-a-global-broadband-race.html"
+    },
+
+    {
+        title: "Snapdragon Summit 2026",
+        cover: "../assets/images/qualcomm-snapdragon.avif",
+        link: "../News/Qualcomm announces its next two flagship chips on September 22.html"
+    },
+
+];
+
+
+/* =========================================
+   Apply Paper Data
+   ========================================= */
+
+papers.forEach((paper, index) => {
+
+    const number = index + 1;
+
+    // Title
+    document.querySelectorAll(`.paper-title${number}`).forEach(el => {
+        el.textContent = paper.title;
+    });
+
+    // Image
+    document.querySelectorAll(`.paper-img${number}`).forEach(el => {
+        if (paper.cover) {
+            el.src = paper.cover;
+        }
+    });
+
+    // Link
+    document.querySelectorAll(`.paper-link${number}`).forEach(el => {
+        if (paper.link) {
+            el.href = paper.link;
+        }
+    });
+
+});
+
+/* =========================================
+   Page Transition
+   ========================================= */
 function runPageTransition(event, url) {
     const transition = document.getElementById("page-transition");
     if (!transition) {
@@ -25,7 +95,19 @@ function runPageTransition(event, url) {
         window.location.href = url;
     }, 700);
 }
+window.addEventListener("pageshow", function () {
+    const transition = document.getElementById("page-transition");
 
+    if (transition) {
+        transition.style.transition = "none";
+        transition.style.transform = "translate(-50%, -50%) scale(0)";
+        transition.style.width = "20px";
+        transition.style.height = "20px";
+        requestAnimationFrame(() => {
+            transition.style.transition = "";
+        });
+    }
+});
 function openProfile(event) {
     runPageTransition(event, "profile.html");
 }
@@ -94,9 +176,10 @@ function openStory(story) {
     video.removeAttribute("src");
 
     const stories = {
-        story1: { type: "image", src: "assets/images/Story 1.jpg", alt: "Coding" },
-        story2: { type: "video", src: "assets/video/story2.mkv", alt: "Story video" },
-        story3: { type: "image", src: "assets/images/Aethercom Studio.png", alt: "Aethercom Studio" }
+        story1: { type: "video", src: "assets/video/Honor-new-logo.mp4", alt: "Honor new logo" },
+        story2: { type: "video", src: "assets/video/honor-robotic-camera.mp4", alt: "honor robotic phone" },
+        story3: { type: "video", src: "assets/video/Qualcomm-snapdragon-summit-2026.mp4", alt: "Qualcomm" },
+        story4: { type: "video", src: "assets/video/3D - Dolby Atmos.mp4", alt: "Dolby Atmos"}
     };
 
     const selected = stories[story];
@@ -130,19 +213,27 @@ function closeStory() {
     if (viewer) viewer.style.display = "none";
 }
 
-/* ---------- Back to top ---------- */
+/* ------------ Back to top ------------ */
 function backToTop() {
     const startPosition = window.scrollY;
-    const duration = 900;
+    const duration = 350;
     const startTime = performance.now();
 
     function scrollAnimation(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const ease = 1 - Math.pow(1 - progress, 3);
-        window.scrollTo(0, startPosition * (1 - ease));
 
-        if (progress < 1) requestAnimationFrame(scrollAnimation);
+        // Smooth ease-out
+        const ease = 1 - Math.pow(1 - progress, 3);
+
+        window.scrollTo(
+            0,
+            startPosition * (1 - ease)
+        );
+
+        if (progress < 1) {
+            requestAnimationFrame(scrollAnimation);
+        }
     }
 
     requestAnimationFrame(scrollAnimation);
@@ -200,15 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("aethercom-notifications", String(next));
         });
     }
-
-    /* ---------- Interface button ---------- */
-    const interfaceButton = document.getElementById("interfaceButton");
-    if (interfaceButton) {
-        interfaceButton.addEventListener("click", () => {
-            interfaceButton.classList.toggle("active");
-        });
-    }
-
+    
     /* ---------- Language + SVG flags ---------- */
     const languageSelect = document.getElementById("languageSelect");
     const languageFlag = document.getElementById("languageFlag");
@@ -373,165 +456,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === "Escape" && searchPanel?.classList.contains("search-visible")) closeSearch();
     });
 
-    /* =========================================
-       AETHERCOM FRONT-END NEWS ADMIN
-       ========================================= */
-    const adminOpenButton = document.getElementById("adminOpenButton");
-    const adminCloseButton = document.getElementById("adminCloseButton");
-    const adminOverlay = document.getElementById("aetherAdminOverlay");
-    const adminPanel = document.getElementById("aetherAdminPanel");
-    const adminForm = document.getElementById("adminNewsForm");
-
-    const admin = {
-        id: document.getElementById("adminNewsId"),
-        title: document.getElementById("adminTitle"),
-        category: document.getElementById("adminCategory"),
-        status: document.getElementById("adminStatus"),
-        image: document.getElementById("adminImage"),
-        summary: document.getElementById("adminSummary"),
-        content: document.getElementById("adminContent"),
-        tags: document.getElementById("adminTags"),
-        readingTime: document.getElementById("adminReadingTime"),
-        date: document.getElementById("adminDate"),
-        source: document.getElementById("adminSource"),
-        hot: document.getElementById("adminHot"),
-        formTitle: document.getElementById("adminFormTitle"),
-        publishButton: document.getElementById("adminPublishButton"),
-        statusText: document.getElementById("adminFormStatus"),
-        previewImage: document.getElementById("adminPreviewImage"),
-        previewCategory: document.getElementById("adminPreviewCategory"),
-        previewDate: document.getElementById("adminPreviewDate"),
-        previewTitle: document.getElementById("adminPreviewTitle"),
-        previewSummary: document.getElementById("adminPreviewSummary"),
-        previewContent: document.getElementById("adminPreviewContent"),
-        previewTags: document.getElementById("adminPreviewTags"),
-        list: document.getElementById("adminNewsList"),
-        count: document.getElementById("adminLibraryCount")
-    };
-
-    function setAdminOpen(isOpen) {
-        if (!adminPanel || !adminOverlay) return;
-        adminPanel.classList.toggle("admin-visible", isOpen);
-        adminOverlay.classList.toggle("admin-visible", isOpen);
-        adminPanel.setAttribute("aria-hidden", String(!isOpen));
-        adminOverlay.setAttribute("aria-hidden", String(!isOpen));
-        document.body.classList.toggle("aether-admin-active", isOpen);
-        if (isOpen) updateAdminPreview();
-    }
-
-    function defaultDateValue() {
-        const now = new Date();
-        const offset = now.getTimezoneOffset();
-        return new Date(now.getTime() - offset * 60000).toISOString().slice(0, 16);
-    }
-
-    function resetAdminForm() {
-        if (!adminForm) return;
-        adminForm.reset();
-        admin.id.value = "";
-        admin.category.value = "Technology";
-        admin.status.value = "published";
-        admin.readingTime.value = "2 min";
-        admin.source.value = "Aethercom";
-        admin.date.value = defaultDateValue();
-        admin.hot.checked = false;
-        admin.formTitle.textContent = "Create News";
-        admin.publishButton.textContent = "Publish News";
-        if (admin.statusText) admin.statusText.textContent = "";
-        updateAdminPreview();
-    }
-
-    function loadAdminPost(id) {
-        const post = getStoredNews().find(item => item.id === id);
-        if (!post) return;
-
-        admin.id.value = post.id;
-        admin.title.value = post.title || "";
-        admin.category.value = post.category || "Technology";
-        admin.status.value = post.status || "draft";
-        admin.image.value = post.image || "";
-        admin.summary.value = post.summary || "";
-        admin.content.value = post.content || "";
-        admin.tags.value = (post.tags || []).join(", ");
-        admin.readingTime.value = post.readingTime || "2 min";
-        admin.date.value = toLocalDateTime(post.date);
-        admin.source.value = post.source || "Aethercom";
-        admin.hot.checked = Boolean(post.hot);
-        admin.formTitle.textContent = "Edit News";
-        admin.publishButton.textContent = post.status === "published" ? "Update News" : "Publish News";
-        if (admin.statusText) admin.statusText.textContent = "Editing selected post.";
-        updateAdminPreview();
-    }
-
-    function toLocalDateTime(value) {
-        const date = new Date(value || Date.now());
-        if (Number.isNaN(date.getTime())) return defaultDateValue();
-        const offset = date.getTimezoneOffset();
-        return new Date(date.getTime() - offset * 60000).toISOString().slice(0, 16);
-    }
-
-    function collectAdminPost(forceStatus = null) {
-        const title = admin.title.value.trim();
-        const summary = admin.summary.value.trim();
-        const content = admin.content.value.trim();
-
-        if (!title || !summary || !content) {
-            if (admin.statusText) admin.statusText.textContent = "Title, summary and content are required.";
-            return null;
-        }
-
-        const existingId = admin.id.value.trim();
-        const postId = existingId || `news-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
-        const dateValue = admin.date.value ? new Date(admin.date.value).toISOString() : new Date().toISOString();
-
-        return {
-            id: postId,
-            title,
-            category: admin.category.value,
-            status: forceStatus || admin.status.value,
-            image: admin.image.value.trim(),
-            summary,
-            content,
-            tags: admin.tags.value.split(",").map(tag => tag.trim()).filter(Boolean).slice(0, 10),
-            readingTime: admin.readingTime.value.trim() || "2 min",
-            date: dateValue,
-            source: admin.source.value.trim() || "Aethercom",
-            hot: admin.hot.checked,
-            updatedAt: new Date().toISOString()
-        };
-    }
-
-    function saveAdminPost(forceStatus = null) {
-        const post = collectAdminPost(forceStatus);
-        if (!post) return;
-
-        const posts = getStoredNews();
-        const index = posts.findIndex(item => item.id === post.id);
-        if (index >= 0) posts[index] = post;
-        else posts.unshift(post);
-
-        localStorage.setItem("aethercom-news", JSON.stringify(posts));
-        renderCustomNews();
-        renderAdminLibrary();
-        refreshSearchIfOpen();
-
-        admin.id.value = post.id;
-        admin.status.value = post.status;
-        admin.formTitle.textContent = "Edit News";
-        admin.publishButton.textContent = post.status === "published" ? "Update News" : "Publish News";
-        if (admin.statusText) admin.statusText.textContent = post.status === "published" ? "Published locally in this browser." : "Draft saved locally in this browser.";
-    }
-
-    function deleteAdminPost(id) {
-        const posts = getStoredNews().filter(post => post.id !== id);
-        localStorage.setItem("aethercom-news", JSON.stringify(posts));
-        renderCustomNews();
-        renderAdminLibrary();
-        refreshSearchIfOpen();
-
-        if (admin.id.value === id) resetAdminForm();
-    }
-
     function formatDate(value) {
         const date = new Date(value || Date.now());
         if (Number.isNaN(date.getTime())) return "";
@@ -550,136 +474,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .map(p => p.trim())
             .filter(Boolean)
             .slice(0, limit);
-    }
-
-    function updateAdminPreview() {
-        if (!admin.previewTitle) return;
-        admin.previewTitle.textContent = admin.title.value.trim() || "Your headline will appear here";
-        admin.previewCategory.textContent = admin.category.value || "Technology";
-        admin.previewDate.textContent = admin.date.value ? formatDateTime(admin.date.value) : "Today";
-        admin.previewSummary.textContent = admin.summary.value.trim() || "Your news summary will appear here.";
-
-        const paragraphs = contentToParagraphs(admin.content.value, 3);
-        admin.previewContent.innerHTML = paragraphs.length
-            ? paragraphs.map(text => `<p>${escapeHTML(text)}</p>`).join("")
-            : "<p>Your full article preview will appear here.</p>";
-
-        const tags = admin.tags.value.split(",").map(tag => tag.trim()).filter(Boolean).slice(0, 10);
-        admin.previewTags.innerHTML = tags.map(tag => `<span>#${escapeHTML(tag)}</span>`).join("");
-
-        const image = admin.image.value.trim();
-        admin.previewImage.src = image || "assets/images/Aethercom low quality.jpg";
-        admin.previewImage.alt = admin.title.value.trim() || "News preview";
-    }
-
-    function renderCustomNews() {
-        const newsList = document.querySelector(".news-list");
-        if (!newsList) return;
-
-        newsList.querySelectorAll(".custom-news-card").forEach(card => card.remove());
-
-        const published = getStoredNews().filter(post => post.status === "published");
-        if (!published.length) return;
-
-        const fragment = document.createDocumentFragment();
-
-        published.forEach(post => {
-            const card = document.createElement("article");
-            card.className = "news-card custom-news-card";
-            card.id = `news-${post.id}`;
-
-            const image = post.image || "assets/images/Aethercom low quality.jpg";
-            const hot = post.hot ? `<span class="custom-news-hot">HOT</span>` : "";
-            const tags = (post.tags || []).slice(0, 3).map(tag => `<span class="custom-news-tag">#${escapeHTML(tag)}</span>`).join("");
-
-            card.innerHTML = `
-                <div class="news-background" style="background-image:url('${escapeHTML(image).replace(/'/g, "&#39;")}');"></div>
-                <div class="news-content">
-                    <img src="${escapeHTML(image)}" alt="${escapeHTML(post.title)}" class="news-image" onerror="this.src='assets/images/Aethercom low quality.jpg';">
-                    <div class="news-info">
-                        <div class="custom-news-label-row"><span class="custom-news-category">${escapeHTML(post.category)}</span>${hot}</div>
-                        <h3>${escapeHTML(post.title)}</h3>
-                        <time>${escapeHTML(formatDateTime(post.date))} · ${escapeHTML(post.readingTime)}</time>
-                        <p>${escapeHTML(post.summary)}</p>
-                        <div class="custom-news-tags">${tags}</div>
-                    </div>
-                </div>`;
-
-            fragment.appendChild(card);
-        });
-
-        newsList.prepend(fragment);
-    }
-
-    function renderAdminLibrary() {
-        if (!admin.list) return;
-        const posts = getStoredNews();
-        admin.count.textContent = `${posts.length} ${posts.length === 1 ? "post" : "posts"}`;
-
-        if (!posts.length) {
-            admin.list.innerHTML = `<div class="admin-empty-library"><strong>No custom news yet</strong><span>Create your first post above. Published posts appear in the Aethercom NEWS feed.</span></div>`;
-            return;
-        }
-
-        admin.list.innerHTML = posts.map(post => `
-            <article class="admin-library-item">
-                <div class="admin-library-thumb"><img src="${escapeHTML(post.image || "assets/images/Aethercom low quality.jpg")}" alt="" onerror="this.src='assets/images/Aethercom low quality.jpg';"></div>
-                <div class="admin-library-info">
-                    <div class="admin-library-top"><span class="admin-library-category">${escapeHTML(post.category)}</span><span class="admin-library-status ${post.status === "published" ? "published" : "draft"}">${escapeHTML(post.status)}</span></div>
-                    <h4>${escapeHTML(post.title)}</h4>
-                    <p>${escapeHTML(post.summary)}</p>
-                    <small>${escapeHTML(formatDateTime(post.date))}</small>
-                </div>
-                <div class="admin-library-actions">
-                    <button type="button" class="admin-edit-button" data-admin-edit="${escapeHTML(post.id)}">Edit</button>
-                    <button type="button" class="admin-delete-button" data-admin-delete="${escapeHTML(post.id)}">Delete</button>
-                </div>
-            </article>`).join("");
-    }
-
-    function refreshSearchIfOpen() {
-        if (searchPanel?.classList.contains("search-visible") && searchInput?.value.trim()) {
-            performSearch(searchInput.value);
-        }
-    }
-
-    if (adminOpenButton && adminCloseButton && adminOverlay && adminPanel && adminForm) {
-        adminOpenButton.addEventListener("click", () => setAdminOpen(true));
-        adminCloseButton.addEventListener("click", () => setAdminOpen(false));
-        adminOverlay.addEventListener("click", () => setAdminOpen(false));
-
-        document.getElementById("adminNewButton")?.addEventListener("click", resetAdminForm);
-        document.getElementById("adminDraftButton")?.addEventListener("click", () => saveAdminPost("draft"));
-
-        adminForm.addEventListener("submit", event => {
-            event.preventDefault();
-            saveAdminPost("published");
-        });
-
-        [admin.title, admin.category, admin.image, admin.summary, admin.content, admin.tags, admin.readingTime, admin.date, admin.source, admin.hot].forEach(field => {
-            field?.addEventListener("input", updateAdminPreview);
-            field?.addEventListener("change", updateAdminPreview);
-        });
-
-        admin.list?.addEventListener("click", event => {
-            const editButton = event.target.closest("[data-admin-edit]");
-            const deleteButton = event.target.closest("[data-admin-delete]");
-
-            if (editButton) {
-                loadAdminPost(editButton.dataset.adminEdit);
-                adminPanel.scrollTo({ top: 0, behavior: "smooth" });
-            }
-
-            if (deleteButton) {
-                const id = deleteButton.dataset.adminDelete;
-                const post = getStoredNews().find(item => item.id === id);
-                if (post && window.confirm(`Delete “${post.title}” from this browser?`)) deleteAdminPost(id);
-            }
-        });
-
-        resetAdminForm();
-        renderAdminLibrary();
-        renderCustomNews();
     }
 
     /* ---------- Slider ---------- */
@@ -1538,3 +1332,167 @@ document.addEventListener("DOMContentLoaded", () => {
     updateMuteState();
 
 });
+/* Aethercom Edit Profile */
+
+/* Aethercom profile sync */
+(function () {
+    const PROFILE_KEY = "aethercom-profile";
+
+    function getStoredProfile() {
+        try {
+            return JSON.parse(localStorage.getItem(PROFILE_KEY)) || null;
+        } catch {
+            return null;
+        }
+    }
+
+    function applyProfileToPage() {
+        const data = getStoredProfile();
+        if (!data) return;
+
+        const headerImage = document.querySelector(".profile-btn .profile-pic");
+        if (headerImage) {
+            if (data.avatar) {
+                headerImage.src = data.avatar;
+                headerImage.removeAttribute("data-profile-default");
+            } else {
+                headerImage.src = "assets/images/profile.avif";
+                headerImage.setAttribute("data-profile-default", "true");
+            }
+        }
+
+        const name = document.getElementById("previewName");
+        const username = document.getElementById("previewUsername");
+        const bio = document.getElementById("previewBio");
+        const location = document.getElementById("previewLocation");
+        const avatar = document.getElementById("previewAvatar");
+        const initial = document.getElementById("avatarInitial");
+        const cover = document.getElementById("previewCover");
+        const links = document.getElementById("previewLinks");
+
+        if (name) name.textContent = data.name || "Aethercom User";
+        if (username) username.textContent = data.username || "@username";
+        if (bio) bio.textContent = data.bio || "";
+        if (location) {
+            location.textContent = data.location || "";
+            location.style.display = data.showLocation && data.location ? "" : "none";
+        }
+
+        if (avatar && initial) {
+            if (data.avatar) {
+                avatar.src = data.avatar;
+                avatar.style.display = "block";
+                initial.style.display = "none";
+            } else {
+                avatar.removeAttribute("src");
+                avatar.style.display = "none";
+                initial.style.display = "block";
+                initial.textContent = (data.name || "A").trim().charAt(0).toUpperCase();
+            }
+        }
+
+        if (cover) {
+            cover.style.backgroundImage = data.cover
+                ? `linear-gradient(to bottom,transparent 35%,rgba(1,1,15,.9)),url("${data.cover}")`
+                : "linear-gradient(to bottom,transparent 35%,rgba(1,1,15,.9)),linear-gradient(135deg,#02618d,#01db8d)";
+        }
+
+        if (links) {
+            links.innerHTML = "";
+
+            const addLink = (href, text) => {
+                if (!href) return;
+                const a = document.createElement("a");
+                a.href = href;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                a.textContent = text;
+                links.appendChild(a);
+            };
+
+            if (data.showWebsite && data.website) {
+                try {
+                    const u = new URL(data.website);
+                    if (/^https?:$/.test(u.protocol)) addLink(u.href, "WEB");
+                } catch {}
+            }
+
+            if (data.telegram) {
+                const value = data.telegram;
+                addLink(
+                    /^https?:\/\//i.test(value)
+                        ? value
+                        : "https://t.me/" + value.replace(/^@/, ""),
+                    "TG"
+                );
+            }
+
+            if (data.instagram) {
+                const value = data.instagram;
+                addLink(
+                    /^https?:\/\//i.test(value)
+                        ? value
+                        : "https://instagram.com/" + value.replace(/^@/, ""),
+                    "IG"
+                );
+            }
+        }
+    }
+
+    applyProfileToPage();
+
+    window.addEventListener("storage", function (event) {
+        if (event.key === PROFILE_KEY) applyProfileToPage();
+    });
+
+    window.addEventListener("aethercom-profile-updated", applyProfileToPage);
+})();
+
+/*  =============================
+    Profile Fixing
+    ============================= */
+(() => {
+const KEY="aethercom-profile";
+const defaults={name:"",username:"",bio:"",location:"",website:"",telegram:"",instagram:"",avatar:"",cover:"",showLocation:true,showWebsite:true};
+const $=id=>document.getElementById(id);
+
+function read(){try{return {...defaults,...(JSON.parse(localStorage.getItem(KEY))||{})}}catch{return {...defaults}}}
+function persist(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(window._t);window._t=setTimeout(()=>e.classList.remove("show"),2200)}
+function username(v){v=v.trim();return v?(v.startsWith("@")?v:"@"+v):"@username"}
+function url(v){try{const u=new URL(v);return /^https?:$/.test(u.protocol)?u.href:""}catch{return""}}
+function social(v,type){if(!v)return"";return /^https?:\/\//i.test(v)?v:(type==="telegram"?"https://t.me/":"https://instagram.com/")+v.replace(/^@/,"")}
+function sw(id,on){$(id).classList.toggle("on",!!on)}
+
+function render(d){
+$("name").value=d.name;$("username").value=d.username;$("bio").value=d.bio;$("location").value=d.location;$("website").value=d.website;$("telegram").value=d.telegram;$("instagram").value=d.instagram;
+$("avatarUrl").value=d.avatar.startsWith("data:")?"":d.avatar;$("coverUrl").value=d.cover.startsWith("data:")?"":d.cover;
+sw("showLocation",d.showLocation);sw("showWebsite",d.showWebsite);
+$("previewName").textContent=d.name||defaults.name;$("previewUsername").textContent=username(d.username);$("previewBio").textContent=d.bio||"";
+$("previewLocation").textContent=d.location;$("previewLocation").style.display=d.showLocation&&d.location?"":"none";
+const av=$("previewAvatar"),initial=$("avatarInitial");
+if(d.avatar){av.src=d.avatar;av.style.display="block";initial.style.display="none"}else{av.removeAttribute("src");av.style.display="none";initial.style.display="block";initial.textContent=(d.name||"A").trim().charAt(0).toUpperCase()}
+$("previewCover").style.backgroundImage=d.cover?`linear-gradient(to bottom,transparent 35%,rgba(1,1,15,.9)),url("${d.cover}")`:"linear-gradient(to bottom,transparent 35%,rgba(1,1,15,.9)),linear-gradient(135deg,#02618d,#01db8d)";
+const links=$("previewLinks");links.innerHTML="";
+if(d.showWebsite&&url(d.website))add(links,d.website,"WEB");
+if(d.telegram)add(links,social(d.telegram,"telegram"),"TG");
+if(d.instagram)add(links,social(d.instagram,"instagram"),"IG");
+}
+function add(p,h,t){const a=document.createElement("a");a.href=h;a.target="_blank";a.rel="noopener noreferrer";a.textContent=t;p.appendChild(a)}
+function current(){return{name:$("name").value.trim()||defaults.name,username:username($("username").value),bio:$("bio").value.trim()||defaults.bio,location:$("location").value.trim(),website:$("website").value.trim(),telegram:$("telegram").value.trim(),instagram:$("instagram").value.trim(),avatar:$("avatarUrl").dataset.value||$("avatarUrl").value.trim(),cover:$("coverUrl").dataset.value||$("coverUrl").value.trim(),showLocation:$("showLocation").classList.contains("on"),showWebsite:$("showWebsite").classList.contains("on")}}
+function update(){render(current())}
+function file(input,target){
+const f=input.files&&input.files[0];if(!f)return;
+if(!f.type.startsWith("image/"))return toast("The selected file is not an image.");
+if(f.size>4*1024*1024){input.value="";return toast("Image size should be less than 4MB")}
+const r=new FileReader();r.onload=()=>{$(target).dataset.value=r.result;update();persist(current());window.dispatchEvent(new Event("aethercom-profile-updated"))};r.readAsDataURL(f)
+}
+$("avatarFile").addEventListener("change",()=>file($("avatarFile"),"avatarUrl"));
+$("coverFile").addEventListener("change",()=>file($("coverFile"),"coverUrl"));
+["name","username","bio","location","website","telegram","instagram","avatarUrl","coverUrl"].forEach(id=>$(id).addEventListener("input",()=>{update();persist(current());window.dispatchEvent(new Event("aethercom-profile-updated"));}));
+["showLocation","showWebsite"].forEach(id=>$(id).addEventListener("click",()=>{$(id).classList.toggle("on");update();persist(current());window.dispatchEvent(new Event("aethercom-profile-updated"));}));
+$("save").addEventListener("click",()=>{const d=current();persist(d);render(d);toast("Profile saved successfully!")});
+$("reset").addEventListener("click",()=>{render(read());toast("Saved info was loaded")});
+$("clear").addEventListener("click",()=>{if(!confirm("Delete profile info from this browser?"))return;localStorage.removeItem(KEY);$("avatarUrl").dataset.value="";$("coverUrl").dataset.value="";$("avatarFile").value="";$("coverFile").value="";render({...defaults});toast("Profile info has been deleted.")});
+render(read());
+})();
