@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qualcomm announces its next two flagship chips on September 22</title>
+        <mata charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" sizes="512x512" href="../favicon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon.png">
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="profile-btn" onclick="openProfile(event)">
+                <img src="../assets/images/Aethercom Edit-Glass.png" class="profile-pic">
+            </div>
+            <div><a href="../index.html"><img src="../assets/svg/Aethercom Text.png" class="logo-text" alt="aethercom text logo"></a></div>
+            <!-- Search Button -->
+            <button
+                class="aether-search-btn"
+                id="aetherSearchButton"
+                type="button"
+                aria-label="Search"
+                title="Search"
+                aria-controls="aetherSearchPanel"
+                aria-expanded="false"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle
+                        cx="10.8"
+                        cy="10.8"
+                        r="6.8"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    />
+                    <path
+                        d="M16 16L21 21"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </button>
+
+            <!-- Search Overlay -->
+            <div
+                class="aether-search-overlay"
+                id="aetherSearchOverlay"
+                aria-hidden="true"
+            ></div>
+
+            <!-- Search Panel -->
+            <aside
+                class="aether-search-panel"
+                id="aetherSearchPanel"
+                aria-hidden="true"
+            >
+
+                <div class="aether-search-inner">
+
+                    <!-- Search Header -->
+                    <div class="aether-search-header">
+
+                        <div class="aether-search-heading">
+                            <span class="aether-search-heading-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </span>
+
+                            <div>
+                                <h2>Search</h2>
+                                <p>Explore Aethercom</p>
+                            </div>
+                        </div>
+
+                        <!-- Close -->
+                        <button
+                            class="aether-search-close"
+                            id="aetherSearchClose"
+                            type="button"
+                            aria-label="Close Search"
+                            title="Close"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M6 6L18 18M18 6L6 18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="aether-search-input-wrapper">
+
+                        <svg
+                            class="aether-search-input-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="10.8"
+                                cy="10.8"
+                                r="6.8"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                            <path
+                                d="M16 16L21 21"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+
+                        <input
+                            id="aetherSearchInput"
+                            class="aether-search-input"
+                            type="search"
+                            placeholder="Search Aethercom..."
+                            autocomplete="off"
+                            spellcheck="false"
+                            aria-label="Search Aethercom"
+                        />
+
+                        <button
+                            id="aetherSearchClear"
+                            class="aether-search-clear"
+                            type="button"
+                            aria-label="Clear search"
+                            title="Clear"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M6 6L18 18M18 6L6 18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Search Hint -->
+                    <div class="aether-search-hint">
+                        <span>Press</span>
+                        <kbd>ESC</kbd>
+                        <span>to close</span>
+                    </div>
+
+                    <!-- Results -->
+                    <div
+                        class="aether-search-results"
+                        id="aetherSearchResults"
+                        aria-live="polite"
+                    >
+
+                        <!-- Initial State -->
+                        <div class="aether-search-state" id="aetherSearchInitial">
+
+                            <div class="aether-search-state-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <h3>Search Aethercom</h3>
+                            <p>
+                                Find pages, projects and other content.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+        </header>
+        <div>
+            <img src="../assets/images/snapdragon summit 2026 qulity.avif" class="banner-news" alt="snapdragon summit 2026">
+            <h1 class="title-news">Snapdragon Summit 2026</h1>
+            <div class="info-news-hexa time-news">
+                <div class="info-news"><span>20 August 2026</span></div>
+                <div class="info-news"><span>Thursday</span></div>
+                <div class="info-news"><span>21:42</span></div>
+            </div>
+            <div class="info-news-hexa">
+                <div class="info-news"><span>#Tech</span></div>
+                <div class="info-news"><span>#news</span></div>
+                <div class="info-news"><span>#Qualcomm</span></div>
+            </div>
+            <div class="info-news">
+                <span class="">Writer: Ali</span>
+                    <span class="verified-badge" title="Verified by Aethercom">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 2.5
+                        L14.2 3.6
+                        L16.6 3.4
+                        L18 5.4
+                        L20.2 6.4
+                        L20.6 8.8
+                        L22 10.8
+                        L21 13
+                        L21.2 15.4
+                        L19.2 17
+                        L18.6 19.3
+                        L16.2 20
+                        L14.3 21.5
+                        L12 20.8
+                        L9.7 21.5
+                        L7.8 20
+                        L5.4 19.3
+                        L4.8 17
+                        L2.8 15.4
+                        L3 13
+                        L2 10.8
+                        L3.4 8.8
+                        L3.8 6.4
+                        L6 5.4
+                        L7.4 3.4
+                        L9.8 3.6
+                        Z"/>
+
+                <path
+                    class="check"
+                    d="M7.5 12.2
+                    L10.4 15
+                    L16.6 8.8"/>
+            </svg>
+                </span>
+            </div>
+        </div>
+        <hr class="hr-news">
+        <p class="text-news">
+        Qualcomm has taken a different approach this year to introduce its next flagship chip. The company has confirmed that it will unveil two Elite 8 Series chips at the 2026 Snapdragon Summit event.
+        <br>In a teaser released on X, Qualcomm used the phrase "When Two Changes the Game" 9 "Dual a Elites" and promised twice the options for the smartphone market. The company also described the introduction as the next chapter in its Age-based AI era. The released short video also shows two unspecified chips along with images of the gameplay of Neverness to Everness.
+        <br>Both chips are said to offer more advanced camera and GPU capabilities to experience the immersive gaming experience.
+        <!-- ==============================
+     AETHERCOM VIDEO PLAYER
+     ============================== -->
+
+<div class="ac-video-player" id="aetherPlayer">
+
+    <!-- Video -->
+    <video
+        class="ac-video"
+        id="acVideo"
+        preload="metadata"
+        playsinline
+    >
+        <source src="../assets/Video/Qualcomm-snapdragon-summit-2026.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Loading -->
+    <div class="ac-loader" id="acLoader">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Center Play Button -->
+    <button
+        class="ac-center-play"
+        id="acCenterPlay"
+        type="button"
+        aria-label="Play video"
+    >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l10-6.86a1 1 0 0 0 0-1.72l-10-6.86A1 1 0 0 0 8 5.14Z"/>
+        </svg>
+    </button>
+
+    <!-- Top Bar -->
+    <div class="ac-top-bar">
+
+        <div class="ac-video-title">
+            <span class="ac-title-dot"></span>
+            <span id="acVideoTitle">Aethercom</span>
+        </div>
+
+        <button
+            class="ac-control-button"
+            id="acPip"
+            type="button"
+            aria-label="Picture in Picture"
+            title="Picture in Picture"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                <rect x="12" y="12" width="7" height="5" rx="1"/>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- Controls -->
+    <div class="ac-controls">
+
+        <!-- Progress -->
+        <div class="ac-progress-area">
+
+            <div class="ac-progress-bar" id="acProgressBar">
+
+                <div
+                    class="ac-progress-buffer"
+                    id="acProgressBuffer"
+                ></div>
+
+                <div
+                    class="ac-progress-filled"
+                    id="acProgressFilled"
+                ></div>
+
+                <div
+                    class="ac-progress-thumb"
+                    id="acProgressThumb"
+                ></div>
+
+            </div>
+
+        </div>
+
+        <!-- Control Row -->
+        <div class="ac-control-row">
+
+            <!-- Left Controls -->
+            <div class="ac-left-controls">
+
+                <!-- Play -->
+                <button
+                    class="ac-control-button"
+                    id="acPlay"
+                    type="button"
+                    aria-label="Play"
+                    title="Play"
+                >
+                    <svg
+                        class="ac-icon-play"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l10-6.86a1 1 0 0 0 0-1.72l-10-6.86A1 1 0 0 0 8 5.14Z"/>
+                    </svg>
+
+                    <svg
+                        class="ac-icon-pause"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <rect x="7" y="5" width="4" height="14" rx="1"/>
+                        <rect x="13" y="5" width="4" height="14" rx="1"/>
+                    </svg>
+                </button>
+
+                <!-- Previous 10 sec -->
+                <button
+                    class="ac-control-button ac-skip-button"
+                    id="acBackward"
+                    type="button"
+                    aria-label="Back 10 seconds"
+                    title="Back 10 seconds"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M11 7V4L6 8l5 4V9c3.31 0 6 2.69 6 6s-2.69 6-6 6a6 6 0 0 1-5.65-4H3.26A9 9 0 1 0 11 7Z"/>
+                    </svg>
+                    <span>10</span>
+                </button>
+
+                <!-- Next 10 sec -->
+                <button
+                    class="ac-control-button ac-skip-button"
+                    id="acForward"
+                    type="button"
+                    aria-label="Forward 10 seconds"
+                    title="Forward 10 seconds"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M13 7V4l5 4-5 4V9c-3.31 0-6 2.69-6 6s2.69 6 6 6a6 6 0 0 0 5.65-4h2.09A9 9 0 1 1 13 7Z"/>
+                    </svg>
+                    <span>10</span>
+                </button>
+
+                <!-- Volume -->
+                <button
+                    class="ac-control-button"
+                    id="acMute"
+                    type="button"
+                    aria-label="Mute"
+                    title="Mute"
+                >
+                    <svg
+                        class="ac-volume-high"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M4 9v6h4l5 4V5L8 9H4Z"/>
+                        <path d="M16 8.5a5 5 0 0 1 0 7"/>
+                        <path d="M18.5 6a8.5 8.5 0 0 1 0 12"/>
+                    </svg>
+
+                    <svg
+                        class="ac-volume-mute"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path d="M4 9v6h4l5 4V5L8 9H4Z"/>
+                        <path d="m17 9 4 6"/>
+                        <path d="m21 9-4 6"/>
+                    </svg>
+                </button>
+
+                <!-- Volume Slider -->
+                <div class="ac-volume-wrapper">
+                    <input
+                        id="acVolume"
+                        class="ac-volume"
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="1"
+                        aria-label="Volume"
+                    >
+                </div>
+
+                <!-- Time -->
+                <div class="ac-time">
+                    <span id="acCurrentTime">00:00</span>
+                    <span class="ac-time-divider">/</span>
+                    <span id="acDuration">00:00</span>
+                </div>
+
+            </div>
+
+            <!-- Right Controls -->
+            <div class="ac-right-controls">
+
+                <!-- Speed -->
+                <div class="ac-speed-wrapper">
+
+                    <button
+                        class="ac-speed-button"
+                        id="acSpeedButton"
+                        type="button"
+                        aria-label="Playback speed"
+                    >
+                        1×
+                    </button>
+
+                    <div
+                        class="ac-speed-menu"
+                        id="acSpeedMenu"
+                    >
+                        <button data-speed="0.5">0.5×</button>
+                        <button data-speed="0.75">0.75×</button>
+                        <button data-speed="1" class="active">1×</button>
+                        <button data-speed="1.25">1.25×</button>
+                        <button data-speed="1.5">1.5×</button>
+                        <button data-speed="2">2×</button>
+                    </div>
+
+                </div>
+
+                <!-- Fullscreen -->
+                <button
+                    class="ac-control-button"
+                    id="acFullscreen"
+                    type="button"
+                    aria-label="Fullscreen"
+                    title="Fullscreen"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 3H3v5"/>
+                        <path d="M3 3l6 6"/>
+                        <path d="M16 3h5v5"/>
+                        <path d="m21 3-6 6"/>
+                        <path d="M8 21H3v-5"/>
+                        <path d="m3 21 6-6"/>
+                        <path d="M16 21h5v-5"/>
+                        <path d="m21 21-6-6"/>
+                    </svg>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+        <br>
+        <p class="text-news">The event will be held in Hawaii from September 22 to 24. Rumors suggest the introduction of Snapdragon A Elite Gen and the higher-end version of Snapdragon A Elite Gen Pro. The Xiaomi Galaxy S27 Ultra and the flagship Q0O OnePlus and some initial speculation suggest that the Pro chip may be produced by the TSMC 2-nanometer manufacturing process and from the GPU. Adreno 850, while the standard version will probably be used in a wider range of premium but slightly cheaper flagship phones, but none of these details have been confirmed yet, and complete information at the launch of the two flagship chips is a different approach to Qualcomm, as the company is usually just one each year. By offering two options, Qualcomm apparently intends to create more specific performance levels in the highest market level and provide more flexibility to phone makers to design products with different prices and capabilities. Details of the performance specifications and devices of partner companies will probably be released when the chips are officially introduced on or before September 22nd.
+        </p>
+        </p>
+        <section>
+                <div class="papers">
+                        <div class="feed-header">
+                            <h2 class="title-paper">
+                                Aethercom Papers
+                            </h2>
+                        </div>
+                        <div class="paper-list">
+                            <a class="paper-link1 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img1">
+                                </div>
+                                <p class="paper-title1"></p>
+                            </div></a>
+                            <a class="paper-link2 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img2">
+                                </div>
+                                <p class="paper-title2"></p>
+                            </div></a>
+                            <a class="paper-link3 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img3">
+                                </div>
+                                <p class="paper-title3"></p>
+                            </div></a>
+                            <a class="paper-link4 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img4">
+                                </div>
+                                <p class="paper-title4"></p>
+                            </div></a>
+                            <a class="paper-link5 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img5">
+                                </div>
+                                <p class="paper-title5"></p>
+                            </div></a>
+                        </div>
+                    </div>
+    </section>
+        <footer class="site-footer">
+            <!-- Main Footer Brand -->
+            <div class="footer-brand">
+                <!-- Aethercom Logo -->
+                <div class="footer-logo" aria-label="Aethercom">
+                    <img src="../assets/svg/Aethercom.svg" title="Aethercom" alt="Aethercom logo">
+                </div>
+                <img src="../assets/svg/Aethercom Text.png" title="Aethercom Brand" alt="aethercom" class="logo-text">
+                <p class="footer-slogan">Beyond the Stars</p>
+                <!-- Social Icons -->
+                <div class="footer-socials">
+                    <!-- Telegram -->
+                    <a href="https://t.me/AethercomHub" class="social-link" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.04-3.72-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.41-.36-.09-.56-.64-.2L5.38 13.49.43 11.94c-1.08-.34-1.1-1.08.23-1.59L20.02 3.08c.88-.32 1.65.2 1.48.42Z"></path>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/AethercomHub" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="5"
+                                fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="4"
+                                    fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+                        </svg>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://GitHub.com/Aethercom" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0c2.1-1.4 3.1-1.1 3.1-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.7 1 .7 1.9v2.8c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:AethercomCEO@Gmail.com" class="social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="5" width="18" height="14" rx="2"
+                                fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="m4 7 8 6 8-6"
+                                fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Footer Navigation -->
+            <div class="footer-navigation">
+
+                <!-- Explore -->
+                <div class="footer-column explore-column">
+                    <h3>Explore</h3>
+
+                    <nav class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="../services.html">Services</a>
+                        <a href="../terms.html">Terms</a>
+                        <a href="../support.html">Support</a>
+                        <a href="../about.html">About</a>
+                    </nav>
+                </div>
+
+                <!-- Settings -->
+                <div class="footer-column settings-column">
+                    <h3>Settings</h3>
+
+                    <div class="settings-list">
+
+                        <!-- Light Mode -->
+                        <div class="setting-row">
+                            <span class="setting-label">Dark Mode</span>
+
+                            <button
+                                class="toggle-switch"
+                                id="themeToggle"
+                                type="button"
+                                aria-label="Toggle Light Mode"
+                                aria-pressed="false"
+                            >
+                                <span class="toggle-circle"></span>
+                            </button>
+                        </div>
+
+                        <!-- Custom Setting -->
+                        <div class="setting-row">
+                            <span class="setting-label">Back to Top</span>
+
+                            <button
+                                class="icon-setting-btn"
+                                onclick="backToTop()"
+                                type="button"
+                                aria-label="Back to top"
+                            >
+                                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="16 12 12 8 8 12"></polyline>
+                                    <line x1="12" y1="16" x2="12" y2="8"></line>
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© 2026 Aethercom. All rights reserved.</p>
+            </div>
+    </footer>
+        <!--JavaScript-->
+        <div id="page-transition"></div>
+        <script src="../js/script.js"></script>
+    </body>
+</html>

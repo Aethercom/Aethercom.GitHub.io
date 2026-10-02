@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Movies; Coding and Hacking</title>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" sizes="512x512" href="../favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.png">
+</head>
+<body>
+    <header class="navbar">
+            <div class="profile-btn" onclick="openProfile(event)">
+                <img src="../assets/images/Aethercom Edit-Glass.png" class="profile-pic">
+            </div>
+            <div><a href="../index.html"><img src="../assets/svg/Aethercom Text.png" class="logo-text"></a></div>
+            <!-- Search Button -->
+            <button
+                class="aether-search-btn"
+                id="aetherSearchButton"
+                type="button"
+                aria-label="Search"
+                title="Search"
+                aria-controls="aetherSearchPanel"
+                aria-expanded="false"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle
+                        cx="10.8"
+                        cy="10.8"
+                        r="6.8"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    />
+                    <path
+                        d="M16 16L21 21"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </button>
+
+            <!-- Search Overlay -->
+            <div
+                class="aether-search-overlay"
+                id="aetherSearchOverlay"
+                aria-hidden="true"
+            ></div>
+
+            <!-- Search Panel -->
+            <aside
+                class="aether-search-panel"
+                id="aetherSearchPanel"
+                aria-hidden="true"
+            >
+
+                <div class="aether-search-inner">
+
+                    <!-- Search Header -->
+                    <div class="aether-search-header">
+
+                        <div class="aether-search-heading">
+                            <span class="aether-search-heading-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </span>
+
+                            <div>
+                                <h2>Search</h2>
+                                <p>Explore Aethercom</p>
+                            </div>
+                        </div>
+
+                        <!-- Close -->
+                        <button
+                            class="aether-search-close"
+                            id="aetherSearchClose"
+                            type="button"
+                            aria-label="Close Search"
+                            title="Close"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M6 6L18 18M18 6L6 18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="aether-search-input-wrapper">
+
+                        <svg
+                            class="aether-search-input-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="10.8"
+                                cy="10.8"
+                                r="6.8"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                            <path
+                                d="M16 16L21 21"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+
+                        <input
+                            id="aetherSearchInput"
+                            class="aether-search-input"
+                            type="search"
+                            placeholder="Search Aethercom..."
+                            autocomplete="off"
+                            spellcheck="false"
+                            aria-label="Search Aethercom"
+                        />
+
+                        <button
+                            id="aetherSearchClear"
+                            class="aether-search-clear"
+                            type="button"
+                            aria-label="Clear search"
+                            title="Clear"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M6 6L18 18M18 6L6 18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Search Hint -->
+                    <div class="aether-search-hint">
+                        <span>Press</span>
+                        <kbd>ESC</kbd>
+                        <span>to close</span>
+                    </div>
+
+                    <!-- Results -->
+                    <div
+                        class="aether-search-results"
+                        id="aetherSearchResults"
+                        aria-live="polite"
+                    >
+
+                        <!-- Initial State -->
+                        <div class="aether-search-state" id="aetherSearchInitial">
+
+                            <div class="aether-search-state-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <h3>Search Aethercom</h3>
+                            <p>
+                                Find pages, projects and other content.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+        </header>
+
+    <main>
+        <div>
+            <img src="../assets/images/top10-movies-movies-for-coding-and-hacking.avif" class="banner-news">
+            <h1 class="title-news">10 Best Movies About Coding, Hacking & the Digital World</h1>
+            <div class="info-news-hexa time-news">
+                <div class="info-news"><span>17  September 2026</span></div>
+                <div class="info-news"><span>Thursday</span></div>
+                <div class="info-news"><span>23:30</span></div>
+            </div>
+            <div class="info-news-hexa">
+                <div class="info-news"><span>#Movie</span></div>
+                <div class="info-news"><span>#Top10</span></div>
+                <div class="info-news"><span>#Hack</span></div>
+            </div>
+            <div class="info-news">
+                <span class="">Writer: Ali</span>
+                    <span class="verified-badge" title="Verified by Aethercom">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 2.5
+                        L14.2 3.6
+                        L16.6 3.4
+                        L18 5.4
+                        L20.2 6.4
+                        L20.6 8.8
+                        L22 10.8
+                        L21 13
+                        L21.2 15.4
+                        L19.2 17
+                        L18.6 19.3
+                        L16.2 20
+                        L14.3 21.5
+                        L12 20.8
+                        L9.7 21.5
+                        L7.8 20
+                        L5.4 19.3
+                        L4.8 17
+                        L2.8 15.4
+                        L3 13
+                        L2 10.8
+                        L3.4 8.8
+                        L3.8 6.4
+                        L6 5.4
+                        L7.4 3.4
+                        L9.8 3.6
+                        Z"/>
+
+                <path
+                    class="check"
+                    d="M7.5 12.2
+                    L10.4 15
+                    L16.6 8.8"/>
+            </svg>
+                </span>
+            </div>
+        </div>
+        <hr class="hr-news">
+        <p class="text-news">
+            Computers have always been more than machines on a screen. They have changed the way we communicate, create, work, fight, build companies, and even understand reality.
+            Cinema has been fascinated by that idea for decades. From teenagers breaking into military computers in the 1980s to programmers building artificial intelligence and hackers exposing massive surveillance systems, movies have created some of the most memorable stories around technology.
+            <br>
+            But how accurate are these movies?
+            <br>
+            Some are surprisingly close to reality. Others turn programming into colorful screens full of impossible commands. And some are not really about hacking at all — but about the people, companies, ideas, and consequences behind technology.
+            So, instead of focusing only on movies that show someone typing random commands into a terminal, this list looks at films connected to <b>hacking, programming, cybersecurity, cryptography, artificial intelligence, computer culture, and the digital revolution</b>.
+            <br>
+            The selection is based on a combination of critical reception, audience ratings, cultural impact, and how strongly each movie connects to the world of computing.
+            <br>
+            Let's get started.
+
+            <hr class="hr-news2">
+
+            <div class="list-board">
+                <div class="title-list-board">List of Titles</div>
+                <div>
+                    <ul class="list-news">
+                        <a href="#No-1" class="normal-link"><li>1. The Matrix 1999</li></a>
+                        <a href="#No-2" class="normal-link"><li>2. The Social Network 2010</li></a>
+                        <a href="#No-3" class="normal-link"><li>3. Ex Machina 2014</li></a>
+                        <a href="#No-4" class="normal-link"><li>4. Sneakers 1992</li></a>
+                        <a href="#No-5" class="normal-link"><li>5. Sneakers 1992</li></a>
+                        <a href="#No-6" class="normal-link"><li>6. The Imitation Game 2014</li></a>
+                        <a href="#No-7" class="normal-link"><li>7. Citizenfour 2014</li></a>
+                        <a href="#No-8" class="normal-link"><li>8. Who Am I: No System Is Safe 2014</li></a>
+                        <a href="#No-9" class="normal-link"><li>9. Hackers 1995</li></a>
+                        <a href="#No-10" class="normal-link"><li>10. Snowden 2016</li></a>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="hr-news2">
+            <!-- No. 1 -->
+            <h1 class="h1-news" id="No-1">1. The Matrix 1999</h1>
+            <div class="img-news"><img src="../assets/images/the-matrix-1999-main-pic.avif" class="img-news-pic" alt="the matrix 1999" title="The Matrix 1999"></div>
+            <div class="info-movie">
+                <table class="table-news-rate">
+                    <tr>
+                        <td><img src="../assets/svg/imdb-icon.svg" alt="imdb" class="svg-table-news"></td>
+                        <td><span>8.7 / 10</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/rotten-tomatoes.svg" alt="rotten tomatoes" class="svg-table-news"></td>
+                        <td><span>83%</span></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/Metacritic_idzzj_QSW__3.avif" alt="matacritic" class="svg-table-news"></td>
+                        <td>73 / 100</td>
+                    </tr>
+                </table>
+                <table class="table-news">
+                    <tr>
+                        <td><img src="../assets/svg/director-chair-director-svgrepo-com.svg" alt="director" class="svg-table-news"><span>Director</span></td>
+                        <td>Lana Wachowski & Lilly Wachowski</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/writer-svgrepo-com.svg" alt="writer" class="svg-table-news"><span>Writers</span></td>
+                        <td>Lana Wachowski & Lilly Wachowski</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/actor-chaplin-comedy-svgrepo-com.svg" alt="actor" class="svg-table-news"><span>Starring</span></td>
+                        <td>Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/movie-film-svgrepo-com.svg" alt="film" class="svg-table-news"><span>Genre</span></td>
+                        <td>Sci-Fi, Action, Cyberpunk</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/time-svgrepo-com.svg" alt="time" class="svg-table-news"><span>Runtime</span></td>
+                        <td>2h 16m</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="text-news">
+                What if the world you see every day isn't real?
+                That question is at the heart of The Matrix, one of the most influential technology-themed movies ever made.
+
+                The story follows Thomas Anderson, a computer programmer who secretly operates under the hacker alias Neo. His life changes after he encounters Morpheus and Trinity and discovers that reality is far different from what he believed.
+
+                The Matrix itself is not a realistic representation of computer programming or hacking. Instead, the movie uses computer concepts as a foundation for a much larger philosophical story about artificial intelligence, simulated reality, control, and human freedom.
+
+                Its influence on cyberpunk culture, technology aesthetics, gaming, and modern science fiction is enormous.
+
+                Even today, the idea of living inside a simulated reality remains one of the most recognizable concepts in technology-related cinema.
+
+                IMDb currently lists the movie at 8.7/10 from more than two million ratings, while Rotten Tomatoes gives it an 83% Tomatometer score.
+                </p>
+                <a href="https://reddit.com/" target="_blank" class="normal-link"><button class="trailer-btn">Official Trailer  |  The Matrix 1999</button></a>
+            <hr class="hr-news2">
+
+            <!-- No. 2 -->
+
+            <h1 class="h1-news" id="No-2">2. The Social Network 2010</h1>
+            <div class="img-news"><img src="../assets/images/05social-network01-superJumbo-v3.avif" class="img-news-pic" alt="the social network 2010" title="The Matrix 1999"></div>
+            <div class="info-movie">
+                <table class="table-news-rate">
+                    <tr>
+                        <td><img src="../assets/svg/imdb-icon.svg" alt="imdb" class="svg-table-news"> </td>
+                        <td>7.8 / 10</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/rotten-tomatoes.svg" alt="rotten tomatoes" class="svg-table-news"> </td>
+                        <td>96%</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/Metacritic_idzzj_QSW__3.avif" alt="matacritic" class="svg-table-news"> </td>
+                        <td>95 / 100</td>
+                    </tr>
+                </table>
+                <table class="table-news">
+                    <tr>
+                        <td><img src="../assets/svg/director-chair-director-svgrepo-com.svg" alt="director" class="svg-table-news"><span>Director</span></td>
+                        <td>John Badham</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/writer-svgrepo-com.svg" alt="writer" class="svg-table-news"><span>Writers</span></td>
+                        <td>Lawrence Lasker & Walter F. Parkes</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/actor-chaplin-comedy-svgrepo-com.svg" alt="actor" class="svg-table-news"><span>Starring</span></td>
+                        <td>Matthew Broderick, Ally Sheedy, John Wood</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/movie-film-svgrepo-com.svg" alt="film" class="svg-table-news"><span>Genre</span></td>
+                        <td>Cyber Thriller, Sci-Fi, Drama</td>
+                    </tr>
+                    <tr>
+                        <td><img src="../assets/svg/time-svgrepo-com.svg" alt="time" class="svg-table-news"><span>Runtime</span></td>
+                        <td>1h 54m</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="text-news">
+                Before hacking became a familiar subject in modern cinema, there was WarGames.
+
+            The story follows a young computer enthusiast who accidentally gains access to a military computer system while searching for new games.
+
+            What begins as curiosity quickly becomes a serious situation when the computer interprets the events as real.
+
+            The movie was released during the Cold War, when computers and nuclear weapons were becoming increasingly connected to questions about global security.
+
+            For anyone interested in cybersecurity, WarGames is historically important because it helped establish the idea of a young computer enthusiast accidentally penetrating a highly sensitive system.
+
+            The technology shown on screen is obviously outdated today, but the underlying question remains surprisingly relevant:
+
+            What happens when a computer system cannot understand human intentions?
+
+            IMDb currently lists the movie at 7.1/10, while Rotten Tomatoes gives it a 93% Tomatometer score.
+            </p>
+            <a href="https://reddit.com/" target="_blank" class="normal-link"><button class="trailer-btn">Official Trailer | WarGames 1983</button></a>
+            <hr class="hr-news2">
+
+            <!-- No. 5 -->
+
+            <h1 class="h1-news" id="No-5">5. Sneakers 1992</h1>
+            <div class="img-news"><img src="../assets/images/sneakers.avif" class="img-news-pic" alt="sneakers 1992" title="Sneakers 1992"></div>
+            <div class="info-movie">
+                <table class="table-news-rate">
+                <tr>
+                    <td><img src="../assets/svg/imdb-icon.svg" alt="imdb" class="svg-table-news"> </td>
+                    <td>7.1 / 10</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/rotten-tomatoes.svg" alt="rotten tomatoes" class="svg-table-news"> </td>
+                    <td>80%</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/Metacritic_idzzj_QSW__3.avif" alt="matacritic" class="svg-table-news"> </td>
+                    <td>65 / 100</td>
+                </tr>
+            </table>
+            <table class="table-news">
+                <tr>
+                    <td><img src="../assets/svg/director-chair-director-svgrepo-com.svg" alt="director" class="svg-table-news"><span>Director</span></td>
+                    <td>Phil Alden Robinson</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/writer-svgrepo-com.svg" alt="writer" class="svg-table-news"><span>Writers</span></td>
+                    <td>Phil Alden Robinson, Lawrence Lasker & Walter F. Parkes</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/actor-chaplin-comedy-svgrepo-com.svg" alt="actor" class="svg-table-news"><span>Starring</span></td>
+                    <td>Robert Redford, Sidney Poitier, River Phoenix, Dan Aykroyd</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/movie-film-svgrepo-com.svg" alt="film" class="svg-table-news"><span>Genre</span></td>
+                    <td>Mystery, Thriller, Crime, Comedy</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/time-svgrepo-com.svg" alt="time" class="svg-table-news"><span>Runtime</span></td>
+                    <td>2h 6m</td>
+                </tr>
+            </table>
+            </div>
+            
+            <p class="text-news">
+                Long before modern cybersecurity teams were common in movies, Sneakers explored the idea of professionals testing security systems.
+
+            Robert Redford plays Martin Bishop, the leader of a team specializing in security testing.
+
+            Their job becomes much more complicated when they are asked to steal a mysterious device capable of breaking encryption.
+
+            The film combines hacking, social engineering, cryptography, physical security, surveillance, and espionage.
+
+            One of its most interesting aspects is that the team isn't simply a group of stereotypical "hackers." Different members specialize in different skills.
+
+            That makes Sneakers particularly interesting for people who want to understand that cybersecurity is much bigger than simply writing code.
+
+            It is about people, systems, information, trust, physical access, and weaknesses.
+
+            IMDb lists the movie at 7.1/10, while Rotten Tomatoes currently gives it an 80% Tomatometer score.
+            </p>
+            <a href="https://reddit.com/" target="_blank" class="normal-link"><button class="trailer-btn">Official Trailer | Sneakers 1992</button></a>
+            <hr class="hr-news2">
+
+            <!-- No. 6 -->
+
+            <h1 class="h1-news" id="No-6">6. The Imitation Game 2014</h1>
+            <div class="img-news"><img src="../assets/images/the imitation game 2014.avif" class="img-news-pic" alt="The Imitation Game 2014" title="The Imitation Game 2014"></div>
+            <div class="info-movie">
+                <table class="table-news-rate">
+                <tr>
+                    <td><img src="../assets/svg/imdb-icon.svg" alt="imdb" class="svg-table-news"> </td>
+                    <td>8.0 / 10</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/rotten-tomatoes.svg" alt="rotten tomatoes" class="svg-table-news"> </td>
+                    <td>90%</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/Metacritic_idzzj_QSW__3.avif" alt="matacritic" class="svg-table-news"> </td>
+                    <td>71 / 100</td>
+                </tr>
+            </table>
+            <table class="table-news">
+                <tr>
+                    <td><img src="../assets/svg/director-chair-director-svgrepo-com.svg" alt="director" class="svg-table-news"><span>Director</span></td>
+                    <td>Morten Tyldum</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/writer-svgrepo-com.svg" alt="writer" class="svg-table-news"><span>Writers</span></td>
+                    <td>Graham Moore</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/actor-chaplin-comedy-svgrepo-com.svg" alt="actor" class="svg-table-news"><span>Starring</span></td>
+                    <td>Benedict Cumberbatch, Keira Knightley, Matthew Goode</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/movie-film-svgrepo-com.svg" alt="film" class="svg-table-news"><span>Genre</span></td>
+                    <td>Biography, Drama, History</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/time-svgrepo-com.svg" alt="time" class="svg-table-news"><span>Runtime</span></td>
+                    <td>1h 54m</td>
+                </tr>
+            </table>
+            </div>
+            
+            <p class="text-news">
+                Programming and cryptography have a long history, and few historical figures are more important to that story than Alan Turing.
+
+            The Imitation Game dramatizes Turing's work during World War II as he and his team attempt to break the German Enigma code.
+
+            The movie is not a programming tutorial, and some parts of its historical story were dramatized for cinema. However, its central technological idea — using machines and mathematical methods to attack complex encryption — makes it an important film for anyone interested in computing history.
+
+            It also introduces a broader idea:
+
+            Computers were not originally created simply for entertainment or social media. They grew out of serious mathematical, military, scientific, and information-processing problems.
+
+            The film received strong critical and audience attention, with an IMDb rating of 8.0/10 and a 90% Tomatometer score on Rotten Tomatoes.
+            </p>
+            <a href="https://reddit.com/" target="_blank" class="normal-link"><button class="trailer-btn">Official Trailer | The Imitation Game 2014</button></a>
+            <hr class="hr-news2">
+
+            <!-- No. 7 -->
+
+            <h1 class="h1-news" id="No-7">7. Citizenfour 2014</h1>
+            <div class="img-news"><img src="../assets/images/1280x720-vay_citizenfour.avif" class="img-news-pic" alt="Citizenfour 2014" title="Citizenfour 2014"></div>
+            <div class="info-movie">
+                <table class="table-news-rate">
+                <tr>
+                    <td><img src="../assets/svg/imdb-icon.svg" alt="imdb" class="svg-table-news"> </td>
+                    <td>8.0 / 10</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/rotten-tomatoes.svg" alt="rotten tomatoes" class="svg-table-news"> </td>
+                    <td>96%</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/Metacritic_idzzj_QSW__3.avif" alt="matacritic" class="svg-table-news"> </td>
+                    <td>88 / 100</td>
+                </tr>
+            </table>
+            <table class="table-news">
+                <tr>
+                    <td><img src="../assets/svg/director-chair-director-svgrepo-com.svg" alt="director" class="svg-table-news"><span>Director</span></td>
+                    <td>Laura Poitras</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/writer-svgrepo-com.svg" alt="writer" class="svg-table-news"><span>Writers</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/actor-chaplin-comedy-svgrepo-com.svg" alt="actor" class="svg-table-news"><span>Starring</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/movie-film-svgrepo-com.svg" alt="film" class="svg-table-news"><span>Genre</span></td>
+                    <td>Documentary</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/time-svgrepo-com.svg" alt="time" class="svg-table-news"><span>Runtime</span></td>
+                    <td>1h 54m</td>
+                </tr>
+            </table>
+            </div>
+            
+            <p class="text-news">
+                Citizenfour is different from almost every other film on this list because it is a documentary rather than a fictional story.
+
+            The film follows filmmaker Laura Poitras and journalist Glenn Greenwald as they meet Edward Snowden in Hong Kong after receiving encrypted communications from him.
+
+            Instead of imagining a fictional cyberattack, Citizenfour documents real events surrounding digital surveillance, encrypted communication, classified information, journalism, and privacy.
+
+            For anyone interested in cybersecurity, this is an important distinction.
+
+            Hacking and cybersecurity are not only about breaking into computers. They are also about protecting communications, understanding surveillance systems, securing information, and deciding who should have access to data.
+
+            The documentary won the Academy Award for Best Documentary Feature.
+
+            IMDb currently lists it at 8.0/10, while Rotten Tomatoes gives it a 96% Tomatometer score.
+            </p>
+            <a href="https://www.youtube.com/c/" target="_blank" class="normal-link"><button class="trailer-btn">Official Trailer | Citizenfour 2014</button></a>
+            <hr class="hr-news2">
+
+            <!-- No. 8 -->
+
+            <h1 class="h1-news" id="No-8">8. Who Am I: No System Is Safe 2014</h1>
+            <div class="img-news"><img src="../assets/images/who am i.avif" class="img-news-pic" alt="Who Am I: No System Is Safe 2014" title="Who Am I: No System Is Safe 2014"></div>
+            <div class="info-movie">
+                <table class="table-news-rate">
+                <tr>
+                    <td><img src="../assets/svg/imdb-icon.svg" alt="imdb" class="svg-table-news"> </td>
+                    <td>7.4 / 10</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/rotten-tomatoes.svg" alt="rotten tomatoes" class="svg-table-news"> </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/Metacritic_idzzj_QSW__3.avif" alt="matacritic" class="svg-table-news"> </td>
+                    <td></td>
+                </tr>
+            </table>
+            <table class="table-news">
+                <tr>
+                    <td><img src="../assets/svg/director-chair-director-svgrepo-com.svg" alt="director" class="svg-table-news"><span>Director</span></td>
+                    <td>Oliver Stone</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/writer-svgrepo-com.svg" alt="writer" class="svg-table-news"><span>Writers</span></td>
+                    <td>Kieran Fitzgerald & Oliver Stone</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/actor-chaplin-comedy-svgrepo-com.svg" alt="actor" class="svg-table-news"><span>Starring</span></td>
+                    <td>Joseph Gordon-Levitt, Shailene Woodley, Zachary Quinto</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/movie-film-svgrepo-com.svg" alt="film" class="svg-table-news"><span>Genre</span></td>
+                    <td>Biography, Drama, Thriller</td>
+                </tr>
+                <tr>
+                    <td><img src="../assets/svg/time-svgrepo-com.svg" alt="time" class="svg-table-news"><span>Runtime</span></td>
+                    <td>2h 14m</td>
+                </tr>
+            </table>
+            </div>
+            
+            <p class="text-news">
+                The final movie on our list takes us from fictional hacking to one of the most famous real-world cybersecurity stories of the 21st century.
+
+            Snowden dramatizes the story of Edward Snowden and his decision to disclose classified information concerning government surveillance programs.
+
+            The movie explores surveillance, intelligence systems, digital communications, privacy, and the consequences of possessing sensitive information.
+
+            Because the story is based on real events, it also demonstrates how cybersecurity can become a political, legal, ethical, and personal issue rather than simply a technical one.
+
+            It is worth remembering that Snowden is a dramatized feature film, while documentaries such as Citizenfour provide a different perspective based on contemporary documentation.
+
+            IMDb currently lists Snowden at 7.3/10, while Rotten Tomatoes gives it a 61% Tomatometer score.
+            </p>
+            <a href="https://www.youtube.com/watch%3Fv%3DQlSAiI3xMh4&ved=2ahUKEwiSpZCilvaWAxWPhP0HHXuMBdAQr4kDegUIugIQAA&usg=AOvVaw0aiCYZIpkPDd1wIcM2rkvj" target="_blank" class="normal-link"><button class="trailer-btn">Official Trailer | Snowden 2016</button></a>
+            <hr class="hr-news2">
+
+            <!-- End of sugesstion -->
+
+            <h2 class="h1-news">Final Thoughts</h3>
+            <p class="text-news">
+            Movies about coding and hacking often have one major problem: Hollywood doesn't always understand computers.
+
+            Real programming usually looks nothing like someone typing furiously while dozens of green windows fly across the screen.
+
+            But that doesn't mean these movies are useless.
+
+            The best technology films are not necessarily the ones that show the most realistic code. They are the ones that make us think about what technology actually means.
+
+            WarGames asks what happens when humans lose control of automated systems.
+
+            The Matrix asks whether reality itself can be trusted.
+
+            The Social Network explores how software can become a global social force.
+
+            Ex Machina questions artificial intelligence and consciousness.
+
+            Sneakers looks at security and encryption.
+
+            The Imitation Game shows the historical importance of computation and cryptography.
+
+            Citizenfour explores surveillance and digital privacy through real events.
+
+            Who Am I explores anonymity and hacker culture.
+
+            Hackers captures the mythology of the 1990s computer underground.
+
+            And Snowden shows how digital information can have consequences far beyond a computer screen.
+
+            The most important lesson is probably this:
+
+            Technology is never just about technology.
+
+            Behind every program, network, database, algorithm, and security system are people making decisions about how those tools should be used.
+
+            That's what makes coding and hacking such interesting subjects for cinema — and why, decades after the first computer thrillers appeared, filmmakers are still trying to answer the same question:
+
+            What happens when humans gain the ability to control information?
+            </p>
+            <hr class="hr-news2">
+            <p class="text-news">
+            Aethercom Recommendation
+            If you're interested in programming or cybersecurity, don't watch these movies only for entertainment.
+            Pay attention to the ideas behind them.
+            Look at how they portray programmers, hackers, security researchers, artificial intelligence, encryption, privacy, and the relationship between humans and technology.
+            <br>
+            And remember:
+            Real cybersecurity is built on knowledge, ethics, curiosity, and responsible experimentation — not Hollywood-style typing.
+            </p>
+    </main>
+    <section>
+                <div class="papers">
+                        <div class="feed-header">
+                            <h2 class="title-paper">
+                                Aethercom Papers
+                            </h2>
+                        </div>
+                        <div class="paper-list">
+                            <a class="paper-link1 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img1">
+                                </div>
+                                <p class="paper-title1"></p>
+                            </div></a>
+                            <a class="paper-link2 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img2">
+                                </div>
+                                <p class="paper-title2"></p>
+                            </div></a>
+                            <a class="paper-link3 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img3">
+                                </div>
+                                <p class="paper-title3"></p>
+                            </div></a>
+                            <a class="paper-link4 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img4">
+                                </div>
+                                <p class="paper-title4"></p>
+                            </div></a>
+                            <a class="paper-link5 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img5">
+                                </div>
+                                <p class="paper-title5"></p>
+                            </div></a>
+                        </div>
+                    </div>
+    </section>
+    <footer class="site-footer">
+            <!-- Main Footer Brand -->
+            <div class="footer-brand">
+                <!-- Aethercom Logo -->
+                <div class="footer-logo" aria-label="Aethercom">
+                    <img src="../assets/svg/Aethercom.svg" title="Aethercom" alt="Aethercom logo">
+                </div>
+                <img src="../assets/svg/Aethercom Text.png" title="Aethercom Brand" alt="aethercom" class="logo-text">
+                <p class="footer-slogan">Beyond the Stars</p>
+                <!-- Social Icons -->
+                <div class="footer-socials">
+                    <!-- Telegram -->
+                    <a href="https://t.me/AethercomHub" class="social-link" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.04-3.72-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.41-.36-.09-.56-.64-.2L5.38 13.49.43 11.94c-1.08-.34-1.1-1.08.23-1.59L20.02 3.08c.88-.32 1.65.2 1.48.42Z"></path>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/AethercomHub" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="5"
+                                fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="4"
+                                    fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+                        </svg>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://GitHub.com/Aethercom" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0c2.1-1.4 3.1-1.1 3.1-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.7 1 .7 1.9v2.8c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:AethercomCEO@Gmail.com" class="social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="5" width="18" height="14" rx="2"
+                                fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="m4 7 8 6 8-6"
+                                fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Footer Navigation -->
+            <div class="footer-navigation">
+
+                <!-- Explore -->
+                <div class="footer-column explore-column">
+                    <h3>Explore</h3>
+
+                    <nav class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="../services.html">Services</a>
+                        <a href="../terms.html">Terms</a>
+                        <a href="../support.html">Support</a>
+                        <a href="../about.html">About</a>
+                    </nav>
+                </div>
+
+                <!-- Settings -->
+                <div class="footer-column settings-column">
+                    <h3>Settings</h3>
+
+                    <div class="settings-list">
+                        
+                        <!-- Light Mode -->
+                        <div class="setting-row">
+                            <span class="setting-label">Dark Mode</span>
+
+                            <button
+                                class="toggle-switch"
+                                id="themeToggle"
+                                type="button"
+                                aria-label="Toggle Light Mode"
+                                aria-pressed="false"
+                            >
+                                <span class="toggle-circle"></span>
+                            </button>
+                        </div>
+
+                        <!-- Custom Setting -->
+                        <div class="setting-row">
+                            <span class="setting-label">Back to Top</span>
+
+                            <button
+                                class="icon-setting-btn"
+                                onclick="backToTop()"
+                                type="button"
+                                aria-label="Back to top"
+                            >
+                                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="16 12 12 8 8 12"></polyline>
+                                    <line x1="12" y1="16" x2="12" y2="8"></line>
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© 2026 Aethercom. All rights reserved.</p>
+            </div>
+        </footer>
+        <!--JavaScript-->
+        <div id="page-transition"></div>
+        <script src="../js/script.js"></script>
+</body>
+</html>

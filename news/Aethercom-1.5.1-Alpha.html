@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aethercom | New Version</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" sizes="512x512" href="../favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon.png">
+</head>
+<body>
+<header class="navbar">
+            <div class="profile-btn" onclick="openProfile(event)">
+                <img src="../assets/images/Aethercom Edit-Glass.png" class="profile-pic">
+            </div>
+            <div><a href="../index.html"><img src="../assets/svg/Aethercom Text.png" class="logo-text" alt="aethercom text logo"></a></div>
+            <!-- Search Button -->
+            <button
+                class="aether-search-btn"
+                id="aetherSearchButton"
+                type="button"
+                aria-label="Search"
+                title="Search"
+                aria-controls="aetherSearchPanel"
+                aria-expanded="false"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle
+                        cx="10.8"
+                        cy="10.8"
+                        r="6.8"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    />
+                    <path
+                        d="M16 16L21 21"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </button>
+
+            <!-- Search Overlay -->
+            <div
+                class="aether-search-overlay"
+                id="aetherSearchOverlay"
+                aria-hidden="true"
+            ></div>
+
+            <!-- Search Panel -->
+            <aside
+                class="aether-search-panel"
+                id="aetherSearchPanel"
+                aria-hidden="true"
+            >
+
+                <div class="aether-search-inner">
+
+                    <!-- Search Header -->
+                    <div class="aether-search-header">
+
+                        <div class="aether-search-heading">
+                            <span class="aether-search-heading-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </span>
+
+                            <div>
+                                <h2>Search</h2>
+                                <p>Explore Aethercom</p>
+                            </div>
+                        </div>
+
+                        <!-- Close -->
+                        <button
+                            class="aether-search-close"
+                            id="aetherSearchClose"
+                            type="button"
+                            aria-label="Close Search"
+                            title="Close"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M6 6L18 18M18 6L6 18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="aether-search-input-wrapper">
+
+                        <svg
+                            class="aether-search-input-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="10.8"
+                                cy="10.8"
+                                r="6.8"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                            <path
+                                d="M16 16L21 21"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+
+                        <input
+                            id="aetherSearchInput"
+                            class="aether-search-input"
+                            type="search"
+                            placeholder="Search Aethercom..."
+                            autocomplete="off"
+                            spellcheck="false"
+                            aria-label="Search Aethercom"
+                        />
+
+                        <button
+                            id="aetherSearchClear"
+                            class="aether-search-clear"
+                            type="button"
+                            aria-label="Clear search"
+                            title="Clear"
+                        >
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M6 6L18 18M18 6L6 18"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Search Hint -->
+                    <div class="aether-search-hint">
+                        <span>Press</span>
+                        <kbd>ESC</kbd>
+                        <span>to close</span>
+                    </div>
+
+                    <!-- Results -->
+                    <div
+                        class="aether-search-results"
+                        id="aetherSearchResults"
+                        aria-live="polite"
+                    >
+
+                        <!-- Initial State -->
+                        <div class="aether-search-state" id="aetherSearchInitial">
+
+                            <div class="aether-search-state-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <h3>Search Aethercom</h3>
+                            <p>
+                                Find pages, projects and other content.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+</header>
+
+<main>
+<section>
+    <img src="../assets/images/Aethercom-1-5-1-Alpha-cover.avif" class="banner-news" alt="Aethercom studio environment and male and female employees introducing version 1.5.1 of Alpha">
+            <h1 class="title-news" data-i18n="title"></h1>
+            <div class="info-news-hexa time-news">
+                <div class="info-news"><span data-i18n="date"></span></div>
+                <div class="info-news"><span data-i18n="day"></span></div>
+                <div class="info-news"><span data-i18n="time"></span></div>
+            </div>
+            <div class="info-news-hexa">
+                <div class="info-news"><span>#Aethercom</span></div>
+                <div class="info-news"><span>#1_5_1_Alpha</span></div>
+                <div class="info-news"><span>#Release</span></div>
+            </div>
+            <div class="info-news">
+                <span class=""  data-i18n="writer"></span>
+                    <span class="verified-badge" title="Verified by Aethercom">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 2.5
+                        L14.2 3.6
+                        L16.6 3.4
+                        L18 5.4
+                        L20.2 6.4
+                        L20.6 8.8
+                        L22 10.8
+                        L21 13
+                        L21.2 15.4
+                        L19.2 17
+                        L18.6 19.3
+                        L16.2 20
+                        L14.3 21.5
+                        L12 20.8
+                        L9.7 21.5
+                        L7.8 20
+                        L5.4 19.3
+                        L4.8 17
+                        L2.8 15.4
+                        L3 13
+                        L2 10.8
+                        L3.4 8.8
+                        L3.8 6.4
+                        L6 5.4
+                        L7.4 3.4
+                        L9.8 3.6
+                        Z"/>
+
+                <path
+                    class="check"
+                    d="M7.5 12.2
+                    L10.4 15
+                    L16.6 8.8"/>
+            </svg>
+                </span>
+            </div>
+    <div class="language-term" style="margin:5px 30px"><label for="languageSelector" data-i18n="language">Language</label><select id="languageSelector"><option value="en">English</option><option value="fa">فارسی</option><option value="dari">دری</option><option value="ar">العربية</option><option value="zh">中文</option><option value="ko">한국어</option><option value="ja">日本語</option></select></div>
+</section>
+<hr class="hr-news">
+<p class="text-news" data-i18n="firstSay"></p>
+<hr class="hr-news2">
+<div class="list-board"><div class="title-list-board" data-i18n="listTitle"></div><div><ul class="list-news" id="articleContents"></ul></div></div>
+<hr class="hr-news2">
+
+<div id="article-body"></div>
+
+<hr class="hr-news2">
+<div class="list-board"><div class="title-list-board" data-i18n="releaseTitle"></div><p class="text-news" data-i18n="lastSay"></p></div>
+
+<section>
+                <div class="papers">
+                        <div class="feed-header">
+                            <h2 class="title-paper">
+                                Aethercom Papers
+                            </h2>
+                        </div>
+                        <div class="paper-list">
+                            <a class="paper-link1 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img1">
+                                </div>
+                                <p class="paper-title1"></p>
+                            </div></a>
+                            <a class="paper-link2 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img2">
+                                </div>
+                                <p class="paper-title2"></p>
+                            </div></a>
+                            <a class="paper-link3 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img3">
+                                </div>
+                                <p class="paper-title3"></p>
+                            </div></a>
+                            <a class="paper-link4 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img4">
+                                </div>
+                                <p class="paper-title4"></p>
+                            </div></a>
+                            <a class="paper-link5 normal-link"><div class="paper">
+                                <div class="cover-paper">
+                                    <img class="paper-img5">
+                                </div>
+                                <p class="paper-title5"></p>
+                            </div></a>
+                        </div>
+                    </div>
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+            <!-- Main Footer Brand -->
+            <div class="footer-brand">
+                <!-- Aethercom Logo -->
+                <div class="footer-logo" aria-label="Aethercom">
+                    <img src="../assets/svg/Aethercom.svg" title="Aethercom" alt="Aethercom logo">
+                </div>
+                <img src="../assets/svg/Aethercom Text.png" title="Aethercom Brand" alt="aethercom text logo" class="logo-text">
+                <p class="footer-slogan">Beyond the Stars</p>
+                <!-- Social Icons -->
+                <div class="footer-socials">
+                    <!-- Telegram -->
+                    <a href="https://t.me/AethercomHub" class="social-link" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.04-3.72-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.41-.36-.09-.56-.64-.2L5.38 13.49.43 11.94c-1.08-.34-1.1-1.08.23-1.59L20.02 3.08c.88-.32 1.65.2 1.48.42Z"></path>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/AethercomHub" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="5"
+                                fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="4"
+                                    fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+                        </svg>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://GitHub.com/Aethercom" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0c2.1-1.4 3.1-1.1 3.1-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.7 1 .7 1.9v2.8c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+                        </svg>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:AethercomCEO@Gmail.com" class="social-link" aria-label="Email">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="5" width="18" height="14" rx="2"
+                                fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="m4 7 8 6 8-6"
+                                fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Footer Navigation -->
+            <div class="footer-navigation">
+
+                <!-- Explore -->
+                <div class="footer-column explore-column">
+                    <h3>Explore</h3>
+
+                    <nav class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="../services.html">Services</a>
+                        <a href="../terms.html">Terms</a>
+                        <a href="../support.html">Support</a>
+                        <a href="../about.html">About</a>
+                    </nav>
+                </div>
+
+                <!-- Settings -->
+                <div class="footer-column settings-column">
+                    <h3>Settings</h3>
+
+                    <div class="settings-list">
+
+                        <!-- Light Mode -->
+                        <div class="setting-row">
+                            <span class="setting-label">Dark Mode</span>
+
+                            <button
+                                class="toggle-switch"
+                                id="themeToggle"
+                                type="button"
+                                aria-label="Toggle Light Mode"
+                                aria-pressed="false"
+                            >
+                                <span class="toggle-circle"></span>
+                            </button>
+                        </div>
+
+                        <!-- Custom Setting -->
+                        <div class="setting-row">
+                            <span class="setting-label">Back to Top</span>
+
+                            <button
+                                class="icon-setting-btn"
+                                onclick="backToTop()"
+                                type="button"
+                                aria-label="Back to top"
+                            >
+                                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="16 12 12 8 8 12"></polyline>
+                                    <line x1="12" y1="16" x2="12" y2="8"></line>
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© 2026 Aethercom. All rights reserved.</p>
+            </div>
+    </footer>
+
+<div id="page-transition"></div>
+<script>
+const translations = {
+ en:{title:"Aethercom 1.5.1 Alpha — A New Foundation for Aethercom",date:"25 September 2026",day:"Friday",time:"21:00",writer:"Writer: Ali",language:"Language",firstSay:"Aethercom 1.5.1 Alpha is now here. This release is more than a visual refresh: it is a broad rebuild of the site's interface, content experience and front-end foundation. The new version brings a redesigned footer, site-wide light mode, a new article feed, wider language support, rebuilt profile and story systems, a search engine, a dedicated video player, improved news cards and a general pass over the site's code, responsiveness, colors and effects.",listTitle:"Release highlights",releaseTitle:"A closer look at 1.5.1 Alpha",relatedTitle:"Latest update",relatedCardTitle:"Aethercom 1.5.1 Alpha is now available",relatedCardDate:"25 September 2026 · Release Update",relatedCardText:"A broad front-end update focused on navigation, personalization, multilingual support, content discovery, media playback and responsive performance.",lastSay:"Version 1.5.1 Alpha marks a new stage in Aethercom's development. Instead of treating each new feature as an isolated addition, this release brings the site's major systems closer together: the interface, language layer, profiles, stories, news, search, media and responsive behavior now share a more consistent foundation. The result is a website designed to feel more complete while remaining lightweight, adaptable and ready for future iterations.",sections:[
+["A New Footer and Site-Wide Light Mode","The footer has been rebuilt from the ground up rather than simply restyled. Its structure is now better aligned with Aethercom's visual language and gives the lower part of every page a clearer role in navigation and settings. The same new footer also introduces the site's Light Mode control. Light Mode is designed to affect the whole website instead of stopping at the header, so the experience can move between the dark and light environments more consistently."],
+["Browse articles and news","A new horizontal content section can now appear at the end of articles and news pages. It is designed around the familiar browsing pattern used by large technology and digital-media sites: readers finish an article and can immediately move sideways through the latest content instead of returning to the homepage. This creates a more connected reading flow and gives newly published content a visible place at the end of each article."],
+["Expanded Language Support Across the Website","Aethercom's multilingual layer has been expanded significantly. Chinese, Japanese, Korean, Arabic, Persian and Dari are now supported across the main website environment. The release also prepares the Support area for an even wider range of languages: Chinese, Japanese, Korean, Arabic, Persian, Dari, Hebrew, German, Russian, French, Urdu, Pashto and Hindi. The goal is not simply to translate isolated pages, but to make language selection part of the site's broader content architecture."],
+["Dedicated Support, Services, Terms, About and 404 Pages","Several core pages have been rebuilt or created as dedicated experiences: Support, Services, Terms, About and a custom 404 page. This gives the site clearer destinations for help, service information, legal and usage information, project background and missing-page navigation instead of relying on generic or unfinished endpoints."],
+["The Profile System Has Been Rebuilt","The profile page has been redesigned from the ground up. Its new structure is intended to make the profile feel like a real part of the Aethercom environment rather than a separate utility page. The profile editor is also now available, allowing users to change their profile information through a dedicated editing experience."],
+["Browser-Local Profile Editing and Persistence","Profile editing now persists in the browser through local storage. Changes made by a user can remain available when the site is reopened, while the data stays limited to that user's own browser. In other words, this is local personalization rather than a server-side account system: another browser or device does not automatically receive the same profile data."],
+["New Typography Foundation: Arial and Vazirmatn","The release adds a clearer typography foundation with Arial and Vazirmatn. Arial provides a familiar Latin-script base, while Vazirmatn gives Persian and related right-to-left content a more suitable reading experience. This is especially important as multilingual support expands and different scripts need consistent treatment without forcing one font to handle every language equally."],
+["Aethercom Search Engine","A dedicated search system has been added to the site. The new search interface gives visitors a direct way to discover pages, projects and other available content instead of navigating only through menus and feeds. It also creates a foundation for making content discovery more useful as the amount of Aethercom content grows."],
+["Stories Rebuilt with Playback Support","The Stories section has been rebuilt, and stories can now be played. This moves the feature beyond a collection of static circular previews and gives it a more media-oriented behavior. The new structure also fits better with Aethercom's wider work on video, interaction and content presentation."],
+["News Page Forms Reworked","The forms used by the News pages have been changed as part of the broader content-system update. The new approach is intended to make news content easier to structure and more consistent with the site's updated cards, labels, tags and feed behavior."],
+["A More Stable Fixed Header","The header has been refined so that it behaves more consistently as visitors move through pages and scroll. The goal is to keep the main navigation and core controls available without making the header feel disconnected from the content below it."],
+["Aethercom's Dedicated Video Player","A custom video player has been added to Aethercom. Instead of depending entirely on the browser's default media controls, the site now has its own player interface that can be integrated with Aethercom's visual system and future media features."],
+["A Redesigned News Feed for Every Screen","The news feed has received a broader redesign. Content cards now use category labels, tags and HOT markers where appropriate, while the layout has been optimized for mobile and tablet screens. The goal is to preserve the hierarchy of an article card—image, category, title, time, summary and tags—without allowing the desktop layout to simply shrink awkwardly onto smaller displays."],
+["Code Review, Performance and Responsive Refinement","A large part of 1.5.1 Alpha is the work that is less visible at first glance. The website's code has been reviewed, JavaScript has been optimized, and the site's responsive behavior has been refined across devices. Colors and visual effects have also been adjusted so the interface feels more coherent and less wasteful. This work is important because the release is not only about adding features; it is also about making the existing foundation easier to use and maintain."],
+["A More Complete Aethercom","Taken together, these changes make 1.5.1 Alpha a broad platform update rather than a single-feature release. The footer, light mode, content feed, multilingual system, dedicated pages, profile tools, typography, search, stories, news workflow, header, video player and responsive code now form a more connected environment. This is the direction Aethercom is taking into its next stage: building a digital space where software, media and content can live together without losing the simplicity of the interface."]]},
+ fa:{title:"Aethercom 1.5.1 Alpha؛ یک پایهٔ تازه برای Aethercom",date:"۲۵ سپتامبر ۲۰۲۶",day:"جمعه",time:"۲۱:۰۰",writer:"نویسنده: علی",language:"زبان",firstSay:"Aethercom 1.5.1 Alpha منتشر شد. این نسخه فقط یک تغییر ظاهری نیست؛ بخش بزرگی از رابط کاربری، تجربهٔ محتوا و پایهٔ فرانت‌اند سایت بازطراحی و بازبینی شده است. فوتر کاملاً جدید، لایت مود سراسری، فید تازهٔ اخبار، پشتیبانی گسترده‌تر از زبان‌ها، پروفایل و استوری بازطراحی‌شده، موتور جستجو، ویدئوپلیر اختصاصی، کارت‌های خبری بهتر و بهینه‌سازی کلی کدها و نمایش در دستگاه‌های مختلف، هستهٔ این انتشار را تشکیل می‌دهند.",listTitle:"مهم‌ترین تغییرات انتشار",releaseTitle:"نگاهی دقیق‌تر به 1.5.1 Alpha",relatedTitle:"آخرین به‌روزرسانی",relatedCardTitle:"Aethercom 1.5.1 Alpha منتشر شد",relatedCardDate:"۲۲ سپتامبر ۲۰۲۶ · خبر انتشار",relatedCardText:"یک به‌روزرسانی گسترده برای رابط کاربری، شخصی‌سازی، زبان‌ها، کشف محتوا، پخش رسانه و عملکرد ریسپانسیو سایت.",lastSay:"نسخهٔ 1.5.1 Alpha برای Aethercom یک مرحلهٔ تازه در توسعه است. در این انتشار، قابلیت‌ها صرفاً به‌صورت جداگانه اضافه نشده‌اند؛ بلکه بخش‌های اصلی سایت—رابط کاربری، زبان‌ها، پروفایل، استوری، اخبار، جستجو، رسانه و رفتار ریسپانسیو—به یک ساختار منسجم‌تر نزدیک شده‌اند. نتیجه، سایتی کامل‌تر و آماده‌تر برای نسخه‌های بعدی است؛ بدون اینکه سادگی و سبک بودن تجربهٔ کاربری از بین برود.",sections:[
+["فوتر کاملاً جدید و لایت مود سراسری","فوتر سایت از پایه بازسازی شده است، نه اینکه فقط ظاهر قبلی آن تغییر کند. ساختار جدید آن با زبان بصری Aethercom هماهنگ‌تر است و بخش پایینی صفحات را به یک بخش واقعی برای ناوبری و تنظیمات تبدیل می‌کند. کلید Light Mode نیز در همین فوتر قرار گرفته و لایت مود برای کل محیط سایت طراحی شده است، نه فقط هدر؛ بنابراین تغییر میان حالت تاریک و روشن باید در سراسر تجربه منسجم‌تر باشد."],
+["مرور مقالات و اخبار پربازدید","بخشی تازه در انتهای مقالات و اخبار اضافه شده که به‌صورت افقی اسکرول می‌شود. این بخش از الگوی رایج سایت‌های محتوایی و فناوری الهام گرفته شده است: کاربر پس از تمام کردن مقاله می‌تواند بدون برگشتن به صفحهٔ اصلی، محتوای تازه را به‌صورت افقی مرور کند. این تغییر ارتباط میان مقالهٔ فعلی و مطالب تازه را بیشتر می‌کند و به خبرهای جدید جای مشخصی در انتهای صفحات می‌دهد."],
+["گسترش پشتیبانی زبانی در سراسر سایت","لایهٔ چندزبانهٔ Aethercom به شکل قابل توجهی گسترش یافته است. چینی، ژاپنی، کره‌ای، عربی، فارسی و دری اکنون در محیط اصلی سایت پشتیبانی می‌شوند. در بخش Support نیز دامنهٔ زبان‌ها گسترده‌تر شده و چینی، ژاپنی، کره‌ای، عربی، فارسی، دری، عبری، آلمانی، روسی، فرانسوی، اردو، پشتو و هندی برای آن در نظر گرفته شده‌اند. هدف فقط ترجمهٔ چند صفحه نیست؛ زبان حالا بخشی از معماری محتوایی سایت است."],
+["ایجاد صفحات اختصاصی Support، Services، Terms، About و 404","چند صفحهٔ اصلی سایت به‌صورت اختصاصی ایجاد یا بازسازی شده‌اند: Support، Services، Terms، About و صفحهٔ 404 اختصاصی. به این ترتیب برای پشتیبانی، معرفی سرویس‌ها، قوانین و شرایط، معرفی Aethercom و مدیریت صفحات پیدا نشده، مقصدهای مشخص و منسجم‌تری وجود دارد."],
+["بازسازی کامل صفحهٔ پروفایل","صفحهٔ پروفایل از نو طراحی شده است تا پروفایل بخشی واقعی از محیط Aethercom باشد، نه یک صفحهٔ جانبی ساده. علاوه بر آن، پروفایل ادیتور نیز اضافه شده و کاربر می‌تواند اطلاعات پروفایل خود را از طریق یک محیط ویرایش اختصاصی تغییر دهد."],
+["ذخیرهٔ پروفایل در مرورگر کاربر","ویرایش پروفایل حالا با Local Storage در مرورگر ذخیره می‌شود. یعنی اطلاعاتی که کاربر ویرایش می‌کند پس از باز کردن دوبارهٔ سایت در همان مرورگر قابل استفاده باقی می‌ماند، اما این اطلاعات به یک سیستم حساب کاربری سمت سرور تبدیل نشده‌اند؛ مرورگر یا دستگاه دیگری به‌صورت خودکار همان داده‌ها را دریافت نمی‌کند."],
+["پایهٔ جدید تایپوگرافی؛ Arial و Vazirmatn","فونت‌های Arial و Vazirmatn به سیستم تایپوگرافی اضافه شده‌اند. Arial برای متن‌های لاتین یک پایهٔ ساده و آشنا فراهم می‌کند و Vazirmatn برای فارسی و محتوای راست‌به‌چپ خوانایی مناسب‌تری ایجاد می‌کند. با افزایش زبان‌های پشتیبانی‌شده، این تفکیک کمک می‌کند هر اسکریپت با فونت مناسب‌تری نمایش داده شود."],
+["موتور جستجوی Aethercom","موتور جستجوی اختصاصی به سایت اضافه شده است. اکنون بازدیدکننده می‌تواند صفحات، پروژه‌ها و محتوای موجود را مستقیماً جستجو کند و برای پیدا کردن محتوا فقط به منوها و فیدها وابسته نباشد. این سیستم همچنین پایه‌ای برای بهتر شدن کشف محتوا در آینده است."],
+["بازسازی بخش Story و امکان پخش استوری","بخش Story از نو ساخته شده و حالا استوری‌ها قابلیت پخش شدن دارند. بنابراین این بخش دیگر فقط مجموعه‌ای از پیش‌نمایش‌های دایره‌ای ثابت نیست و رفتار رسانه‌ای بیشتری پیدا کرده است. این تغییر با مسیر جدید Aethercom در زمینهٔ ویدئو و ارائهٔ محتوای تعاملی نیز هماهنگ است."],
+["بازطراحی فرم‌های صفحات News","فرم‌های مربوط به صفحات News تغییر کرده‌اند تا ساختار انتشار محتوا با سیستم جدید سایت هماهنگ‌تر باشد. این تغییر با کارت‌های خبری، برچسب‌های دسته‌بندی، تگ‌ها و رفتار جدید فید اخبار ارتباط دارد و آماده‌سازی محتوا را منسجم‌تر می‌کند."],
+["هدر ثابت‌تر و منسجم‌تر","هدر سایت بازبینی شده تا هنگام اسکرول و جابه‌جایی میان بخش‌های صفحه رفتار ثابت‌تری داشته باشد. هدف این است که کنترل‌های اصلی و ناوبری در دسترس بمانند، بدون اینکه هدر از محتوای اصلی جدا و سنگین به نظر برسد."],
+["ویدئوپلیر اختصاصی Aethercom","یک ویدئوپلیر اختصاصی به سایت اضافه شده است. به جای تکیهٔ کامل بر کنترل‌های پیش‌فرض مرورگر، Aethercom حالا رابط پخش مخصوص خود را دارد که می‌تواند با ظاهر سایت و قابلیت‌های رسانه‌ای آینده هماهنگ شود."],
+["بازطراحی فید اخبار برای موبایل و تبلت","فید اخبار به شکل گسترده‌تری بازطراحی شده است. کارت‌ها اکنون می‌توانند برچسب دسته‌بندی، تگ و برچسب HOT داشته باشند و چیدمان برای صفحه‌های موبایل و تبلت بهینه شده است. ساختار اصلی کارت—تصویر، دسته‌بندی، عنوان، زمان، خلاصه و تگ‌ها—در اندازه‌های کوچک‌تر نیز باید خوانا و منظم باقی بماند."],
+["بازبینی کدها، بهینه‌سازی و ریسپانسیو شدن محیط","بخش مهمی از 1.5.1 Alpha تغییراتی است که شاید در نگاه اول دیده نشوند. کدهای سایت بازبینی شده‌اند، JavaScript بهینه‌تر شده، رفتار ریسپانسیو در دستگاه‌های مختلف اصلاح شده و رنگ‌ها و افکت‌ها نیز بازتنظیم شده‌اند تا محیط منسجم‌تر و کم‌هزینه‌تر باشد. این نسخه فقط قابلیت اضافه نمی‌کند؛ پایهٔ موجود را هم مرتب‌تر و قابل نگهداری‌تر می‌کند."],
+["Aethercom کامل‌تر از قبل","در کنار هم قرار گرفتن این تغییرات، 1.5.1 Alpha را به یک انتشار گسترده تبدیل می‌کند، نه یک آپدیت تک‌قابلیتی. فوتر، لایت مود، فید محتوا، سیستم زبان، صفحات اختصاصی، پروفایل، تایپوگرافی، جستجو، استوری، سیستم اخبار، هدر، ویدئوپلیر و بهینه‌سازی ریسپانسیو اکنون ارتباط بیشتری با یکدیگر دارند. مسیر Aethercom در مرحلهٔ بعدی، ساخت یک فضای دیجیتال منسجم برای نرم‌افزار، رسانه و محتواست؛ فضایی که در عین گسترده‌تر شدن، سادگی رابط کاربری خود را حفظ کند."]]},
+ dari:{title:"Aethercom 1.5.1 Alpha؛ یک بنیان تازه برای Aethercom",date:"۲۲ سپتامبر ۲۰۲۶",day:"سه‌شنبه",time:"۲۱:۰۰",writer:"نویسنده: علی",language:"زبان",firstSay:"Aethercom 1.5.1 Alpha منتشر شد. این نسخه تنها یک تغییر ظاهری نیست؛ بخش بزرگی از محیط کاربری، تجربهٔ محتوا و پایهٔ فرانت‌اند سایت بازسازی و بازبینی شده است. فوتر تازه، لایت مود سراسری، فید نو اخبار، پشتیبانی بیشتر از زبان‌ها، پروفایل و استوری بازسازی‌شده، موتور جستجو، ویدئوپلیر اختصاصی، کارت‌های خبری بهتر و بهینه‌سازی عمومی کدها و نمایش در دستگاه‌های مختلف، بخش‌های اصلی این انتشار اند.",listTitle:"مهم‌ترین تغییرات انتشار",releaseTitle:"نگاهی نزدیک‌تر به 1.5.1 Alpha",relatedTitle:"آخرین به‌روزرسانی",relatedCardTitle:"Aethercom 1.5.1 Alpha منتشر شد",relatedCardDate:"۲۲ سپتامبر ۲۰۲۶ · خبر انتشار",relatedCardText:"یک به‌روزرسانی گسترده برای محیط کاربری، شخصی‌سازی، زبان‌ها، کشف محتوا، پخش رسانه و نمایش ریسپانسیو سایت.",lastSay:"نسخهٔ 1.5.1 Alpha یک مرحلهٔ تازه در رشد Aethercom است. در این انتشار، امکانات تنها به شکل جداگانه افزوده نشده‌اند؛ بخش‌های اصلی سایت—رابط کاربری، زبان‌ها، پروفایل، استوری، اخبار، جستجو، رسانه و رفتار ریسپانسیو—به یک بنیان هماهنگ‌تر نزدیک شده‌اند. نتیجه سایتی کامل‌تر و آماده‌تر برای نسخه‌های آینده است، در حالی که سادگی محیط کاربری حفظ می‌شود.",sections:[
+["فوتر تازه و لایت مود سراسری","فوتر سایت از بنیاد دوباره ساخته شده است و تنها یک تغییر ظاهری در نسخهٔ قبلی نیست. ساختار تازه با سبک بصری Aethercom سازگارتر شده و بخش پایانی صفحه نقش روشن‌تری در ناوبری و تنظیمات دارد. کلید Light Mode نیز در همین فوتر قرار دارد و لایت مود برای تمام محیط سایت طراحی شده است، نه فقط هدر."],
+["مرور مقالات و اخبار پربازدید","در پایان مقالات و خبرها یک بخش تازه با اسکرول افقی اضافه شده است. کاربر پس از پایان مقاله می‌تواند بدون برگشتن به صفحهٔ اصلی، مطالب تازه را مرور کند. این ساختار از الگوی رایج سایت‌های فناوری و محتوایی الهام گرفته شده و ارتباط میان مقاله و محتوای تازه را بیشتر می‌کند."],
+["پشتیبانی زبانی گسترده‌تر در تمام سایت","چینی، جاپانی، کوریایی، عربی، فارسی و دری در محیط اصلی سایت پشتیبانی می‌شوند. بخش Support زبان‌های بیشتری را نیز پوشش می‌دهد: چینی، جاپانی، کوریایی، عربی، فارسی، دری، عبری، آلمانی، روسی، فرانسوی، اردو، پشتو و هندی. زبان در این نسخه بخشی از معماری محتوای سایت شده است."],
+["صفحات اختصاصی Support، Services، Terms، About و 404","صفحات Support، Services، Terms، About و یک صفحهٔ اختصاصی 404 ایجاد یا بازسازی شده‌اند تا برای پشتیبانی، معرفی خدمات، شرایط، معرفی Aethercom و صفحات پیدا نشده، مسیرهای مشخص‌تری وجود داشته باشد."],
+["بازسازی صفحهٔ پروفایل","صفحهٔ پروفایل از نو ساخته شده و اکنون بخشی منسجم‌تر از محیط Aethercom است. پروفایل ادیتور نیز اضافه شده تا کاربر بتواند معلومات پروفایل خود را از یک محیط ویرایش اختصاصی تغییر بدهد."],
+["ذخیرهٔ پروفایل تنها در مرورگر کاربر","تغییرات پروفایل با Local Storage در مرورگر ذخیره می‌شوند. این معلومات در همان مرورگر باقی می‌مانند و به معنی ایجاد حساب کاربری یا ذخیرهٔ مرکزی در سرور نیستند؛ دستگاه یا مرورگر دیگر به‌صورت خودکار همان معلومات را نخواهد داشت."],
+["فونت‌های Arial و Vazirmatn","Arial و Vazirmatn به پایهٔ تایپوگرافی اضافه شده‌اند. Arial برای متن لاتین و Vazirmatn برای فارسی و محتوای راست‌به‌چپ استفاده می‌شوند تا با گسترش زبان‌ها، خوانایی هر خط نوشتاری بهتر حفظ شود."],
+["موتور جستجوی Aethercom","موتور جستجو اضافه شده است تا کاربران بتوانند صفحات، پروژه‌ها و محتوای سایت را مستقیم پیدا کنند. این قابلیت مسیر تازه‌ای برای کشف محتوا ایجاد می‌کند و با رشد سایت اهمیت بیشتری خواهد داشت."],
+["بازسازی Stories و امکان پخش استوری","بخش Story از نو ساخته شده و حالا استوری‌ها قابلیت پخش دارند. این بخش از حالت نمایش سادهٔ پیش‌نمایش‌ها خارج شده و به تجربهٔ رسانه‌ای Aethercom نزدیک‌تر شده است."],
+["تغییر فرم‌های صفحات News","فرم‌های صفحات News تغییر کرده‌اند تا با سیستم جدید محتوا و کارت‌های خبری، دسته‌بندی‌ها، تگ‌ها و فید جدید هماهنگ‌تر باشند."],
+["هدر ثابت‌تر","هدر بازبینی شده تا هنگام اسکرول و جابه‌جایی میان بخش‌های صفحه رفتار ثابت‌تر و منسجم‌تری داشته باشد و دسترسی به ناوبری و کنترل‌های اصلی آسان‌تر بماند."],
+["ویدئوپلیر اختصاصی","Aethercom حالا ویدئوپلیر اختصاصی خود را دارد. این پلیر امکان هماهنگی بهتر تجربهٔ پخش ویدئو با ظاهر سایت و قابلیت‌های رسانه‌ای آینده را فراهم می‌کند."],
+["فید اخبار بهینه‌شده برای موبایل و تبلت","فید اخبار بازطراحی شده و کارت‌ها اکنون برچسب دسته‌بندی، تگ و HOT دارند. ساختار کارت‌ها برای صفحه‌های موبایل و تبلت نیز بهینه شده تا اطلاعات مهم بدون شلوغی نمایش داده شوند."],
+["بازبینی کدها و بهینه‌سازی عمومی","کدهای سایت بازبینی شده، JavaScript بهینه‌تر شده و نمایش سایت در دستگاه‌های مختلف اصلاح شده است. رنگ‌ها و افکت‌ها نیز بازتنظیم شده‌اند تا محیط هماهنگ‌تر، سبک‌تر و قابل نگهداری‌تر باشد."],
+["Aethercom کامل‌تر از پیش","مجموع این تغییرات 1.5.1 Alpha را به یک انتشار گسترده تبدیل می‌کند. فوتر، لایت مود، فید محتوا، زبان‌ها، صفحات اختصاصی، پروفایل، تایپوگرافی، جستجو، استوری، اخبار، هدر، ویدئوپلیر و ریسپانسیو اکنون در یک محیط منسجم‌تر کنار هم قرار گرفته‌اند."]]},
+ ar:{title:"Aethercom 1.5.1 Alpha — أساس جديد لـ Aethercom",date:"22 سبتمبر 2026",day:"الثلاثاء",time:"21:00",writer:"الكاتب: علي",language:"اللغة",firstSay:"تم إطلاق Aethercom 1.5.1 Alpha. هذا الإصدار ليس مجرد تحديث بصري؛ بل يشمل إعادة بناء واسعة لواجهة الموقع وتجربة المحتوى وأساس الواجهة الأمامية. يتضمن الإصدار تذييلًا جديدًا بالكامل، ووضعًا فاتحًا على مستوى الموقع، وقسمًا جديدًا للأخبار، ودعمًا لغويًا أوسع، وإعادة بناء للملفات الشخصية والقصص، ومحرك بحث، ومشغل فيديو مخصص، وتحسينات لبطاقات الأخبار والاستجابة لمختلف الأجهزة.",listTitle:"أهم تغييرات الإصدار",releaseTitle:"نظرة أقرب على 1.5.1 Alpha",relatedTitle:"آخر تحديث",relatedCardTitle:"تم إطلاق Aethercom 1.5.1 Alpha",relatedCardDate:"22 سبتمبر 2026 · تحديث الإصدار",relatedCardText:"تحديث واسع للواجهة والتخصيص واللغات واكتشاف المحتوى وتشغيل الوسائط والأداء المتجاوب.",lastSay:"يمثل الإصدار 1.5.1 Alpha مرحلة جديدة في تطوير Aethercom. لم تتم إضافة الميزات كأجزاء منفصلة فقط، بل أصبحت الواجهة واللغات والملفات الشخصية والقصص والأخبار والبحث والوسائط والاستجابة للأجهزة تعمل على أساس أكثر ترابطًا. الهدف هو بناء مساحة رقمية أكثر اكتمالًا مع الحفاظ على بساطة الواجهة.",sections:[
+["تذييل جديد ووضع فاتح للموقع بالكامل","أعيد بناء التذييل من الصفر ليتوافق بشكل أفضل مع الهوية البصرية لـ Aethercom. كما أصبح مفتاح Light Mode جزءًا من التذييل، وصُمم الوضع الفاتح ليشمل بيئة الموقع كاملة بدلًا من الاقتصار على الرأس."],
+["تصفح المقالات والأخبار","تمت إضافة قسم أفقي في نهاية المقالات والأخبار لعرض أحدث المحتوى. يمكن للقارئ استكشاف الأخبار الجديدة بالتمرير الأفقي دون العودة إلى الصفحة الرئيسية، مما يجعل تجربة القراءة أكثر ترابطًا."],
+["دعم لغوي أوسع في الموقع","يدعم الموقع الآن الصينية واليابانية والكورية والعربية والفارسية والداري في البيئة الرئيسية. كما يدعم قسم Support الصينية واليابانية والكورية والعربية والفارسية والداري والعبرية والألمانية والروسية والفرنسية والأردية والبشتوية والهندية."],
+["صفحات Support وServices وTerms وAbout و404 مخصصة","تم إنشاء أو إعادة بناء صفحات الدعم والخدمات والشروط ومن نحن وصفحة 404 مخصصة، لتوفير وجهات واضحة لكل وظيفة أساسية في الموقع."],
+["إعادة بناء صفحة الملف الشخصي","أعيد تصميم صفحة الملف الشخصي بالكامل، وأضيف محرر مخصص للملف الشخصي حتى يتمكن المستخدم من تعديل معلوماته من واجهة منفصلة."],
+["حفظ الملف الشخصي داخل متصفح المستخدم","يتم حفظ تعديلات الملف الشخصي محليًا باستخدام Local Storage. تبقى البيانات في متصفح المستخدم نفسه ولا تتحول إلى حساب مركزي على الخادم، لذلك لا تنتقل تلقائيًا إلى جهاز أو متصفح آخر."],
+["إضافة Arial وVazirmatn","تمت إضافة Arial للنصوص اللاتينية وVazirmatn للمحتوى الفارسي واتجاهات الكتابة من اليمين إلى اليسار، لتحسين القراءة مع توسع دعم اللغات."],
+["محرك بحث Aethercom","أضيف محرك بحث مخصص لمساعدة الزوار على العثور على الصفحات والمشاريع والمحتوى مباشرة بدل الاعتماد على القوائم والتغذية فقط."],
+["إعادة بناء Stories مع دعم التشغيل","أعيد بناء قسم Stories وأصبحت القصص قابلة للتشغيل، مما يحول القسم من مجرد معاينات ثابتة إلى تجربة إعلامية أكثر تفاعلًا."],
+["إعادة تصميم نماذج صفحات News","تم تغيير نماذج صفحات الأخبار لتتناسب مع نظام المحتوى الجديد وبطاقات الأخبار والتصنيفات والوسوم والتغذية الحديثة."],
+["رأس أكثر ثباتًا","تم تحسين الرأس ليكون أكثر ثباتًا أثناء التمرير والتنقل، مع إبقاء أدوات التنقل والتحكم الأساسية في متناول المستخدم."],
+["مشغل فيديو مخصص","تمت إضافة مشغل فيديو خاص بـ Aethercom بدل الاعتماد الكامل على عناصر التحكم الافتراضية للمتصفح، مما يتيح دمجه مع هوية الموقع وتطويرات الوسائط القادمة."],
+["تغذية أخبار محسنة للهاتف واللوحي","أعيد تصميم تغذية الأخبار لتشمل تصنيفات ووسوم وعلامات HOT، مع تحسين التخطيط لشاشات الهواتف والأجهزة اللوحية."],
+["مراجعة الكود وتحسين الأداء والاستجابة","تمت مراجعة الأكواد وتحسين JavaScript وسلوك الموقع على الأجهزة المختلفة، كما أعيد ضبط الألوان والتأثيرات لتصبح البيئة أكثر اتساقًا وأقل هدرًا."],
+["Aethercom أكثر اكتمالًا","تجمع 1.5.1 Alpha هذه التغييرات في بيئة أكثر ترابطًا تشمل التذييل والوضع الفاتح والمحتوى واللغات والملفات الشخصية والبحث والقصص والأخبار والوسائط والاستجابة للأجهزة، لتكون قاعدة أفضل للمراحل القادمة."]]},
+ zh:{title:"Aethercom 1.5.1 Alpha——Aethercom 的全新基础",date:"2026年9月22日",day:"星期二",time:"21:00",writer:"作者：Ali",language:"语言",firstSay:"Aethercom 1.5.1 Alpha 正式发布。这不仅是一次视觉更新，也对网站界面、内容体验和前端基础进行了大范围重构。新版本带来了全新的页脚、全站浅色模式、新的最新资讯区域、更广泛的语言支持、重新设计的个人资料和 Stories、搜索引擎、专属视频播放器，以及针对新闻卡片、响应式布局和 JavaScript 的多项优化。",listTitle:"版本重点",releaseTitle:"深入了解 1.5.1 Alpha",relatedTitle:"最新更新",relatedCardTitle:"Aethercom 1.5.1 Alpha 已发布",relatedCardDate:"2026年9月22日 · 版本更新",relatedCardText:"围绕界面、个性化、多语言、内容发现、媒体播放和响应式体验的一次全面更新。",lastSay:"1.5.1 Alpha 标志着 Aethercom 开发进入新的阶段。这次更新并不是简单地逐项增加功能，而是让界面、语言、个人资料、Stories、新闻、搜索、媒体和响应式行为拥有更加统一的基础。Aethercom 正逐步形成一个能够容纳软件、媒体和内容，同时保持简洁体验的数字空间。",sections:[
+["全新页脚与全站浅色模式","页脚从零开始重新构建，使其与 Aethercom 的视觉语言更加协调，并承担更清晰的导航与设置作用。Light Mode 开关也位于新页脚中，而且浅色模式面向整个网站，而不仅仅是顶部导航。"],
+["浏览文章和新闻","文章和新闻页面末尾现在可以显示横向滚动的最新内容区域。用户读完文章后无需返回首页即可继续浏览新内容，让阅读流程更加连贯。"],
+["网站多语言支持扩展","主网站环境现在支持中文、日语、韩语、阿拉伯语、波斯语和达里语。Support 区域进一步支持中文、日语、韩语、阿拉伯语、波斯语、达里语、希伯来语、德语、俄语、法语、乌尔都语、普什图语和印地语。"],
+["专属 Support、Services、Terms、About 和 404 页面","支持、服务、条款、关于和自定义 404 页面已经建立或重新设计，为网站的重要功能提供更明确的入口。"],
+["个人资料页面全面重构","个人资料页面从头重新设计，并加入 Profile Editor，让用户可以通过专门的编辑界面修改资料。"],
+["个人资料仅保存在用户自己的浏览器中","资料编辑使用 Local Storage 保存，因此在同一个浏览器中可以保留设置，但这并不是服务器端账户系统，其他设备或浏览器不会自动获得这些资料。"],
+["加入 Arial 与 Vazirmatn 字体","Arial 为拉丁文字提供基础字体，Vazirmatn 则为波斯语和右到左文字提供更合适的阅读体验。"],
+["Aethercom 搜索引擎","新增搜索系统，让用户可以直接寻找页面、项目和其他内容，而不必完全依赖菜单和资讯流。"],
+["Stories 重构并支持播放","Stories 模块重新构建，现在故事内容可以播放，使其从静态预览进一步发展为更完整的媒体体验。"],
+["News 页面表单重新设计","新闻页面的表单进行了调整，使内容结构与新的新闻卡片、分类、标签和资讯流系统更加一致。"],
+["更稳定的固定顶部栏","顶部栏经过优化，在滚动和页面浏览时更加稳定，同时保持主要导航和控制项易于访问。"],
+["Aethercom 专属视频播放器","新增专属视频播放器，让媒体播放界面能够更好地融入 Aethercom 的视觉系统，并为未来媒体功能提供基础。"],
+["针对手机和平板优化的新闻资讯流","新闻资讯流重新设计，加入分类标签、标签和 HOT 标记，并针对手机和平板屏幕优化内容层级和布局。"],
+["代码审查、性能与响应式优化","网站代码经过重新检查，JavaScript 得到优化，设备适配得到改进，同时调整颜色和视觉效果，使整体环境更加统一和高效。"],
+["更加完整的 Aethercom","这些变化共同构成了一次全面的版本更新，让页脚、浅色模式、内容流、多语言、个人资料、搜索、Stories、新闻、媒体和响应式系统更加紧密地协同工作，并为下一阶段奠定基础。" ]]},
+ ko:{title:"Aethercom 1.5.1 Alpha — Aethercom의 새로운 기반",date:"2026년 9월 22일",day:"화요일",time:"21:00",writer:"작성자: Ali",language:"언어",firstSay:"Aethercom 1.5.1 Alpha가 출시되었습니다. 이번 버전은 단순한 시각적 업데이트가 아니라 사이트 인터페이스, 콘텐츠 경험, 프런트엔드 기반을 폭넓게 재구성한 업데이트입니다. 새로운 푸터, 전체 사이트 라이트 모드, 최신 뉴스 영역, 확장된 언어 지원, 새롭게 만든 프로필과 Stories, 검색 엔진, 전용 비디오 플레이어, 뉴스 카드 및 반응형 최적화가 포함됩니다.",listTitle:"주요 업데이트",releaseTitle:"1.5.1 Alpha 자세히 보기",relatedTitle:"최신 업데이트",relatedCardTitle:"Aethercom 1.5.1 Alpha 출시",relatedCardDate:"2026년 9월 22일 · 릴리스 업데이트",relatedCardText:"인터페이스, 개인화, 다국어, 콘텐츠 탐색, 미디어 재생과 반응형 환경을 중심으로 한 대규모 업데이트입니다.",lastSay:"1.5.1 Alpha는 Aethercom 개발의 새로운 단계를 의미합니다. 기능을 각각 따로 추가하는 대신 인터페이스, 언어, 프로필, Stories, 뉴스, 검색, 미디어와 반응형 동작이 더 일관된 기반 위에서 연결되도록 했습니다. 소프트웨어와 미디어, 콘텐츠를 함께 담으면서도 단순한 사용성을 유지하는 것이 다음 단계의 방향입니다.",sections:[
+["새로운 푸터와 전체 사이트 라이트 모드","푸터를 처음부터 다시 제작해 Aethercom의 시각적 스타일과 더 잘 어울리도록 했습니다. 새로운 푸터에는 Light Mode 전환 기능도 포함되며, 라이트 모드는 헤더뿐 아니라 사이트 전체를 대상으로 합니다."],
+["기사와 뉴스를 찾아보세요","기사와 뉴스 마지막에 가로 스크롤이 가능한 최신 콘텐츠 영역을 추가했습니다. 독자는 홈으로 돌아가지 않고도 새 콘텐츠를 계속 탐색할 수 있습니다."],
+["웹사이트 전반의 언어 지원 확대","메인 환경에서 중국어, 일본어, 한국어, 아랍어, 페르시아어, 다리어를 지원합니다. Support 영역에서는 히브리어, 독일어, 러시아어, 프랑스어, 우르두어, 파슈토어, 힌디어까지 지원 범위를 넓혔습니다."],
+["전용 Support, Services, Terms, About 및 404 페이지","지원, 서비스, 약관, 소개 및 사용자 정의 404 페이지를 새로 만들거나 다시 구성해 사이트의 주요 목적지와 탐색 구조를 명확하게 했습니다."],
+["프로필 페이지 전면 재구축","프로필 페이지를 처음부터 다시 설계하고 Profile Editor를 추가해 사용자가 전용 편집 화면에서 자신의 프로필 정보를 변경할 수 있도록 했습니다."],
+["사용자 브라우저에만 저장되는 프로필","프로필 변경 사항은 Local Storage를 통해 같은 브라우저에 저장됩니다. 서버 계정 시스템이 아니므로 다른 기기나 브라우저로 자동 동기화되지 않습니다."],
+["Arial과 Vazirmatn 추가","라틴 문자에는 Arial을, 페르시아어 및 RTL 콘텐츠에는 Vazirmatn을 사용할 수 있도록 타이포그래피 기반을 확장했습니다."],
+["Aethercom 검색 엔진","페이지, 프로젝트와 기타 콘텐츠를 직접 찾을 수 있는 검색 시스템을 추가해 메뉴와 피드에만 의존하지 않고 콘텐츠를 탐색할 수 있게 했습니다."],
+["Stories 재구축 및 재생 지원","Stories 영역을 다시 만들고 스토리를 재생할 수 있도록 해 정적인 미리보기에서 보다 미디어 중심의 경험으로 확장했습니다."],
+["News 페이지 폼 개편","News 페이지의 폼을 변경해 새로운 콘텐츠 구조, 뉴스 카드, 카테고리, 태그와 피드 시스템에 더 잘 맞도록 했습니다."],
+["더 안정적인 고정 헤더","스크롤 중에도 주요 내비게이션과 컨트롤을 쉽게 사용할 수 있도록 헤더의 동작과 고정 상태를 개선했습니다."],
+["Aethercom 전용 비디오 플레이어","브라우저 기본 컨트롤에만 의존하지 않는 전용 비디오 플레이어를 추가해 Aethercom의 디자인과 향후 미디어 기능에 맞게 확장할 수 있도록 했습니다."],
+["모바일과 태블릿에 최적화된 뉴스 피드","뉴스 피드를 다시 디자인하고 카테고리 라벨, 태그와 HOT 표시를 추가했습니다. 모바일과 태블릿에서도 정보 계층이 자연스럽게 유지되도록 레이아웃을 최적화했습니다."],
+["코드 검토와 성능·반응형 개선","사이트 코드를 검토하고 JavaScript를 최적화했으며 여러 기기의 반응형 동작을 개선했습니다. 색상과 효과도 조정해 전체 환경의 일관성과 효율성을 높였습니다."],
+["더 완성된 Aethercom","이 모든 변화가 결합되어 1.5.1 Alpha는 단일 기능 업데이트를 넘어서는 릴리스가 되었습니다. 푸터, 라이트 모드, 콘텐츠, 다국어, 프로필, 검색, Stories, 뉴스, 미디어와 반응형 시스템이 더 긴밀하게 연결되었습니다."]]},
+ ja:{title:"Aethercom 1.5.1 Alpha — Aethercomの新しい基盤",date:"2026年9月22日",day:"火曜日",time:"21:00",writer:"執筆者：Ali",language:"言語",firstSay:"Aethercom 1.5.1 Alphaを公開しました。今回のリリースは単なるデザイン変更ではなく、サイトのインターフェース、コンテンツ体験、フロントエンド基盤を大きく見直したアップデートです。新しいフッター、サイト全体のライトモード、新しい最新ニュース領域、多言語対応の拡張、プロフィールとStoriesの再構築、検索エンジン、専用ビデオプレーヤー、ニュースカードとレスポンシブ表示の改善などを含みます。",listTitle:"主なアップデート",releaseTitle:"1.5.1 Alphaを詳しく見る",relatedTitle:"最新アップデート",relatedCardTitle:"Aethercom 1.5.1 Alphaを公開",relatedCardDate:"2026年9月22日 · リリース更新",relatedCardText:"インターフェース、パーソナライズ、多言語、コンテンツ探索、メディア再生、レスポンシブ表示を中心とした大規模アップデートです。",lastSay:"1.5.1 AlphaはAethercomの開発における新しい段階です。機能を個別に追加するだけでなく、インターフェース、言語、プロフィール、Stories、ニュース、検索、メディア、レスポンシブ動作をより一貫した基盤にまとめました。ソフトウェア、メディア、コンテンツを一つのデジタル空間にまとめながら、シンプルな操作感を保つことが次の方向性です。",sections:[
+["新しいフッターとサイト全体のライトモード","フッターをゼロから再構築し、Aethercomのビジュアルスタイルとの統一感を高めました。新しいフッターにはLight Modeの切り替えも追加され、ライトモードはヘッダーだけでなくサイト全体に適用される設計です。"],
+["記事やニュースを閲覧します","記事やニュースの最後に、横方向へスクロールできる最新コンテンツ領域を追加しました。ホームへ戻らずに新しい記事を続けて閲覧でき、読み終えた後の流れがより自然になります。"],
+["サイト全体の言語対応を拡張","メイン環境では中国語、日本語、韓国語、アラビア語、ペルシャ語、ダリー語をサポートします。Supportではさらにヘブライ語、ドイツ語、ロシア語、フランス語、ウルドゥー語、パシュトー語、ヒンディー語まで対応範囲を広げています。"],
+["専用のSupport、Services、Terms、About、404ページ","Support、Services、Terms、Aboutとカスタム404ページを新設または再構築し、サイトの主要な目的地を明確にしました。"],
+["プロフィールページを全面再構築","プロフィールページを一から再設計し、Profile Editorを追加しました。専用の編集画面からプロフィール情報を変更できます。"],
+["プロフィールはユーザーのブラウザ内だけに保存","プロフィールの変更はLocal Storageを使って同じブラウザに保存されます。サーバー側のアカウントシステムではないため、別の端末やブラウザへ自動同期されません。"],
+["ArialとVazirmatnを追加","ラテン文字にはArial、ペルシャ語や右から左へ書くコンテンツにはVazirmatnを使えるよう、タイポグラフィ基盤を拡張しました。"],
+["Aethercom検索エンジン","ページ、プロジェクト、その他のコンテンツを直接探せる検索機能を追加しました。メニューやフィードだけに頼らず、コンテンツを見つけられます。"],
+["Storiesを再構築し再生に対応","Storiesを作り直し、ストーリーを再生できるようにしました。静的なプレビューから、よりメディアに適した体験へ拡張しています。"],
+["Newsページのフォームを刷新","Newsページのフォームを変更し、新しいコンテンツ構造、ニュースカード、カテゴリ、タグ、フィードとより自然に連携できるようにしました。"],
+["より安定した固定ヘッダー","スクロール中も主要なナビゲーションと操作を使いやすくするため、ヘッダーの固定動作と表示を改善しました。"],
+["Aethercom専用ビデオプレーヤー","ブラウザ標準の操作だけに依存しない専用ビデオプレーヤーを追加しました。Aethercomのデザインや今後のメディア機能と統合しやすい構成です。"],
+["モバイルとタブレット向けに最適化したニュースフィード","ニュースフィードを再設計し、カテゴリ、タグ、HOT表示を追加しました。モバイルやタブレットでも情報の優先順位が崩れないようレイアウトを最適化しています。"],
+["コードレビュー、性能、レスポンシブ改善","コードを見直し、JavaScriptを最適化し、さまざまな端末での表示を改善しました。色とエフェクトも調整し、より統一された環境を目指しています。"],
+["より完成度の高いAethercom","これらの変更により1.5.1 Alphaは単一機能の更新ではなく、フッター、ライトモード、コンテンツ、多言語、プロフィール、検索、Stories、ニュース、メディア、レスポンシブシステムをより密接につなぐ大規模なリリースになりました。"]]}
+};
+
+const selector=document.getElementById('languageSelector');
+const body=document.getElementById('article-body');
+const toc=document.getElementById('articleContents');
+function applyLanguage(lang){
+ const d=translations[lang]||translations.en;
+ document.documentElement.lang=lang;
+ document.querySelector('main').dir=['fa','dari','ar'].includes(lang)?'rtl':'ltr';
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(d[k]!==undefined)el.textContent=d[k];});
+ toc.innerHTML=''; body.innerHTML='';
+ d.sections.forEach((s,i)=>{
+   const id='No-'+(i+1);
+   const a=document.createElement('a');a.href='#'+id;a.className='normal-link';
+   const li=document.createElement('li');li.textContent=(i+1)+'. '+s[0];a.appendChild(li);toc.appendChild(a);
+   const h=document.createElement('h1');h.className='h1-news';h.id=id;h.textContent=s[0];
+   const p=document.createElement('p');p.className='text-news';p.textContent=s[1];
+   body.appendChild(h);body.appendChild(p);
+   const hr=document.createElement('hr');hr.className='hr-news2';body.appendChild(hr);
+ });
+}
+selector.addEventListener('change',e=>{localStorage.setItem('aethercom-language',e.target.value);applyLanguage(e.target.value);});
+applyLanguage(localStorage.getItem('aethercom-language')||'en');
+</script>
+<script src="../js/script.js"></script>
+</body>
+</html>
