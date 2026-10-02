@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#01010f">
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <title>Aethercom | Profile Editor</title>
+        <link rel="icon" type="image/png" sizes="512x512" href="./favicon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon.png">
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="brand-font"><a href="index.html" class="normal-link"><img src="assets/svg/Aethercom Text.png" class="logo-text" alt="aethercom text logo"></a></div>
+            <a class="normal-link" href="javascript:history.back()">❮ Back</a>
+        </header>
+        <div class="page">
+            <div class="layout">
+            <main class="card editor">
+            <div class="heading"><h1>Edit Profile</h1><p>Your info are saved only in this browser with localStorage.</p></div>
+
+            <section class="section"><h2>Profile Pictures</h2><div class="grid">
+            <div class="field full"><label>Profile Photo</label><div class="file-row"><input id="avatarUrl" placeholder="select your photo or enter its address"><label class="file-btn" for="avatarFile">Select File</label><input id="avatarFile" type="file" accept="image/*"></div><span class="help">The image file is stored in the browser's memory. For larger files, it is best to compress it first.</span></div>
+            <div class="field full"><label>Cover Photo</label><div class="file-row"><input id="coverUrl" placeholder="select your photo or enter its address"><label class="file-btn" for="coverFile">Select File</label><input id="coverFile" type="file" accept="image/*"></div></div>
+            </div></section>
+
+            <section class="section"><h2>Main Info</h2><div class="grid">
+            <div class="field"><label for="name">Name</label><input id="name" maxlength="60" placeholder="Example: Ali"></div>
+            <div class="field"><label for="username">ID</label><input id="username" maxlength="30" placeholder="@username"></div>
+            <div class="field full"><label for="bio">Biography</label><textarea id="bio" maxlength="300" placeholder="Write about yourself ..."></textarea></div>
+            <div class="field"><label for="location">IP</label><input id="location" maxlength="80" placeholder="Optional"></div>
+            <div class="field"><label for="website">Website</label><input id="website" maxlength="200" placeholder="https://..."></div>
+            </div></section>
+
+            <section class="section"><h2>Social</h2><div class="grid">
+            <div class="field"><label for="telegram">Telegram</label><input id="telegram" placeholder="@username or link"></div>
+            <div class="field"><label for="instagram">Instagram</label><input id="instagram" placeholder="@username or link"></div>
+            </div></section>
+
+            <section class="section"><h2>Display Settings</h2>
+            <div class="switch-row"><div><strong style="font-size:13px">Show Location</strong><div class="help">Your location will be displaied on the profile card.</div></div><button class="switch" id="showLocation" type="button"></button></div>
+            <div class="switch-row"><div><strong style="font-size:13px">Show Website</strong><div class="help">Your website will be displaied on the profile card.</div></div><button class="switch" id="showWebsite" type="button"></button></div>
+            </section>
+
+            <div class="actions">
+                <button class="btn primary" id="save" type="button">Save</button>
+                <button class="btn" id="reset" type="button">Reset</button>
+                <button class="btn danger" id="clear" type="button">Clear data</button>
+            </div>
+            </main>
+            <aside class="card preview">
+            <div class="cover" id="previewCover"></div>
+            <div class="avatar"><img id="previewAvatar" alt="Profile picture"><span id="avatarInitial">A</span></div>
+            <div class="preview-name" id="previewName">Aethercom User</div>
+            <div class="preview-user" id="previewUsername">@username</div>
+            <div class="preview-bio" id="previewBio">write your biography and text.</div>
+            <div class="preview-meta"><span class="pill" id="previewLocation" style="display:none"></span><span class="pill">Aethercom Member</span></div>
+            <div class="preview-links" id="previewLinks"></div>
+            </aside>
+            </div>
+        </div>
+        <div class="toast" id="toast"></div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

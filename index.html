@@ -7,14 +7,13 @@
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <link rel="icon" type="image/png" sizes="512x512" href="./favicon.png">
         <link rel="apple-touch-icon" sizes="180x180" href="./favicon.png">
-
     </head>
     <body>
         <header class="navbar">
             <div class="profile-btn" onclick="openProfile(event)">
-                <img src="assets/images/me.jpg" class="profile-pic">
+                <img src="assets/images/Aethercom Edit-Glass.png" class="profile-pic" alt="Aethercom logo">
             </div>
-            <div class="brand-font"><a href="index.html" class="normal-link"><img src="assets/svg/Aethercom Text.svg" class="logo-text"></a></div>
+            <div class="brand-font"><a href="index.html" class="normal-link"><img src="assets/svg/Aethercom Text.png" class="logo-text" alt="aethercom text logo"></a></div>
             <!-- Search Button -->
             <button
                 class="aether-search-btn"
@@ -207,44 +206,51 @@
                             <p>
                                 Find pages, projects and other content.
                             </p>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </aside>
         </header>
-        <!--Slider up-->
+        <!--Slider-->
         <div class="slider">
-     <div class="slides">
-        <div class="slide active">
-            <img src="assets/images/Aethercom.png" alt="Slide 1">
-            <div class="slide-text">
-                <h2 data-i18n="title-slide">Aethercom</h2>
-                <p  data-i18n="sub-slide">Connecting Worlds, Creating Futures.</p>
+            <div class="slides">
+                <a href="news/Aethercom-1.5.1-Alpha.html" target="_blank">
+                <div class="slide active">
+                <img src="assets/images/Aethercom-1-5-1-Alpha-cover.avif" alt="Aethercom studio environment and male and female employees introducing version 1.5.1 of Alpha">
+                <div class="slide-text">
+                    <h2>Aethercom 1.5.1 Alpha</h2>
+                    <p>Athercom 1.5.1 Alpha is Now Available for All</p>
+                </div>
+                </div>
+            </a>
+             <a href="https://Aethercom.GitHub.io" target="_blank">
+                <div class="slide active">
+                <img src="assets/images/Aethercom-now-is-online.avif" alt="Athercom logo on LED display">
+                <div class="slide-text">
+                    <h2 data-i18n="title-slide">Aethercom on GitHub</h2>
+                    <p  data-i18n="sub-slide">Aethercom now is online on GitHub platform.</p>
+                </div>
+                </div>
+            </a>
+        <a href="News/Satellite-Internet-from-space-relays-to-a-global-broadband-race.html">
+            <div class="slide">
+                <img src="assets/images/satellite-internet.avif" alt="Around Earth Satellites Sending Waves to the Aethercom logo on Earth">
+                <div class="slide-text">
+                    <h2  data-i18n="title2-slide">Satellite Internet</h2>
+                    <p data-i18n="title2-sub">How satellite internet works, types and history.</p>
+                </div>
             </div>
-        </div>
-
-        <a href="News/Qualcomm announces its next two flagship chips on September 22.html"><div class="slide">
-            <img src="assets/images/snapdragon summit 2026 qulity.png" alt="Slide 2">
-            <div class="slide-text">
-                <h2  data-i18n="title2-slide">Snapdragon Summit 2026</h2>
-                <p data-i18n="title2-sub">Qualcomm has confirmed that it will unveil two flagship chips of the 8 Elite series at Snapdragon Summit 2026. The company has not yet announced the names of the chips, but rumors have reported the 6th generation Snapdragon 8 and the higher-end version with the Pro extension, which are probably designed for flagship and ultra phones.</p>
-            </div>
-        </div></a>
-
+        </a>
+        <a href="news/Top-10-Movies-Coding-and-Hacking.html" target="_blank">
         <div class="slide">
-            <img src="assets/images/meta-apps.jpg" alt="Slide 3">
+            <img src="assets/images/top10-movies-movies-for-coding-and-hacking.avif" alt="Neo and Trinity from the movie Matrix">
             <div class="slide-text">
-                <h2 data-i18n="title3-slide">Meta apps collect data from users three times as much as Microsoft and Apple</h2>
-                <p data-i18n="title3-sub">A new study shows that meta applications collect an average of 25 types of 35 possible data categories; This number is more than three times the average of Microsoft and Apple. 7 of the 10 applications that collect the most data also belong to Meta.</p>
+                <h2 data-i18n="title3-slide">Top10 Movies: Coding and Hacking</h2>
+                <p data-i18n="title3-sub">Introducing the top 10 movies on coding and hacking.</p>
             </div>
         </div>
-
+        </a>
            </div>
-
      <!-- Keys -->
        <button class="slider-btn prev" onclick="previousSlide()">❮</button>
        <button class="slider-btn next" onclick="nextSlide()">❯</button>
@@ -254,46 +260,44 @@
         <span class="dot active" onclick="showSlide(0)"></span>
         <span class="dot" onclick="showSlide(1)"></span>
         <span class="dot" onclick="showSlide(2)"></span>
+        <span class="dot" onclick="showSlide(3)"></span>
          </div>
         </div>
-        <!--Slider buttom-->
-        <!--Story Start-->
+        <!--Slider-->
+        <!--Story-->
         <div class="stories">
             <div class="story" onclick="openStory('story1')">
                 <div class="story-ring">
-                    <img src="assets/images/Story 1.jpg" alt="code">
+                    <img src="assets/images/Honor-new-logo.avif" alt="new Honor logo">
                 </div>
-                <span>Coding</span>
+                <span>New Honor</span>
             </div>
+            <div class="story" onclick="openStory('story2')">
+                <div class="story-ring">
+                    <img src="assets/images/honor-robotic-camera.avif" alt="honor robotic phone">
+                </div>
+                <span>Honor</span>
+            </div>
+            
             <div class="story" onclick="openStory('story3')">
                 <div class="story-ring">
-                    <img src="assets/images/Aethercom Studio.png" alt="aethercom studio">
+                    <img src="assets/images/qualcomm-snapdragon.avif" alt="snapdragon chip">
                 </div>
-                <span>Studio</span>
+                <span>Qualcomm</span>
             </div>
-            <a href="https://t.me/AKR_chatbot?start=start" class="normal-link">
             <div class="story" onclick="openStory('story4')">
                 <div class="story-ring">
-                    <img src="assets/images/bot.jpg" alt="ai bot">
+                    <img src="assets/images/Dolby-atmos.avif" alt="Dolby Atmos logo">
                 </div>
-                <span>AI Assistant</span>
+                <span>Dolby Atmos</span>
             </div>
-            </a>
-            <a href="https://t.me/Musicaland_bot?start=start" class="normal-link">
-            <div class="story" onclick="openStory('story5')">
-                <div class="story-ring">
-                    <img src="assets/images/Musicom.jpg" alt="Musicaland">
-                </div>
-                <span>Musicaland</span>
-            </div>
-            </a>
         </div>
         <!--Story End-->
         <!--Card Start-->
         <section class="service-cards">
 
-    <a href="" class="service-card">
-        <img src="assets/images/windows-white.jpg" alt="Web Development">
+    <div class="service-card">
+        <img src="assets/images/Aethercom - computer - Card 1.avif" alt="Aethercom glass computer and vs code ui">
 
         <div class="card-gradient"></div>
 
@@ -303,10 +307,10 @@
                 Designing and developing modern digital websites and experiencses
             </p>
         </div>
-    </a>
+    </div>
 
-    <a href="" class="service-card">
-        <img src="assets/images/window-sun.jpg" alt="Software">
+    <div class="service-card">
+        <img src="assets/images/Aethercom on glass.avif" alt="aethercom logo on glass and beams of codes">
 
         <div class="card-gradient"></div>
 
@@ -316,23 +320,23 @@
                developing software and digital tools for ideas beyond the stars
             </p>
         </div>
-    </a>
+    </div>
 
-    <a href="" class="service-card">
-        <img src="assets/images/lenovo-fron-back-laptop.jpg" alt="Digital Media">
+    <div class="service-card">
+        <img src="assets/images/Aethercom world.avif" alt="glass earth and internet icons around it">
 
         <div class="card-gradient"></div>
 
         <div class="card-content">
-            <h3>Digital Media</h3>
+            <h3>Aethercom; A Window Into the Digital World</h3>
             <p>
                 Production and development of digita content, media and interactive experiencses
             </p>
         </div>
-    </a>
+    </div>
 
-    <a href="" class="service-card">
-        <img src="assets/images/ai-image.jpg" alt="Artificial Intelligence">
+    <div class="service-card">
+        <img src="assets/images/Aethercom robot-human.avif" alt="an glass robot and girl">
 
         <div class="card-gradient"></div>
 
@@ -342,7 +346,7 @@
                 Exploring and developing new ideas in Tech and AI
             </p>
         </div>
-    </a>
+    </div>
 </section>
         <!--Card End-->
         <!--News Start-->
@@ -351,106 +355,158 @@
                 <h2 class="brand-font">Aethercom NEWS</h2>
             </div>
             <div class="news-list">
-        <!--news1-->
-            <article class="news-card">
+
+            <a href="news/Aethercom-1.5.1-Alpha.html" class="normal-link"><article class="news-card">
             <div class="news-background"
-                 style="background-image: url('assets/images/Aethercom low quality.jpg');">
+                 style="background-image: url('assets/images/Aethercom-1-5-1-Alpha-cover.avif');">
             </div>
             <div class="news-content">
 
                 <img
-                    src="assets/images/Aethercom low quality.jpg"
-                    alt="aethercom"
+                    src="assets/images/Aethercom-1-5-1-Alpha-cover.avif"
+                    alt="Aethercom studio environment and male and female employees introducing version 1.5.1 of Alpha"
                     class="news-image"
                 >
 
                 <div class="news-info">
-                    <h3><svg
-  class="hot-fire"
-  width="42"
-  height="42"
-  viewBox="0 0 100 100"
-  xmlns="http://www.w3.org/2000/svg"
-  aria-label="hot news"
->
-  <defs>
-    <linearGradient id="fireGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff2a00"/>
-      <stop offset="55%" stop-color="#ff6a00"/>
-      <stop offset="100%" stop-color="#ffd000"/>
-    </linearGradient>
+                    <div class="custom-news-label-row">
+                        <div class="custom-news-category">Aethercom</div>
+                        <div class="custom-news-tag-org">#Update</div>
+                        <div class="custom-news-hot">Hot</div>
+                    </div>
+                    
+                    <h3>Aethercom 1.5.1 Alpha released!</h3>
 
-    <filter id="fireGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
+                    <time>25 September 2026 | 22:00</time>
 
-  <!-- orgin fire -->
-  <path
-    class="flame"
-    fill="url(#fireGradient)"
-    filter="url(#fireGlow)"
-    d="
-      M50 94
-      C28 94 16 80 19 62
-      C21 48 31 40 39 30
-      C43 25 44 17 43 10
-      C58 20 64 32 61 45
-      C68 39 72 31 70 24
-      C84 39 87 53 81 68
-      C75 85 65 94 50 94 Z
-    "
-  />
+                    <p>
+                        See the changes and features of the new version of the site
+                    </p>
+                </div>
 
-  <!-- core fire -->
-  <path
-    class="inner-flame"
-    fill="#fff2a6"
-    d="
-      M50 86
-      C39 86 32 78 34 68
-      C35 60 42 54 47 48
-      C50 45 51 40 50 36
-      C59 43 63 51 61 59
-      C66 55 68 50 67 46
-      C73 55 74 65 70 73
-      C66 82 60 86 50 86 Z
-    "
-  />
-</svg> Aethercom website has been introduced</h3>
+            </div>
+
+        </article></a>
+
+        <a href="news/Top-10-Movies-Coding-and-Hacking.html" class="normal-link"><article class="news-card">
+            <div class="news-background"
+                 style="background-image: url('assets/images/top10-movies-movies-for-coding-and-hacking.avif');">
+            </div>
+            <div class="news-content">
+
+                <img
+                    src="assets/images/top10-movies-movies-for-coding-and-hacking.avif"
+                    alt="Neo and Trinity from the movie Matrix"
+                    class="news-image"
+                >
+
+                <div class="news-info">
+                    <div class="custom-news-label-row">
+                        <div class="custom-news-category">Top10</div>
+                        <div class="custom-news-tag-org">#Movie #Coding</div>
+                        <div class="custom-news-hot">Hot</div>
+                    </div>
+                    
+                    <h3>Top10 Movies: Coding and Hacking</h3>
+
+                    <time>18 September 2026 | 23:30</time>
+
+                    <p>
+                        Introducing the top 10 movies on coding and hacking.
+                    </p>
+                </div>
+
+            </div>
+
+        </article></a>
+
+        <a href="news/Satellite-Internet-from-space-relays-to-a-global-broadband-race.html" class="normal-link">
+            <article class="news-card">
+            <div class="news-background"
+                 style="background-image: url('assets/images/satellite-internet.avif');">
+            </div>
+            <div class="news-content">
+
+                <img
+                    src="assets/images/satellite-internet.avif"
+                    alt="Around Earth Satellites Sending Waves to the Aethercom logo on Earth"
+                    class="news-image"
+                >
+
+                <div class="news-info">
+                    <div class="custom-news-label-row">
+                        <div class="custom-news-category">Article</div>
+                        <div class="custom-news-tag-org">#satellite_internet</div>
+                        <div class="custom-news-hot">Hot</div>
+                    </div>
+                    
+                    <h3>Satellite Internet</h3>
+
+                    <time>22 September 2026 | 20:40</time>
+
+                    <p>
+                        How satellite internet works, types and history.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+        </a>
+
+            <article class="news-card">
+            <div class="news-background"
+                 style="background-image: url('assets/images/Aethercom.avif');">
+            </div>
+            <div class="news-content">
+
+                <img
+                    src="assets/images/Aethercom.avif"
+                    alt="aethercom logo"
+                    class="news-image"
+                >
+
+                <div class="news-info">
+                    <div class="custom-news-label-row">
+                        <div class="custom-news-category">Aethercom</div>
+                        <div class="custom-news-tag-org">#website</div>
+                        <div class="custom-news-hot">Hot</div>
+                    </div>
+                    
+                    <h3>Aethercom website has been introduced</h3>
 
                     <time>20 August 2026 | 21:54</time>
 
                     <p>
                         In this post, we want to introduce the website and goals of Aethercom
                     </p>
-
                 </div>
 
             </div>
 
         </article>
 
-        <!--news2-->
+    
         <article class="news-card">
 
             <div class="news-background"
-                 style="background-image: url('assets/images/meta-ai.jpg');">
+                 style="background-image: url('assets/images/meta-ai-q.avif');">
             </div>
 
             <div class="news-content">
 
                 <img
-                    src="assets/images/meta-ai.jpg"
-                    alt="meta ai"
+                    src="assets/images/meta-ai-q.avif"
+                    alt="meta ai logo on phone"
                     class="news-image"
                 >
 
                 <div class="news-info">
+                    <div class="custom-news-label-row">
+                        <span class="custom-news-category">AI</span>
+                        <div class="custom-news-tag-org">#Meta #Mac</div>
+                        
+                    </div>
 
                     <h3>The proprietary Meta AI artificial intelligence application was introduced for the Mac</h3>
 
@@ -459,30 +515,33 @@
                     <p>
                         The standalone Meta AI desktop application on Mac has features such as viewing part of the screen and providing more detailed instructions to the user. By connecting to professional Facebook, Instagram and Google Workspace accounts, this tool can help businesses analyze data, advertising and content production.
                     </p>
-
+                    
                 </div>
 
             </div>
 
         </article>
 
-        <!--news3-->
+   
         <article class="news-card">
 
             <div class="news-background"
-                 style="background-image: url('assets/images/android-17.jpg');">
+                 style="background-image: url('assets/images/android-17-q.avif');">
             </div>
 
             <div class="news-content">
 
                 <img
-                    src="assets/images/android-17.jpg"
-                    alt="android 17"
+                    src="assets/images/android-17-q.avif"
+                    alt="android 17 icon on android phone"
                     class="news-image"
                 >
 
                 <div class="news-info">
-
+                    <div class="custom-news-label-row">
+                        <span class="custom-news-category">Android</span>
+                        <div class="custom-news-tag-org">#Google #Android</div>
+                    </div>
                     <h3>Google on Android 17 makes the RAM usage limit stricter</h3>
 
                     <time>20 August 2026 | 21:45</time>
@@ -497,22 +556,26 @@
 
         </article>
 
-        <!--news4-->
+      
         <a href="News/Qualcomm announces its next two flagship chips on September 22.html" class="normal-link">
         <article class="news-card">
             <div class="news-background"
-                 style="background-image: url('assets/images/snapdragon-summit-2026.jpg');">
+                 style="background-image: url('assets/images/qualcomm-snapdragon.avif');">
             </div>
 
             <div class="news-content">
 
                 <img
-                    src="assets/images/snapdragon-summit-2026.jpg"
-                    alt="snapdragon summit 2026"
+                    src="assets/images/qualcomm-snapdragon.avif"
+                    alt="snapdragon chip"
                     class="news-image"
                 >
                 <div class="news-info">
-
+                    <div class="custom-news-label-row">
+                        <div class="custom-news-category">Qualcomm</div>
+                        <div class="custom-news-tag-org">#Snapdragon</div>
+                        <div class="custom-news-hot">Hot</div>
+                    </div>
                     <h3>Qualcomm announces its next two flagship chips on September 22</h3>
 
                     <time>20 August 2026 | 21:42</time>
@@ -524,23 +587,27 @@
             </div>
         </article></a>
 
-        <!--news5-->
+        
         <article class="news-card">
 
             <div class="news-background"
-                 style="background-image: url('assets/images/google-laptop.jpg');">
+                 style="background-image: url('assets/images/google-laptop-q.avif');">
             </div>
 
             <div class="news-content">
 
                 <img
-                    src="assets/images/google-laptop.jpg"
-                    alt="google laptop"
+                    src="assets/images/google-laptop-q.avif"
+                    alt="google laptop back"
                     class="news-image"
                 >
 
                 <div class="news-info">
-
+                    <div class="custom-news-label-row">
+                        <div class="custom-news-category">Google</div>
+                        <div class="custom-news-tag-org">#Google_Book</div>
+                        
+                    </div>
                     <h3>Google will introduce new Google Books and their operating system on September 15</h3>
 
                     <time>20 August 2026 | 21:18</time>
@@ -558,19 +625,23 @@
         <article class="news-card">
 
             <div class="news-background"
-                 style="background-image: url('assets/images/galaxy-s26-fe.jpg');">
+                 style="background-image: url('assets/images/galaxy-s26-fe-q.avif');">
             </div>
 
             <div class="news-content">
 
                 <img
-                    src="assets/images/galaxy-s26-fe.jpg"
-                    alt="galaxy s26 fe"
+                    src="assets/images/galaxy-s26-fe-q.avif"
+                    alt="samsung galaxy s26 fe"
                     class="news-image"
                 >
 
                 <div class="news-info">
-
+                    <div class="custom-news-label-row">
+                        <div class="custom-news-category">Samsung</div>
+                        <div class="custom-news-tag-org">#Galaxy #S26_FE</div>
+                        <div class="custom-news-hot">Hot</div>
+                    </div>
                     <h3>Samsung Galaxy S26 FE has been released</h3>
 
                     <time>20 August 2026 | 21:02</time>
@@ -587,165 +658,12 @@
     </div>
 
 </section>
-        <!--News End-->
-        <!--Papers-->
-        <div class="papers">
-            <div class="feed-header">
-                <h2 class="brand-font">
-                    Aethercom Papers
-                </h2>
-            </div>
-            <div class="paper-list">
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI? read more about Aethercom AI and SoDoCo AI of Aethercom by Ali Rahimi</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img src="assets/images/Story 2.jpg" class="cover-paper">
-                    <p>How learn Languages with AI?</p>
-                </div>
-                <div class="paper">
-                    <img>
-                    <p></p>
-                </div>
-                <div class="paper">
-                    <img>
-                    <p></p>
-                </div>
-                <div class="paper">
-                    <img>
-                    <p></p>
-                </div>
-                <div class="paper">
-                    <img>
-                    <p></p>
-                </div>
-                <div class="paper">
-                    <img>
-                    <p></p>
-                </div>
-            </div>
+
         </div>
         <!--Telegram Ad-->
         <a href="https://t.me/AethercomHub" class="normal-link">
         <div data-i18n="telegram-ad" class="hero">Follow Aethercom on Telegram</div>
         </a>
-        <!-- Aethercom Front-end Admin Panel -->
-        <div class="aether-admin-overlay" id="aetherAdminOverlay" aria-hidden="true"></div>
-        <aside class="aether-admin-panel" id="aetherAdminPanel" aria-hidden="true">
-            <div class="aether-admin-inner">
-                <div class="aether-admin-header">
-                    <div>
-                        <span class="aether-admin-eyebrow">AETHERCOM</span>
-                        <h2>Admin Panel</h2>
-                        <p>News management · Front-end demo</p>
-                    </div>
-                    <button class="aether-admin-close" id="adminCloseButton" type="button" aria-label="Close Admin Panel">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6L18 18M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                    </button>
-                </div>
-                <div class="aether-admin-note"><strong>Front-end mode</strong><span>Posts are saved only in this browser with localStorage. This is not secure authentication; connect it to a real backend before public deployment.</span></div>
-                <div class="aether-admin-grid">
-                    <section class="aether-admin-editor">
-                        <div class="admin-section-heading"><div><span class="admin-section-kicker">EDITOR</span><h3 id="adminFormTitle">Create News</h3></div><button class="admin-reset-button" id="adminNewButton" type="button">New</button></div>
-                        <form id="adminNewsForm" autocomplete="off">
-                            <input type="hidden" id="adminNewsId">
-                            <div class="admin-field"><label for="adminTitle">Title</label><input id="adminTitle" type="text" maxlength="180" placeholder="News headline..." required></div>
-                            <div class="admin-field-row">
-                                <div class="admin-field"><label for="adminCategory">Category</label><select id="adminCategory"><option>Technology</option><option>AI</option><option>Software</option><option>Hardware</option><option>Mobile</option><option>Science</option><option>Aethercom</option></select></div>
-                                <div class="admin-field"><label for="adminStatus">Status</label><select id="adminStatus"><option value="published">Published</option><option value="draft">Draft</option></select></div>
-                            </div>
-                            <div class="admin-field"><label for="adminImage">Cover image URL / path</label><input id="adminImage" type="text" placeholder="assets/images/news-image.jpg"></div>
-                            <div class="admin-field"><label for="adminSummary">Summary</label><textarea id="adminSummary" rows="3" maxlength="500" placeholder="Short description of the news..." required></textarea></div>
-                            <div class="admin-field"><label for="adminContent">Content</label><textarea id="adminContent" rows="10" placeholder="Write the full news here. Separate paragraphs with a blank line..." required></textarea></div>
-                            <div class="admin-field-row">
-                                <div class="admin-field"><label for="adminTags">Tags</label><input id="adminTags" type="text" placeholder="AI, Technology, Aethercom"></div>
-                                <div class="admin-field"><label for="adminReadingTime">Reading time</label><input id="adminReadingTime" type="text" value="2 min" maxlength="20"></div>
-                            </div>
-                            <div class="admin-field-row">
-                                <div class="admin-field"><label for="adminDate">Date & time</label><input id="adminDate" type="datetime-local"></div>
-                                <div class="admin-field"><label for="adminSource">Source</label><input id="adminSource" type="text" value="Aethercom" maxlength="100"></div>
-                            </div>
-                            <label class="admin-checkbox"><input id="adminHot" type="checkbox"><span>Mark as Hot News</span></label>
-                            <div class="admin-form-actions"><button class="admin-secondary-button" id="adminDraftButton" type="button">Save Draft</button><button class="admin-primary-button" id="adminPublishButton" type="submit">Publish News</button></div>
-                            <p class="admin-form-status" id="adminFormStatus" aria-live="polite"></p>
-                        </form>
-                    </section>
-                    <section class="aether-admin-preview">
-                        <div class="admin-section-heading"><div><span class="admin-section-kicker">PREVIEW</span><h3>Live Preview</h3></div></div>
-                        <article class="admin-preview-card" id="adminPreviewCard">
-                            <div class="admin-preview-image-wrap"><img id="adminPreviewImage" src="" alt=""></div>
-                            <div class="admin-preview-body"><div class="admin-preview-meta"><span id="adminPreviewCategory">Technology</span><span id="adminPreviewDate">Today</span></div><h4 id="adminPreviewTitle">Your headline will appear here</h4><p id="adminPreviewSummary">Your news summary will appear here.</p><div class="admin-preview-content" id="adminPreviewContent"><p>Your full article preview will appear here.</p></div><div class="admin-preview-tags" id="adminPreviewTags"></div></div>
-                        </article>
-                    </section>
-                </div>
-                <section class="aether-admin-library"><div class="admin-section-heading"><div><span class="admin-section-kicker">LIBRARY</span><h3>Your News</h3></div><span class="admin-library-count" id="adminLibraryCount">0 posts</span></div><div class="admin-news-list" id="adminNewsList"></div></section>
-            </div>
-        </aside>
 
         <footer class="site-footer">
             <!-- Main Footer Brand -->
@@ -754,18 +672,18 @@
                 <div class="footer-logo" aria-label="Aethercom">
                     <img src="assets/svg/Aethercom.svg" title="Aethercom" alt="Aethercom logo">
                 </div>
-                <img src="assets/svg/Aethercom Text.svg" title="Aethercom Brand" alt="aethercom" class="logo-text">
+                <img src="assets/svg/Aethercom Text.png" title="Aethercom Brand" alt="aethercom" class="logo-text">
                 <p class="footer-slogan">Beyond the Stars</p>
                 <!-- Social Icons -->
                 <div class="footer-socials">
                     <!-- Telegram -->
-                    <a href="#" class="social-link" aria-label="Telegram">
+                    <a href="https://t.me/AethercomHub" class="social-link" aria-label="Telegram">
                         <svg viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.04-3.72-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.41-.36-.09-.56-.64-.2L5.38 13.49.43 11.94c-1.08-.34-1.1-1.08.23-1.59L20.02 3.08c.88-.32 1.65.2 1.48.42Z"/>
+                            <path d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.04-3.72-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.41-.36-.09-.56-.64-.2L5.38 13.49.43 11.94c-1.08-.34-1.1-1.08.23-1.59L20.02 3.08c.88-.32 1.65.2 1.48.42Z"></path>
                         </svg>
                     </a>
                     <!-- Instagram -->
-                    <a href="#" class="social-link" aria-label="Instagram">
+                    <a href="https://instagram.com/AethercomHub" class="social-link" aria-label="Instagram">
                         <svg viewBox="0 0 24 24">
                             <rect x="3" y="3" width="18" height="18" rx="5"
                                 fill="none" stroke="currentColor" stroke-width="2"/>
@@ -776,7 +694,7 @@
                     </a>
 
                     <!-- GitHub -->
-                    <a href="#" class="social-link" aria-label="GitHub">
+                    <a href="https://GitHub.com/Aethercom" class="social-link" aria-label="GitHub">
                         <svg viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0c2.1-1.4 3.1-1.1 3.1-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.7 1 .7 1.9v2.8c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
@@ -784,7 +702,7 @@
                     </a>
 
                     <!-- Email -->
-                    <a href="mailto:hello@aethercom.com" class="social-link" aria-label="Email">
+                    <a href="mailto:AethercomCEO@Gmail.com" class="social-link" aria-label="Email">
                         <svg viewBox="0 0 24 24">
                             <rect x="3" y="5" width="18" height="14" rx="2"
                                 fill="none" stroke="currentColor" stroke-width="2"/>
@@ -806,10 +724,10 @@
 
                     <nav class="footer-links">
                         <a href="index.html">Home</a>
-                        <a href="projects.html">Projects</a>
-                        <a href="about.html">About</a>
+                        <a href="services.html">Services</a>
+                        <a href="terms.html">Terms</a>
                         <a href="support.html">Support</a>
-                        <a href="profile.html">Profile</a>
+                        <a href="about.html">About</a>
                     </nav>
                 </div>
 
@@ -827,9 +745,7 @@
 
                                 <span class="language-flag" id="languageFlag" aria-hidden="true"></span>
                                 <select id="languageSelect">
-                                    <option value="en">English</option>
-                                    <option value="fa">فارسی</option>
-                                    <option value="da">دری</option>
+                                    
                                 </select>
 
                             </div>
@@ -837,7 +753,7 @@
 
                         <!-- Light Mode -->
                         <div class="setting-row">
-                            <span class="setting-label">Light Mode</span>
+                            <span class="setting-label">Dark Mode</span>
 
                             <button
                                 class="toggle-switch"
@@ -876,42 +792,24 @@
 
                         <!-- Custom Setting -->
                         <div class="setting-row">
-                            <span class="setting-label">Interface</span>
+                            <span class="setting-label">Back to Top</span>
 
                             <button
                                 class="icon-setting-btn"
-                                id="interfaceButton"
+                                onclick="backToTop()"
                                 type="button"
-                                aria-label="Interface Settings"
+                                aria-label="Back to top"
                             >
-                                <svg viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.8"
-                                    />
-                                    <path
-                                        d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.8 1.8-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V20h-2.55v-.1a1.7 1.7 0 0 0-1.03-1.56 1.7 1.7 0 0 0-1.88.34l-.06.06-1.8-1.8.06-.06A1.7 1.7 0 0 0 8.1 15a1.7 1.7 0 0 0-1.56-1.03H6.4v-2.55h.14A1.7 1.7 0 0 0 8.1 10.4a1.7 1.7 0 0 0-.34-1.88L7.7 8.46l1.8-1.8.06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1.03-1.56V5.4h2.55v.1a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06 1.8 1.8-.06.06A1.7 1.7 0 0 0 19.4 10.4a1.7 1.7 0 0 0 1.56 1.03h.1v2.55h-.1A1.7 1.7 0 0 0 19.4 15Z"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="1.3"
-                                        stroke-linejoin="round"
-                                    />
+                                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="16 12 12 8 8 12"></polyline>
+                                    <line x1="12" y1="16" x2="12" y2="8"></line>
                                 </svg>
+
                             </button>
                         </div>
 
                     </div>
-
-                    <button class="admin-open-button" id="adminOpenButton" type="button" aria-label="Open Aethercom Admin Panel">
-                        <span class="admin-open-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 3v18M3 12h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                            </svg>
-                        </span>
-                        <span>Admin Panel</span>
-                    </button>
                 </div>
 
             </div>
@@ -923,11 +821,66 @@
     <!--JavaScript-->
     <div id="page-transition"></div>
     <script src="js/script.js"></script>
+<script>
+const AETHERCOM_TRANSLATIONS = {"Search":{"en":"Search","ar":"بحث","zh":"搜索","da":"جستجو","de":"Suche","fa":"جستجو","fr":"Rechercher","he":"חיפוש","hi":"खोजें","ja":"検索","ko":"검색","ps":"لټون","ru":"Поиск","ur":"تلاش"},"Explore Aethercom":{"en":"Explore Aethercom","ar":"استكشف Aethercom","zh":"探索 Aethercom","da":"Aethercom را بررسی کنید","de":"Aethercom entdecken","fa":"Aethercom را کاوش کنید","fr":"Explorer Aethercom","he":"גלה את Aethercom","hi":"Aethercom देखें","ja":"Aethercomを探索","ko":"Aethercom 탐색","ps":"Aethercom وپلټئ","ru":"Исследуйте Aethercom","ur":"Aethercom دریافت کریں"},"Close Search":{"en":"Close Search","ar":"إغلاق البحث","zh":"关闭搜索","da":"بستن جستجو","de":"Suche schließen","fa":"بستن جستجو","fr":"Fermer la recherche","he":"סגור חיפוש","hi":"खोज बंद करें","ja":"検索を閉じる","ko":"검색 닫기","ps":"لټون بند کړئ","ru":"Закрыть поиск","ur":"تلاش بند کریں"},"Close":{"en":"Close","ar":"إغلاق","zh":"关闭","da":"بستن","de":"Schließen","fa":"بستن","fr":"Fermer","he":"סגור","hi":"बंद करें","ja":"閉じる","ko":"닫기","ps":"بندول","ru":"Закрыть","ur":"بند کریں"},"Search Aethercom...":{"en":"Search Aethercom...","ar":"ابحث في Aethercom...","zh":"搜索 Aethercom...","da":"جستجو در Aethercom...","de":"Aethercom durchsuchen...","fa":"جستجو در Aethercom...","fr":"Rechercher dans Aethercom...","he":"חפש ב-Aethercom...","hi":"Aethercom खोजें...","ja":"Aethercomを検索...","ko":"Aethercom 검색...","ps":"په Aethercom کې لټون...","ru":"Поиск в Aethercom...","ur":"Aethercom میں تلاش کریں..."},"Clear search":{"en":"Clear search","ar":"مسح البحث","zh":"清除搜索","da":"پاک کردن جستجو","de":"Suche löschen","fa":"پاک کردن جستجو","fr":"Effacer la recherche","he":"נקה חיפוש","hi":"खोज साफ़ करें","ja":"検索をクリア","ko":"검색 지우기","ps":"لټون پاک کړئ","ru":"Очистить поиск","ur":"تلاش صاف کریں"},"Clear":{"en":"Clear","ar":"مسح","zh":"清除","da":"پاک کردن","de":"Löschen","fa":"پاک کردن","fr":"Effacer","he":"נקה","hi":"साफ़ करें","ja":"クリア","ko":"지우기","ps":"پاکول","ru":"Очистить","ur":"صاف کریں"},"Press":{"en":"Press","ar":"اضغط","zh":"按","da":"فشار دهید","de":"Drücken Sie","fa":"فشار دهید","fr":"Appuyez sur","he":"לחץ על","hi":"दबाएँ","ja":"押す","ko":"누르기","ps":"فشار ورکړئ","ru":"Нажмите","ur":"دبائیں"},"to close":{"en":"to close","ar":"للإغلاق","zh":"关闭","da":"برای بستن","de":"zum Schließen","fa":"برای بستن","fr":"pour fermer","he":"כדי לסגור","hi":"बंद करने के लिए","ja":"で閉じる","ko":"닫으려면","ps":"د بندولو لپاره","ru":"для закрытия","ur":"بند کرنے کے لیے"},"Find pages, projects and other content.":{"en":"Find pages, projects and other content.","ar":"اعثر على الصفحات والمشاريع والمحتويات الأخرى.","zh":"查找页面、项目和其他内容。","da":"صفحه‌ها، پروژه‌ها و محتوای دیگر را پیدا کنید.","de":"Finde Seiten, Projekte und andere Inhalte.","fa":"صفحه‌ها، پروژه‌ها و سایر محتوا را پیدا کنید.","fr":"Trouvez des pages, des projets et d’autres contenus.","he":"מצא דפים, פרויקטים ותכנים נוספים.","hi":"पेज, प्रोजेक्ट और अन्य सामग्री खोजें।","ja":"ページ、プロジェクト、その他のコンテンツを検索します。","ko":"페이지, 프로젝트 및 기타 콘텐츠를 찾아보세요.","ps":"پاڼې، پروژې او نورې منځپانګې ومومئ.","ru":"Находите страницы, проекты и другой контент.","ur":"صفحات، پروجیکٹس اور دیگر مواد تلاش کریں۔"},"Aethercom 1.5.1 Alpha":{"en":"Aethercom 1.5.1 Alpha","ar":"Aethercom 1.5.1 Alpha","zh":"Aethercom 1.5.1 Alpha","da":"Aethercom 1.5.1 Alpha","de":"Aethercom 1.5.1 Alpha","fa":"Aethercom 1.5.1 Alpha","fr":"Aethercom 1.5.1 Alpha","he":"Aethercom 1.5.1 Alpha","hi":"Aethercom 1.5.1 Alpha","ja":"Aethercom 1.5.1 Alpha","ko":"Aethercom 1.5.1 Alpha","ps":"Aethercom 1.5.1 Alpha","ru":"Aethercom 1.5.1 Alpha","ur":"Aethercom 1.5.1 Alpha"},"Athercom 1.5.1 Alpha is Now Available for All":{"en":"Aethercom 1.5.1 Alpha is Now Available for All","ar":"أصبح Aethercom 1.5.1 Alpha متاحًا للجميع الآن","zh":"Aethercom 1.5.1 Alpha 现已面向所有人开放","da":"Aethercom 1.5.1 Alpha اکنون برای همه در دسترس است","de":"Aethercom 1.5.1 Alpha ist jetzt für alle verfügbar","fa":"Aethercom 1.5.1 Alpha اکنون برای همه در دسترس است","fr":"Aethercom 1.5.1 Alpha est désormais disponible pour tous","he":"Aethercom 1.5.1 Alpha זמין כעת לכולם","hi":"Aethercom 1.5.1 Alpha अब सभी के लिए उपलब्ध है","ja":"Aethercom 1.5.1 Alphaが全員に提供開始","ko":"Aethercom 1.5.1 Alpha가 이제 모두에게 제공됩니다","ps":"Aethercom 1.5.1 Alpha اوس د ټولو لپاره شتون لري","ru":"Aethercom 1.5.1 Alpha теперь доступен для всех","ur":"Aethercom 1.5.1 Alpha اب سب کے لیے دستیاب ہے"},"Aethercom on GitHub":{"en":"Aethercom on GitHub","ar":"Aethercom على GitHub","zh":"GitHub 上的 Aethercom","da":"Aethercom در GitHub","de":"Aethercom auf GitHub","fa":"Aethercom در GitHub","fr":"Aethercom sur GitHub","he":"Aethercom ב-GitHub","hi":"GitHub पर Aethercom","ja":"GitHub上のAethercom","ko":"GitHub의 Aethercom","ps":"په GitHub کې Aethercom","ru":"Aethercom на GitHub","ur":"GitHub پر Aethercom"},"Athercom now is online on GitHub platform.":{"en":"Aethercom is now online on the GitHub platform.","ar":"أصبح Aethercom متاحًا الآن على منصة GitHub.","zh":"Aethercom 现已上线 GitHub 平台。","da":"Aethercom اکنون در پلتفرم GitHub آنلاین است.","de":"Aethercom ist jetzt auf der GitHub-Plattform online.","fa":"Aethercom اکنون روی پلتفرم GitHub آنلاین است.","fr":"Aethercom est désormais en ligne sur la plateforme GitHub.","he":"Aethercom זמין כעת בפלטפורמת GitHub.","hi":"Aethercom अब GitHub प्लेटफ़ॉर्म पर ऑनलाइन है।","ja":"AethercomがGitHubプラットフォームで公開されました。","ko":"Aethercom이 이제 GitHub 플랫폼에 온라인으로 공개되었습니다.","ps":"Aethercom اوس په GitHub پلاتفورم کې آنلاین دی.","ru":"Aethercom теперь доступен на платформе GitHub.","ur":"Aethercom اب GitHub پلیٹ فارم پر آن لائن ہے۔"},"Satellite Internet":{"en":"Satellite Internet","ar":"الإنترنت عبر الأقمار الصناعية","zh":"卫星互联网","da":"اینترنت ماهواره‌ای","de":"Satelliteninternet","fa":"اینترنت ماهواره‌ای","fr":"Internet par satellite","he":"אינטרנט לווייני","hi":"सैटेलाइट इंटरनेट","ja":"衛星インターネット","ko":"위성 인터넷","ps":"سپوږمکۍ انټرنېټ","ru":"Спутниковый интернет","ur":"سیٹلائٹ انٹرنیٹ"},"How satellite internet works, types and history.":{"en":"How satellite internet works, types and history.","ar":"كيف يعمل الإنترنت عبر الأقمار الصناعية وأنواعه وتاريخه.","zh":"卫星互联网的工作原理、类型与历史。","da":"اینترنت ماهواره‌ای چگونه کار می‌کند، انواع و تاریخچهٔ آن.","de":"Funktionsweise, Arten und Geschichte des Satelliteninternets.","fa":"اینترنت ماهواره‌ای چگونه کار می‌کند، انواع و تاریخچه آن.","fr":"Fonctionnement, types et histoire de l’Internet par satellite.","he":"כיצד פועל אינטרנט לווייני, סוגיו וההיסטוריה שלו.","hi":"सैटेलाइट इंटरनेट कैसे काम करता है, इसके प्रकार और इतिहास।","ja":"衛星インターネットの仕組み、種類、歴史。","ko":"위성 인터넷의 작동 방식, 종류와 역사.","ps":"سپوږمکۍ انټرنېټ څنګه کار کوي، ډولونه او تاریخچه یې.","ru":"Как работает спутниковый интернет, его виды и история.","ur":"سیٹلائٹ انٹرنیٹ کیسے کام کرتا ہے، اس کی اقسام اور تاریخ۔"},"Top10 Movies: Coding and Hacking":{"en":"Top10 Movies: Coding and Hacking","ar":"أفضل 10 أفلام: البرمجة والاختراق","zh":"十大电影：编程与黑客","da":"۱۰ فیلم برتر: برنامه‌نویسی و هکینگ","de":"Top 10 Filme: Programmieren und Hacking","fa":"۱۰ فیلم برتر: برنامه‌نویسی و هکینگ","fr":"Top 10 des films : programmation et hacking","he":"10 הסרטים המובילים: תכנות והאקינג","hi":"शीर्ष 10 फ़िल्में: कोडिंग और हैकिंग","ja":"トップ10映画：コーディングとハッキング","ko":"톱 10 영화: 코딩과 해킹","ps":"۱۰ غوره فلمونه: کوډینګ او هکینګ","ru":"Топ-10 фильмов: программирование и хакерство","ur":"ٹاپ 10 فلمیں: کوڈنگ اور ہیکنگ"},"Introducing the top 10 movies on coding and hacking.":{"en":"Introducing the top 10 movies on coding and hacking.","ar":"نقدم لكم أفضل 10 أفلام عن البرمجة والاختراق.","zh":"介绍十部关于编程与黑客的最佳电影。","da":"معرفی ۱۰ فیلم برتر دربارهٔ برنامه‌نویسی و هکینگ.","de":"Wir stellen die Top 10 Filme über Programmieren und Hacking vor.","fa":"۱۰ فیلم برتر درباره برنامه‌نویسی و هکینگ را معرفی می‌کنیم.","fr":"Découvrez les 10 meilleurs films sur la programmation et le hacking.","he":"היכרות עם 10 הסרטים המובילים על תכנות והאקינג.","hi":"कोडिंग और हैकिंग पर शीर्ष 10 फ़िल्मों का परिचय।","ja":"コーディングとハッキングを題材にしたトップ10映画を紹介します。","ko":"코딩과 해킹을 다룬 톱 10 영화를 소개합니다.","ps":"د کوډینګ او هکینګ ۱۰ غوره فلمونه درپېژنو.","ru":"Представляем топ-10 фильмов о программировании и хакерстве.","ur":"کوڈنگ اور ہیکنگ پر ٹاپ 10 فلمیں پیش کر رہے ہیں۔"},"Web Development":{"en":"Web Development","ar":"تطوير الويب","zh":"网页开发","da":"توسعهٔ وب","de":"Webentwicklung","fa":"توسعه وب","fr":"Développement web","he":"פיתוח אתרים","hi":"वेब विकास","ja":"Web開発","ko":"웹 개발","ps":"د ویب پراختیا","ru":"Веб-разработка","ur":"ویب ڈویلپمنٹ"},"Designing and developing modern digital websites and experiencses":{"en":"Designing and developing modern digital websites and experiencses","ar":"تصميم وتطوير مواقع وتجارب رقمية حديثة","zh":"设计和开发现代数字网站与体验","da":"طراحی و توسعهٔ وب‌سایت‌ها و تجربه‌های دیجیتال مدرن","de":"Entwurf und Entwicklung moderner digitaler Websites und Erlebnisse","fa":"طراحی و توسعه وب‌سایت‌ها و تجربه‌های دیجیتال مدرن","fr":"Conception et développement de sites et d’expériences numériques modernes","he":"עיצוב ופיתוח אתרים וחוויות דיגיטליות מודרניים","hi":"आधुनिक डिजिटल वेबसाइट और अनुभवों का डिज़ाइन व विकास","ja":"最新のデジタルWebサイトと体験の設計・開発","ko":"현대적인 디지털 웹사이트와 경험을 설계하고 개발합니다","ps":"د عصري ډیجیټل وېبپاڼو او تجربو ډیزاین او پراختیا","ru":"Проектирование и разработка современных цифровых сайтов и впечатлений","ur":"جدید ڈیجیٹل ویب سائٹس اور تجربات کی ڈیزائننگ اور ڈویلپمنٹ"},"Beams of the idea":{"en":"Beams of the idea","ar":"أشعة الفكرة","zh":"思想的光束","da":"پرتوهای ایده","de":"Strahlen der Idee","fa":"پرتوهای ایده","fr":"Rayons de l’idée","he":"קרני הרעיון","hi":"विचार की किरणें","ja":"アイデアの光線","ko":"아이디어의 빛줄기","ps":"د نظر وړانګې","ru":"Лучи идеи","ur":"خیال کی کرنیں"},"developing software and digital tools for ideas beyond the stars":{"en":"developing software and digital tools for ideas beyond the stars","ar":"تطوير البرمجيات والأدوات الرقمية للأفكار التي تتجاوز النجوم","zh":"为超越星辰的创意开发软件和数字工具","da":"توسعهٔ نرم‌افزار و ابزارهای دیجیتال برای ایده‌هایی فراتر از ستاره‌ها","de":"Entwicklung von Software und digitalen Werkzeugen für Ideen jenseits der Sterne","fa":"توسعه نرم‌افزار و ابزارهای دیجیتال برای ایده‌هایی فراتر از ستارگان","fr":"Développer des logiciels et des outils numériques pour des idées au-delà des étoiles","he":"פיתוח תוכנה וכלים דיגיטליים לרעיונות שמעבר לכוכבים","hi":"सितारों से परे विचारों के लिए सॉफ़्टवेयर और डिजिटल टूल विकसित करना","ja":"星々の彼方のアイデアのためのソフトウェアとデジタルツールを開発します","ko":"별 너머의 아이디어를 위한 소프트웨어와 디지털 도구를 개발합니다","ps":"له ستورو هاخوا نظریو لپاره سافټویر او ډیجیټل وسایل جوړول","ru":"Разработка программного обеспечения и цифровых инструментов для идей за пределами звёзд","ur":"ستاروں سے آگے کے خیالات کے لیے سافٹ ویئر اور ڈیجیٹل ٹولز تیار کرنا"},"Aethercom; A Window Into the Digital World":{"en":"Aethercom; A Window Into the Digital World","ar":"Aethercom؛ نافذة إلى العالم الرقمي","zh":"Aethercom；通往数字世界的一扇窗","da":"Aethercom؛ پنجره‌ای به دنیای دیجیتال","de":"Aethercom; Ein Fenster zur digitalen Welt","fa":"Aethercom؛ پنجره‌ای به جهان دیجیتال","fr":"Aethercom ; Une fenêtre sur le monde numérique","he":"Aethercom; חלון אל העולם הדיגיטלי","hi":"Aethercom; डिजिटल दुनिया की एक खिड़की","ja":"Aethercom：デジタル世界への窓","ko":"Aethercom; 디지털 세계로 향하는 창","ps":"Aethercom؛ ډیجیټل نړۍ ته یوه کړکۍ","ru":"Aethercom; окно в цифровой мир","ur":"Aethercom؛ ڈیجیٹل دنیا کی ایک کھڑکی"},"Production and development of digita content, media and interactive experiencses":{"en":"Production and development of digita content, media and interactive experiencses","ar":"إنتاج وتطوير المحتوى الرقمي والإعلام والتجارب التفاعلية","zh":"数字内容、媒体和互动体验的制作与开发","da":"تولید و توسعهٔ محتوای دیجیتال، رسانه و تجربه‌های تعاملی","de":"Produktion und Entwicklung digitaler Inhalte, Medien und interaktiver Erlebnisse","fa":"تولید و توسعه محتوای دیجیتال، رسانه و تجربه‌های تعاملی","fr":"Production et développement de contenus numériques, médias et expériences interactives","he":"הפקה ופיתוח של תוכן דיגיטלי, מדיה וחוויות אינטראקטיביות","hi":"डिजिटल सामग्री, मीडिया और इंटरैक्टिव अनुभवों का उत्पादन व विकास","ja":"デジタルコンテンツ、メディア、インタラクティブ体験の制作・開発","ko":"디지털 콘텐츠, 미디어 및 인터랙티브 경험의 제작과 개발","ps":"د ډیجیټل منځپانګې، رسنیو او متقابلو تجربو تولید او پراختیا","ru":"Производство и разработка цифрового контента, медиа и интерактивных впечатлений","ur":"ڈیجیٹل مواد، میڈیا اور انٹرایکٹو تجربات کی تیاری اور ڈویلپمنٹ"},"Innovation & AI":{"en":"Innovation & AI","ar":"الابتكار والذكاء الاصطناعي","zh":"创新与人工智能","da":"نوآوری و هوش مصنوعی","de":"Innovation & KI","fa":"نوآوری و هوش مصنوعی","fr":"Innovation et IA","he":"חדשנות ובינה מלאכותית","hi":"नवाचार और AI","ja":"イノベーションとAI","ko":"혁신 및 AI","ps":"نوښت او AI","ru":"Инновации и ИИ","ur":"جدت اور AI"},"Exploring and developing new ideas in Tech and AI":{"en":"Exploring and developing new ideas in Tech and AI","ar":"استكشاف وتطوير أفكار جديدة في التقنية والذكاء الاصطناعي","zh":"探索和开发科技与人工智能领域的新想法","da":"کشف و توسعهٔ ایده‌های جدید در فناوری و هوش مصنوعی","de":"Erkundung und Entwicklung neuer Ideen in Technologie und KI","fa":"کاوش و توسعه ایده‌های جدید در فناوری و هوش مصنوعی","fr":"Explorer et développer de nouvelles idées dans la tech et l’IA","he":"חקר ופיתוח רעיונות חדשים בטכנולוגיה ובבינה מלאכותית","hi":"टेक और AI में नए विचारों की खोज और विकास","ja":"テクノロジーとAIにおける新しいアイデアの探究・開発","ko":"기술과 AI의 새로운 아이디어를 탐색하고 개발합니다","ps":"په ټکنالوژۍ او AI کې د نویو نظریو سپړنه او پراختیا","ru":"Исследование и разработка новых идей в технологиях и ИИ","ur":"ٹیکنالوجی اور AI میں نئے خیالات کی تلاش اور ترقی"},"Aethercom NEWS":{"en":"Aethercom NEWS","ar":"أخبار Aethercom","zh":"Aethercom 新闻","da":"اخبار Aethercom","de":"Aethercom NEWS","fa":"اخبار Aethercom","fr":"Actualités Aethercom","he":"חדשות Aethercom","hi":"Aethercom समाचार","ja":"Aethercomニュース","ko":"Aethercom 뉴스","ps":"د Aethercom خبرونه","ru":"Новости Aethercom","ur":"Aethercom خبریں"},"#Update":{"en":"#Update","ar":"#تحديث","zh":"#更新","da":"#به‌روزرسانی","de":"#Update","fa":"#به‌روزرسانی","fr":"#MiseÀJour","he":"#עדכון","hi":"#अपडेट","ja":"#アップデート","ko":"#업데이트","ps":"#تازه‌کول","ru":"#Обновление","ur":"#اپڈیٹ"},"Hot":{"en":"Hot","ar":"رائج","zh":"热门","da":"داغ","de":"Beliebt","fa":"داغ","fr":"Tendance","he":"חם","hi":"लोकप्रिय","ja":"注目","ko":"인기","ps":"تود","ru":"Популярно","ur":"مقبول"},"Top10":{"en":"Top10","ar":"أفضل 10","zh":"十大","da":"۱۰ برتر","de":"Top 10","fa":"۱۰ برتر","fr":"Top 10","he":"10 המובילים","hi":"शीर्ष 10","ja":"トップ10","ko":"톱 10","ps":"۱۰ غوره","ru":"Топ-10","ur":"ٹاپ 10"},"#Movie #Coding":{"en":"#Movie #Coding","ar":"#فيلم #برمجة","zh":"#电影 #编程","da":"#فیلم #برنامه‌نویسی","de":"#Film #Programmierung","fa":"#فیلم #برنامه‌نویسی","fr":"#Film #Programmation","he":"#סרט #תכנות","hi":"#फ़िल्म #कोडिंग","ja":"#映画 #コーディング","ko":"#영화 #코딩","ps":"#فلم #کوډینګ","ru":"#Фильм #Программирование","ur":"#فلم #کوڈنگ"},"Article":{"en":"Article","ar":"مقالة","zh":"文章","da":"مقاله","de":"Artikel","fa":"مقاله","fr":"Article","he":"מאמר","hi":"लेख","ja":"記事","ko":"기사","ps":"مقاله","ru":"Статья","ur":"مضمون"},"#satellite_internet":{"en":"#satellite_internet","ar":"#الإنترنت_عبر_الأقمار_الصناعية","zh":"#卫星互联网","da":"#اینترنت_ماهواره‌ای","de":"#Satelliteninternet","fa":"#اینترنت_ماهواره‌ای","fr":"#Internet_Satellite","he":"#אינטרנט_לווייני","hi":"#सैटेलाइट_इंटरनेट","ja":"#衛星インターネット","ko":"#위성_인터넷","ps":"#سپوږمکۍ_انټرنېټ","ru":"#Спутниковый_интернет","ur":"#سیٹلائٹ_انٹرنیٹ"},"#website":{"en":"#website","ar":"#موقع_الويب","zh":"#网站","da":"#وب‌سایت","de":"#Website","fa":"#وب‌سایت","fr":"#SiteWeb","he":"#אתר","hi":"#वेबसाइट","ja":"#ウェブサイト","ko":"#웹사이트","ps":"#وېبپاڼه","ru":"#Сайт","ur":"#ویب_سائٹ"},"AI":{"en":"AI","ar":"الذكاء الاصطناعي","zh":"人工智能","da":"هوش مصنوعی","de":"KI","fa":"هوش مصنوعی","fr":"IA","he":"בינה מלאכותית","hi":"AI","ja":"AI","ko":"AI","ps":"AI","ru":"ИИ","ur":"AI"},"Android":{"en":"Android","ar":"Android","zh":"Android","da":"اندروید","de":"Android","fa":"اندروید","fr":"Android","he":"Android","hi":"Android","ja":"Android","ko":"Android","ps":"Android","ru":"Android","ur":"Android"},"Google":{"en":"Google","ar":"Google","zh":"Google","da":"Google","de":"Google","fa":"Google","fr":"Google","he":"Google","hi":"Google","ja":"Google","ko":"Google","ps":"Google","ru":"Google","ur":"Google"},"Qualcomm":{"en":"Qualcomm","ar":"Qualcomm","zh":"高通","da":"کوالکام","de":"Qualcomm","fa":"کوالکام","fr":"Qualcomm","he":"Qualcomm","hi":"क्वालकॉम","ja":"Qualcomm","ko":"퀄컴","ps":"Qualcomm","ru":"Qualcomm","ur":"Qualcomm"},"Samsung":{"en":"Samsung","ar":"Samsung","zh":"三星","da":"سامسونگ","de":"Samsung","fa":"سامسونگ","fr":"Samsung","he":"Samsung","hi":"सैमसंग","ja":"Samsung","ko":"삼성","ps":"Samsung","ru":"Samsung","ur":"Samsung"},"Home":{"en":"Home","ar":"الرئيسية","zh":"首页","da":"خانه","de":"Startseite","fa":"خانه","fr":"Accueil","he":"בית","hi":"होम","ja":"ホーム","ko":"홈","ps":"کور","ru":"Главная","ur":"ہوم"},"Services":{"en":"Services","ar":"الخدمات","zh":"服务","da":"خدمات","de":"Dienste","fa":"خدمات","fr":"Services","he":"שירותים","hi":"सेवाएँ","ja":"サービス","ko":"서비스","ps":"خدمتونه","ru":"Услуги","ur":"خدمات"},"Terms":{"en":"Terms","ar":"الشروط","zh":"条款","da":"شرایط","de":"Bedingungen","fa":"شرایط","fr":"Conditions","he":"תנאים","hi":"शर्तें","ja":"利用規約","ko":"약관","ps":"شرایط","ru":"Условия","ur":"شرائط"},"Support":{"en":"Support","ar":"الدعم","zh":"支持","da":"پشتیبانی","de":"Support","fa":"پشتیبانی","fr":"Assistance","he":"תמיכה","hi":"सहायता","ja":"サポート","ko":"지원","ps":"ملاتړ","ru":"Поддержка","ur":"مدد"},"About":{"en":"About","ar":"حول","zh":"关于","da":"دربارهٔ ما","de":"Über uns","fa":"درباره","fr":"À propos","he":"אודות","hi":"हमारे बारे में","ja":"概要","ko":"소개","ps":"زموږ په اړه","ru":"О нас","ur":"ہمارے بارے میں"},"Explore":{"en":"Explore","ar":"استكشف","zh":"探索","da":"بررسی","de":"Entdecken","fa":"کاوش","fr":"Explorer","he":"גלה","hi":"अन्वेषण","ja":"探索","ko":"탐색","ps":"سپړنه","ru":"Исследовать","ur":"دریافت کریں"},"Settings":{"en":"Settings","ar":"الإعدادات","zh":"设置","da":"تنظیمات","de":"Einstellungen","fa":"تنظیمات","fr":"Paramètres","he":"הגדרות","hi":"सेटिंग्स","ja":"設定","ko":"설정","ps":"تنظیمات","ru":"Настройки","ur":"ترتیبات"},"Language":{"en":"Language","ar":"اللغة","zh":"语言","da":"زبان","de":"Sprache","fa":"زبان","fr":"Langue","he":"שפה","hi":"भाषा","ja":"言語","ko":"언어","ps":"ژبه","ru":"Язык","ur":"زبان"},"English":{"en":"English","ar":"الإنجليزية","zh":"英语","da":"انگلیسی","de":"Englisch","fa":"انگلیسی","fr":"Anglais","he":"אנגלית","hi":"अंग्रेज़ी","ja":"英語","ko":"영어","ps":"انګلیسي","ru":"Английский","ur":"انگریزی"},"فارسی":{"en":"فارسی","ar":"الفارسية","zh":"波斯语","da":"فارسی","de":"Persisch","fa":"فارسی","fr":"Persan","he":"פרסית","hi":"फ़ारसी","ja":"ペルシア語","ko":"페르시아어","ps":"فارسي","ru":"Персидский","ur":"فارسی"},"دری":{"en":"دری","ar":"الدَّرية","zh":"达里语","da":"دری","de":"Dari","fa":"دری","fr":"Dari","he":"דרי","hi":"दरी","ja":"ダリー語","ko":"다리어","ps":"دري","ru":"Дари","ur":"دری"},"Dark Mode":{"en":"Dark Mode","ar":"الوضع الداكن","zh":"深色模式","da":"حالت تاریک","de":"Dunkelmodus","fa":"حالت تاریک","fr":"Mode sombre","he":"מצב כהה","hi":"डार्क मोड","ja":"ダークモード","ko":"다크 모드","ps":"تیاره حالت","ru":"Тёмная тема","ur":"ڈارک موڈ"},"Toggle Light Mode":{"en":"Toggle Light Mode","ar":"تبديل الوضع الفاتح","zh":"切换浅色模式","da":"تغییر حالت روشن","de":"Hellen Modus umschalten","fa":"تغییر حالت روشن","fr":"Basculer le mode clair","he":"החלף מצב בהיר","hi":"लाइट मोड बदलें","ja":"ライトモードを切り替え","ko":"라이트 모드 전환","ps":"روښانه حالت بدل کړئ","ru":"Переключить светлую тему","ur":"لائٹ موڈ تبدیل کریں"},"Notifications":{"en":"Notifications","ar":"الإشعارات","zh":"通知","da":"اعلان‌ها","de":"Benachrichtigungen","fa":"اعلان‌ها","fr":"Notifications","he":"התראות","hi":"सूचनाएँ","ja":"通知","ko":"알림","ps":"خبرتیاوې","ru":"Уведомления","ur":"اطلاعات"},"Toggle Notifications":{"en":"Toggle Notifications","ar":"تبديل الإشعارات","zh":"切换通知","da":"تغییر اعلان‌ها","de":"Benachrichtigungen umschalten","fa":"تغییر اعلان‌ها","fr":"Basculer les notifications","he":"החלף התראות","hi":"सूचनाएँ बदलें","ja":"通知を切り替え","ko":"알림 전환","ps":"خبرتیاوې بدل کړئ","ru":"Переключить уведомления","ur":"اطلاعات تبدیل کریں"},"Back to Top":{"en":"Back to Top","ar":"العودة إلى الأعلى","zh":"返回顶部","da":"بازگشت به بالا","de":"Nach oben","fa":"بازگشت به بالا","fr":"Retour en haut","he":"חזרה לראש הדף","hi":"शीर्ष पर जाएँ","ja":"トップへ戻る","ko":"맨 위로","ps":"بېرته سر ته","ru":"Вернуться наверх","ur":"واپس اوپر"},"Back to top":{"en":"Back to top","ar":"العودة إلى الأعلى","zh":"返回顶部","da":"بازگشت به بالا","de":"Nach oben","fa":"بازگشت به بالا","fr":"Retour en haut","he":"חזרה לראש הדף","hi":"शीर्ष पर जाएँ","ja":"トップへ戻る","ko":"맨 위로","ps":"بېرته سر ته","ru":"Вернуться наверх","ur":"واپس اوپر"},"Follow Aethercom on Telegram":{"en":"Follow Aethercom on Telegram","ar":"تابع Aethercom على Telegram","zh":"在 Telegram 上关注 Aethercom","da":"Aethercom را در Telegram دنبال کنید","de":"Aethercom auf Telegram folgen","fa":"Aethercom را در تلگرام دنبال کنید","fr":"Suivez Aethercom sur Telegram","he":"עקבו אחר Aethercom ב-Telegram","hi":"Telegram पर Aethercom को फ़ॉलो करें","ja":"TelegramでAethercomをフォロー","ko":"Telegram에서 Aethercom 팔로우","ps":"په Telegram کې Aethercom تعقیب کړئ","ru":"Подписывайтесь на Aethercom в Telegram","ur":"Telegram پر Aethercom کو فالو کریں"},"Beyond the Stars":{"en":"Beyond the Stars","ar":"ما وراء النجوم","zh":"超越星辰","da":"فراتر از ستاره‌ها","de":"Jenseits der Sterne","fa":"فراتر از ستارگان","fr":"Au-delà des étoiles","he":"מעבר לכוכבים","hi":"सितारों से परे","ja":"星々の彼方へ","ko":"별 너머","ps":"له ستورو هاخوا","ru":"За пределами звёзд","ur":"ستاروں سے آگے"},"© 2026 Aethercom. All rights reserved.":{"en":"© 2026 Aethercom. All rights reserved.","ar":"© 2026 Aethercom. جميع الحقوق محفوظة.","zh":"© 2026 Aethercom。保留所有权利。","da":"© ۲۰۲۶ Aethercom. تمام حقوق محفوظ است.","de":"© 2026 Aethercom. Alle Rechte vorbehalten.","fa":"© ۲۰۲۶ Aethercom. تمامی حقوق محفوظ است.","fr":"© 2026 Aethercom. Tous droits réservés.","he":"© 2026 Aethercom. כל הזכויות שמורות.","hi":"© 2026 Aethercom. सर्वाधिकार सुरक्षित।","ja":"© 2026 Aethercom。無断転載を禁じます。","ko":"© 2026 Aethercom. 모든 권리 보유.","ps":"© ۲۰۲۶ Aethercom. ټول حقونه خوندي دي.","ru":"© 2026 Aethercom. Все права защищены.","ur":"© 2026 Aethercom. جملہ حقوق محفوظ ہیں."},"Aethercom 1.5.1 Alpha released!":{"en":"Aethercom 1.5.1 Alpha released!","ar":"تم إصدار Aethercom 1.5.1 Alpha!","zh":"Aethercom 1.5.1 Alpha 已发布！","da":"Aethercom 1.5.1 Alpha منتشر شد!","de":"Aethercom 1.5.1 Alpha wurde veröffentlicht!","fa":"Aethercom 1.5.1 Alpha منتشر شد!","fr":"Aethercom 1.5.1 Alpha est sorti !","he":"Aethercom 1.5.1 Alpha שוחרר!","hi":"Aethercom 1.5.1 Alpha जारी हो गया है!","ja":"Aethercom 1.5.1 Alphaがリリースされました！","ko":"Aethercom 1.5.1 Alpha가 출시되었습니다!","ps":"Aethercom 1.5.1 Alpha خپور شو!","ru":"Выпущен Aethercom 1.5.1 Alpha!","ur":"Aethercom 1.5.1 Alpha جاری کر دیا گیا ہے!"},"See the changes and features of the new version of the site":{"en":"See the changes and features of the new version of the site","ar":"اطلع على تغييرات وميزات الإصدار الجديد من الموقع","zh":"查看网站新版本的变化和功能","da":"تغییرات و ویژگی‌های نسخهٔ جدید سایت را ببینید","de":"Sehen Sie sich die Änderungen und Funktionen der neuen Website-Version an","fa":"تغییرات و ویژگی‌های نسخه جدید سایت را ببینید","fr":"Découvrez les changements et fonctionnalités de la nouvelle version du site","he":"ראו את השינויים והתכונות של הגרסה החדשה של האתר","hi":"साइट के नए संस्करण के बदलाव और सुविधाएँ देखें","ja":"サイトの新バージョンの変更点と機能をご覧ください","ko":"사이트 새 버전의 변경 사항과 기능을 확인하세요","ps":"د سایټ د نوې نسخې بدلونونه او ځانګړنې وګورئ","ru":"Посмотрите изменения и функции новой версии сайта","ur":"سائٹ کے نئے ورژن کی تبدیلیاں اور خصوصیات دیکھیں"},"Aethercom website has been introduced":{"en":"Aethercom website has been introduced","ar":"تم تقديم موقع Aethercom","zh":"Aethercom 网站已上线","da":"وب‌سایت Aethercom معرفی شد","de":"Die Aethercom-Website wurde vorgestellt","fa":"وب‌سایت Aethercom معرفی شد","fr":"Le site Aethercom a été présenté","he":"אתר Aethercom הוצג","hi":"Aethercom वेबसाइट पेश की गई है","ja":"Aethercomのウェブサイトが公開されました","ko":"Aethercom 웹사이트가 공개되었습니다","ps":"د Aethercom وېبپاڼه معرفي شوه","ru":"Представлен сайт Aethercom","ur":"Aethercom ویب سائٹ متعارف کرائی گئی ہے"},"In this post, we want to introduce the website and goals of Aethercom":{"en":"In this post, we want to introduce the website and goals of Aethercom","ar":"في هذا المنشور، نريد تقديم موقع Aethercom وأهدافه","zh":"在这篇文章中，我们想介绍 Aethercom 网站及其目标","da":"در این پست می‌خواهیم وب‌سایت و اهداف Aethercom را معرفی کنیم","de":"In diesem Beitrag möchten wir die Website und die Ziele von Aethercom vorstellen","fa":"در این مطلب می‌خواهیم وب‌سایت و اهداف Aethercom را معرفی کنیم","fr":"Dans cet article, nous souhaitons présenter le site et les objectifs d’Aethercom","he":"בפוסט זה אנו רוצים להציג את אתר Aethercom ואת מטרותיו","hi":"इस पोस्ट में हम Aethercom वेबसाइट और उसके लक्ष्यों का परिचय देना चाहते हैं","ja":"この投稿では、Aethercomのウェブサイトと目標を紹介します","ko":"이 게시물에서는 Aethercom 웹사이트와 목표를 소개합니다","ps":"په دې پوسټ کې غواړو د Aethercom وېبپاڼه او موخې یې معرفي کړو","ru":"В этом посте мы хотим представить сайт Aethercom и его цели","ur":"اس پوسٹ میں ہم Aethercom ویب سائٹ اور اس کے مقاصد کا تعارف کرانا چاہتے ہیں"},"The proprietary Meta AI artificial intelligence application was introduced for the Mac":{"en":"The proprietary Meta AI artificial intelligence application was introduced for the Mac","ar":"تم تقديم تطبيق الذكاء الاصطناعي Meta AI الخاص لأجهزة Mac","zh":"Meta AI 专有人工智能应用已在 Mac 上推出","da":"اپلیکیشن اختصاصی هوش مصنوعی Meta AI برای Mac معرفی شد","de":"Die proprietäre KI-Anwendung Meta AI wurde für den Mac vorgestellt","fa":"اپلیکیشن اختصاصی هوش مصنوعی Meta AI برای مک معرفی شد","fr":"L’application d’intelligence artificielle propriétaire Meta AI a été présentée pour Mac","he":"אפליקציית הבינה המלאכותית הקניינית Meta AI הוצגה עבור Mac","hi":"Mac के लिए स्वामित्व वाला Meta AI कृत्रिम बुद्धिमत्ता ऐप पेश किया गया","ja":"Mac向けの独自AIアプリMeta AIが発表されました","ko":"Mac용 독점 인공지능 애플리케이션 Meta AI가 공개되었습니다","ps":"د Mac لپاره د Meta AI ځانګړی مصنوعي ځیرکتیا اپلېکېشن معرفي شو","ru":"Проприетарное приложение искусственного интеллекта Meta AI представлено для Mac","ur":"Mac کے لیے Meta AI کی ملکیتی مصنوعی ذہانت ایپ متعارف کرائی گئی"},"Google on Android 17 makes the RAM usage limit stricter":{"en":"Google on Android 17 makes the RAM usage limit stricter","ar":"تجعل Google حد استخدام ذاكرة RAM أكثر صرامة في Android 17","zh":"Google 在 Android 17 中收紧 RAM 使用限制","da":"Google در Android 17 محدودیت استفاده از RAM را سخت‌گیرانه‌تر می‌کند","de":"Google verschärft in Android 17 das RAM-Nutzungslimit","fa":"گوگل در اندروید ۱۷ محدودیت استفاده از RAM را سخت‌تر می‌کند","fr":"Google renforce la limite d’utilisation de la RAM dans Android 17","he":"Google מחמירה את מגבלת השימוש ב-RAM ב-Android 17","hi":"Google ने Android 17 में RAM उपयोग सीमा को सख्त किया","ja":"Android 17でGoogleがRAM使用制限を厳格化","ko":"Google이 Android 17에서 RAM 사용 제한을 강화합니다","ps":"Google په Android 17 کې د RAM د کارونې حد سختوي","ru":"Google ужесточает лимит использования RAM в Android 17","ur":"Google نے Android 17 میں RAM کے استعمال کی حد سخت کر دی"},"Qualcomm announces its next two flagship chips on September 22":{"en":"Qualcomm announces its next two flagship chips on September 22","ar":"تعلن Qualcomm عن شريحتيها الرائدتين التاليتين في 22 سبتمبر","zh":"Qualcomm 将于 9 月 22 日发布下一代两款旗舰芯片","da":"Qualcomm در ۲۲ سپتامبر دو تراشهٔ پرچم‌دار بعدی خود را معرفی می‌کند","de":"Qualcomm kündigt am 22. September seine nächsten beiden Flaggschips an","fa":"کوالکام در ۲۲ سپتامبر دو تراشه پرچم‌دار بعدی خود را معرفی می‌کند","fr":"Qualcomm annoncera ses deux prochaines puces phares le 22 septembre","he":"Qualcomm תכריז על שני שבבי הדגל הבאים שלה ב-22 בספטמבר","hi":"Qualcomm 22 सितंबर को अपने अगले दो फ्लैगशिप चिप्स पेश करेगा","ja":"Qualcommは9月22日に次期フラッグシップチップ2種を発表します","ko":"Qualcomm이 9월 22일 차세대 플래그십 칩 2종을 발표합니다","ps":"Qualcomm به د سپتمبر په ۲۲مه خپل راتلونکي دوه پرچم‌دار چپس اعلان کړي","ru":"Qualcomm 22 сентября представит два следующих флагманских чипа","ur":"Qualcomm 22 ستمبر کو اپنی اگلی دو فلیگ شپ چپس کا اعلان کرے گا"},"Google will introduce new Google Books and their operating system on September 15":{"en":"Google will introduce new Google Books and their operating system on September 15","ar":"ستقدم Google كتب Google الجديدة ونظام التشغيل الخاص بها في 15 سبتمبر","zh":"Google 将于 9 月 15 日推出新版 Google Books 及其操作系统","da":"Google در ۱۵ سپتامبر Google Books جدید و سیستم‌عامل خود را معرفی می‌کند","de":"Google wird am 15. September neue Google Books und das dazugehörige Betriebssystem vorstellen","fa":"گوگل در ۱۵ سپتامبر Google Books جدید و سیستم‌عامل آن را معرفی می‌کند","fr":"Google présentera de nouveaux Google Books et leur système d’exploitation le 15 septembre","he":"Google תציג ב-15 בספטמבר את Google Books החדש ואת מערכת ההפעלה שלה","hi":"Google 15 सितंबर को नए Google Books और उनका ऑपरेटिंग सिस्टम पेश करेगा","ja":"Googleは9月15日に新しいGoogle BooksとそのOSを発表します","ko":"Google이 9월 15일 새로운 Google Books와 운영체제를 공개합니다","ps":"Google به د سپتمبر په ۱۵مه نوي Google Books او خپل عملیاتي سیسټم معرفي کړي","ru":"Google 15 сентября представит новые Google Books и свою операционную систему","ur":"Google 15 ستمبر کو نئی Google Books اور ان کا آپریٹنگ سسٹم متعارف کرائے گا"},"Samsung Galaxy S26 FE has been released":{"en":"Samsung Galaxy S26 FE has been released","ar":"تم إطلاق Samsung Galaxy S26 FE","zh":"Samsung Galaxy S26 FE 已发布","da":"Samsung Galaxy S26 FE عرضه شده است","de":"Das Samsung Galaxy S26 FE wurde veröffentlicht","fa":"Samsung Galaxy S26 FE منتشر شد","fr":"Le Samsung Galaxy S26 FE est sorti","he":"Samsung Galaxy S26 FE הושק","hi":"Samsung Galaxy S26 FE जारी हो गया है","ja":"Samsung Galaxy S26 FEが発売されました","ko":"Samsung Galaxy S26 FE가 출시되었습니다","ps":"Samsung Galaxy S26 FE خپور شوی دی","ru":"Выпущен Samsung Galaxy S26 FE","ur":"Samsung Galaxy S26 FE جاری کر دیا گیا ہے"},"25 September 2026 | 22:00":{"en":"25 September 2026 | 22:00","ar":"25 سبتمبر 2026 | 22:00","zh":"2026年9月25日 | 22:00","da":"۲۵ سپتامبر ۲۰۲۶ | ۲۲:۰۰","de":"25. September 2026 | 22:00","fa":"۲۵ سپتامبر ۲۰۲۶ | ۲۲:۰۰","fr":"25 septembre 2026 | 22:00","he":"25 בספטמבר 2026 | 22:00","hi":"25 सितंबर 2026 | 22:00","ja":"2026年9月25日 | 22:00","ko":"2026년 9월 25일 | 22:00","ps":"۲۵ سپتمبر ۲۰۲۶ | ۲۲:۰۰","ru":"25 сентября 2026 | 22:00","ur":"25 ستمبر 2026 | 22:00"},"18 September 2026 | 23:30":{"en":"18 September 2026 | 23:30","ar":"18 سبتمبر 2026 | 23:30","zh":"2026年9月18日 | 23:30","da":"۱۸ سپتامبر ۲۰۲۶ | ۲۳:۳۰","de":"18. September 2026 | 23:30","fa":"۱۸ سپتامبر ۲۰۲۶ | ۲۳:۳۰","fr":"18 septembre 2026 | 23:30","he":"18 בספטמבר 2026 | 23:30","hi":"18 सितंबर 2026 | 23:30","ja":"2026年9月18日 | 23:30","ko":"2026년 9월 18일 | 23:30","ps":"۱۸ سپتمبر ۲۰۲۶ | ۲۳:۳۰","ru":"18 сентября 2026 | 23:30","ur":"18 ستمبر 2026 | 23:30"},"22 September 2026 | 20:40":{"en":"22 September 2026 | 20:40","ar":"22 سبتمبر 2026 | 20:40","zh":"2026年9月22日 | 20:40","da":"۲۲ سپتامبر ۲۰۲۶ | ۲۰:۴۰","de":"22. September 2026 | 20:40","fa":"۲۲ سپتامبر ۲۰۲۶ | ۲۰:۴۰","fr":"22 septembre 2026 | 20:40","he":"22 בספטמבר 2026 | 20:40","hi":"22 सितंबर 2026 | 20:40","ja":"2026年9月22日 | 20:40","ko":"2026년 9월 22일 | 20:40","ps":"۲۲ سپتمبر ۲۰۲۶ | ۲۰:۴۰","ru":"22 сентября 2026 | 20:40","ur":"22 ستمبر 2026 | 20:40"},"The standalone Meta AI desktop application on Mac has features such as viewing part of the screen and providing more detailed instructions to the user. By connecting to professional Facebook, Instagram and Google Workspace accounts, this tool can help businesses analyze data, advertising and content production.":{"en":"The standalone Meta AI desktop application on Mac has features such as viewing part of the screen and providing more detailed instructions to the user. By connecting to professional Facebook, Instagram and Google Workspace accounts, this tool can help businesses analyze data, advertising and content production.","ar":"يتميز تطبيق Meta AI المستقل لسطح المكتب على Mac بميزات مثل عرض جزء من الشاشة وتقديم تعليمات أكثر تفصيلاً للمستخدم. ومن خلال ربط حسابات Facebook وInstagram وGoogle Workspace الاحترافية، يمكن لهذه الأداة مساعدة الشركات في تحليل البيانات والإعلانات وإنتاج المحتوى.","zh":"Mac 上独立的 Meta AI 桌面应用具有查看部分屏幕并向用户提供更详细指令等功能。通过连接专业的 Facebook、Instagram 和 Google Workspace 账户，该工具可以帮助企业分析数据、广告和内容制作。","da":"اپلیکیشن مستقل دسکتاپ Meta AI در مک امکاناتی مانند مشاهده بخشی از صفحه و ارائه دستورالعمل‌های دقیق‌تر به کاربر دارد. با اتصال حساب‌های حرفه‌ای Facebook، Instagram و Google Workspace، این ابزار می‌تواند به کسب‌وکارها در تحلیل داده‌ها، تبلیغات و تولید محتوا کمک کند.","de":"Die eigenständige Meta-AI-Desktopanwendung auf dem Mac bietet Funktionen wie die Anzeige eines Bildschirmbereichs und detailliertere Anweisungen für den Nutzer. Durch die Verbindung professioneller Facebook-, Instagram- und Google-Workspace-Konten kann dieses Tool Unternehmen bei der Analyse von Daten, Werbung und Content-Produktion unterstützen.","fa":"اپلیکیشن مستقل دسکتاپ Meta AI در مک امکاناتی مانند مشاهده بخشی از صفحه و ارائه دستورالعمل‌های دقیق‌تر به کاربر دارد. با اتصال حساب‌های حرفه‌ای Facebook، Instagram و Google Workspace، این ابزار می‌تواند به کسب‌وکارها در تحلیل داده‌ها، تبلیغات و تولید محتوا کمک کند.","fr":"L’application de bureau autonome Meta AI sur Mac offre des fonctions telles que l’affichage d’une partie de l’écran et la fourniture d’instructions plus détaillées à l’utilisateur. En connectant des comptes professionnels Facebook, Instagram et Google Workspace, cet outil peut aider les entreprises à analyser les données, la publicité et la production de contenu.","he":"לאפליקציית שולחן העבודה העצמאית Meta AI ב-Mac יש תכונות כמו צפייה בחלק מהמסך ומתן הוראות מפורטות יותר למשתמש. באמצעות חיבור חשבונות מקצועיים של Facebook, Instagram ו-Google Workspace, הכלי יכול לסייע לעסקים בניתוח נתונים, פרסום והפקת תוכן.","hi":"Mac पर स्वतंत्र Meta AI डेस्कटॉप ऐप में स्क्रीन के एक हिस्से को देखने और उपयोगकर्ता को अधिक विस्तृत निर्देश देने जैसी सुविधाएँ हैं। पेशेवर Facebook, Instagram और Google Workspace खातों को जोड़कर यह टूल व्यवसायों को डेटा, विज्ञापन और सामग्री उत्पादन का विश्लेषण करने में मदद कर सकता है।","ja":"Mac向けのスタンドアロンMeta AIデスクトップアプリには、画面の一部を表示したり、ユーザーにより詳細な指示を提供したりする機能があります。プロ向けのFacebook、Instagram、Google Workspaceアカウントを接続することで、企業のデータ、広告、コンテンツ制作の分析を支援できます。","ko":"Mac의 독립형 Meta AI 데스크톱 애플리케이션은 화면 일부를 보고 사용자에게 더 자세한 지침을 제공하는 등의 기능을 갖추고 있습니다. 전문 Facebook, Instagram 및 Google Workspace 계정을 연결하면 기업의 데이터, 광고 및 콘텐츠 제작 분석을 지원할 수 있습니다.","ps":"په Mac کې د Meta AI خپلواک ډیسکتاپ اپلېکېشن داسې ځانګړنې لري لکه د سکرین د یوې برخې لیدل او کارونکي ته لا ډېرې تفصیلي لارښوونې ورکول. د مسلکي Facebook، Instagram او Google Workspace حسابونو په نښلولو سره، دا وسیله له سوداګرۍ سره د معلوماتو، اعلانونو او منځپانګې د تولید په تحلیل کې مرسته کولی شي.","ru":"Автономное настольное приложение Meta AI для Mac позволяет, например, просматривать часть экрана и предоставлять пользователю более подробные инструкции. Подключив профессиональные аккаунты Facebook, Instagram и Google Workspace, этот инструмент может помогать компаниям анализировать данные, рекламу и производство контента.","ur":"Mac پر اسٹینڈ الون Meta AI ڈیسک ٹاپ ایپ میں اسکرین کے ایک حصے کو دیکھنے اور صارف کو زیادہ تفصیلی ہدایات دینے جیسی خصوصیات ہیں۔ پیشہ ورانہ Facebook، Instagram اور Google Workspace اکاؤنٹس سے منسلک ہو کر یہ ٹول کاروباروں کو ڈیٹا، اشتہارات اور مواد کی تیاری کا تجزیہ کرنے میں مدد دے سکتا ہے۔"},"Aethercom":{"en":"Aethercom","ar":"Aethercom","zh":"Aethercom","da":"Aethercom","de":"Aethercom","fa":"Aethercom","fr":"Aethercom","he":"Aethercom","hi":"Aethercom","ja":"Aethercom","ko":"Aethercom","ps":"Aethercom","ru":"Aethercom","ur":"Aethercom"},"Honor":{"en":"Honor","ar":"آنر","zh":"Honor","da":"آنر","de":"Honor","fa":"آنر","fr":"Honor","he":"Honor","hi":"Honor","ja":"Honor","ko":"Honor","ps":"Honor","ru":"Honor","ur":"Honor"},"New Honor":{"en":"New Honor","ar":"آنر الجدید","zh":"New Honor","da":"آنر نو","de":"New Honor","fa":"آنر جدید","fr":"New Honor","he":"New Honor","hi":"New Honor","ja":"New Honor","ko":"New Honor","ps":"New Honor","ru":"New Honor","ur":"New Honor"},"Dolby Atmos":{"en":"Dolby Atmos","ar":"دالبی اتموس","zh":"Dolby Atmos","da":"دالبی اتموس","de":"Dolby Atmos","fa":"دالبی اتموس","fr":"Dolby Atmos","he":"Dolby Atmos","hi":"Dolby Atmos","ja":"Dolby Atmos","ko":"Dolby Atmos","ps":"Dolby Atmos","ru":"Dolby Atmos","ur":"Dolby Atmos"},"#Meta #Mac":{"en":"#Meta #Mac","ar":"#Meta #Mac","zh":"#Meta #Mac","da":"#Meta #Mac","de":"#Meta #Mac","fa":"#Meta #Mac","fr":"#Meta #Mac","he":"#Meta #Mac","hi":"#Meta #Mac","ja":"#Meta #Mac","ko":"#Meta #Mac","ps":"#Meta #Mac","ru":"#Meta #Mac","ur":"#Meta #Mac"},"#Google #Android":{"en":"#Google #Android","ar":"#Google #Android","zh":"#Google #Android","da":"#Google #Android","de":"#Google #Android","fa":"#Google #Android","fr":"#Google #Android","he":"#Google #Android","hi":"#Google #Android","ja":"#Google #Android","ko":"#Google #Android","ps":"#Google #Android","ru":"#Google #Android","ur":"#Google #Android"},"#Snapdragon":{"en":"#Snapdragon","ar":"#Snapdragon","zh":"#Snapdragon","da":"#Snapdragon","de":"#Snapdragon","fa":"#Snapdragon","fr":"#Snapdragon","he":"#Snapdragon","hi":"#Snapdragon","ja":"#Snapdragon","ko":"#Snapdragon","ps":"#Snapdragon","ru":"#Snapdragon","ur":"#Snapdragon"},"#Google_Book":{"en":"#Google_Book","ar":"#Google_Book","zh":"#Google_Book","da":"#Google_Book","de":"#Google_Book","fa":"#Google_Book","fr":"#Google_Book","he":"#Google_Book","hi":"#Google_Book","ja":"#Google_Book","ko":"#Google_Book","ps":"#Google_Book","ru":"#Google_Book","ur":"#Google_Book"},"#Galaxy #S26_FE":{"en":"#Galaxy #S26_FE","ar":"#Galaxy #S26_FE","zh":"#Galaxy #S26_FE","da":"#Galaxy #S26_FE","de":"#Galaxy #S26_FE","fa":"#Galaxy #S26_FE","fr":"#Galaxy #S26_FE","he":"#Galaxy #S26_FE","hi":"#Galaxy #S26_FE","ja":"#Galaxy #S26_FE","ko":"#Galaxy #S26_FE","ps":"#Galaxy #S26_FE","ru":"#Galaxy #S26_FE","ur":"#Galaxy #S26_FE"},"20 August 2026 | 21:54":{"en":"20 August 2026 | 21:54","ar":"20 أغسطس 2026 | 21:54","zh":"2026年8月20日 | 21:54","da":"۲۰ آگست ۲۰۲۶ | ۲۱:۵۴","de":"20. August 2026 | 21:54","fa":"۲۰ آگست ۲۰۲۶ | ۲۱:۵۴","fr":"20 août 2026 | 21:54","he":"20 באוגוסט 2026 | 21:54","hi":"20 अगस्त 2026 | 21:54","ja":"2026年8月20日 | 21:54","ko":"2026년 8월 20일 | 21:54","ps":"۲۰ اګست ۲۰۲۶ | ۲۱:۵۴","ru":"20 августа 2026 | 21:54","ur":"20 اگست 2026 | 21:54"},"20 August 2026 | 22:05":{"en":"20 August 2026 | 22:05","ar":"20 أغسطس 2026 | 22:05","zh":"2026年8月20日 | 22:05","da":"۲۰ آگست ۲۰۲۶ | ۲۲:۰۵","de":"20. August 2026 | 22:05","fa":"۲۰ آگست ۲۰۲۶ | ۲۲:۰۵","fr":"20 août 2026 | 22:05","he":"20 באוגוסט 2026 | 22:05","hi":"20 अगस्त 2026 | 22:05","ja":"2026年8月20日 | 22:05","ko":"2026년 8월 20일 | 22:05","ps":"۲۰ اګست ۲۰۲۶ | ۲۲:۰۵","ru":"20 августа 2026 | 22:05","ur":"20 اگست 2026 | 22:05"},"20 August 2026 | 21:45":{"en":"20 August 2026 | 21:45","ar":"20 أغسطس 2026 | 21:45","zh":"2026年8月20日 | 21:45","da":"۲۰ آگست ۲۰۲۶ | ۲۱:۴۵","de":"20. August 2026 | 21:45","fa":"۲۰ آگست ۲۰۲۶ | ۲۱:۴۵","fr":"20 août 2026 | 21:45","he":"20 באוגוסט 2026 | 21:45","hi":"20 अगस्त 2026 | 21:45","ja":"2026年8月20日 | 21:45","ko":"2026년 8월 20일 | 21:45","ps":"۲۰ اګست ۲۰۲۶ | ۲۱:۴۵","ru":"20 августа 2026 | 21:45","ur":"20 اگست 2026 | 21:45"},"20 August 2026 | 21:42":{"en":"20 August 2026 | 21:42","ar":"20 أغسطس 2026 | 21:42","zh":"2026年8月20日 | 21:42","da":"۲۰ آگست ۲۰۲۶ | ۲۱:۴۲","de":"20. August 2026 | 21:42","fa":"۲۰ آگست ۲۰۲۶ | ۲۱:۴۲","fr":"20 août 2026 | 21:42","he":"20 באוגוסט 2026 | 21:42","hi":"20 अगस्त 2026 | 21:42","ja":"2026年8月20日 | 21:42","ko":"2026년 8월 20일 | 21:42","ps":"۲۰ اګست ۲۰۲۶ | ۲۱:۴۲","ru":"20 августа 2026 | 21:42","ur":"20 اگست 2026 | 21:42"},"20 August 2026 | 21:18":{"en":"20 August 2026 | 21:18","ar":"20 أغسطس 2026 | 21:18","zh":"2026年8月20日 | 21:18","da":"۲۰ آگست ۲۰۲۶ | ۲۱:۱۸","de":"20. August 2026 | 21:18","fa":"۲۰ آگست ۲۰۲۶ | ۲۱:۱۸","fr":"20 août 2026 | 21:18","he":"20 באוגוסט 2026 | 21:18","hi":"20 अगस्त 2026 | 21:18","ja":"2026年8月20日 | 21:18","ko":"2026년 8월 20일 | 21:18","ps":"۲۰ اګست ۲۰۲۶ | ۲۱:۱۸","ru":"20 августа 2026 | 21:18","ur":"20 اگست 2026 | 21:18"},"20 August 2026 | 21:02":{"en":"20 August 2026 | 21:02","ar":"20 أغسطس 2026 | 21:02","zh":"2026年8月20日 | 21:02","da":"۲۰ آگست ۲۰۲۶ | ۲۱:۰۲","de":"20. August 2026 | 21:02","fa":"۲۰ آگست ۲۰۲۶ | ۲۱:۰۲","fr":"20 août 2026 | 21:02","he":"20 באוגוסט 2026 | 21:02","hi":"20 अगस्त 2026 | 21:02","ja":"2026年8月20日 | 21:02","ko":"2026년 8월 20일 | 21:02","ps":"۲۰ اګست ۲۰۲۶ | ۲۱:۰۲","ru":"20 августа 2026 | 21:02","ur":"20 اگست 2026 | 21:02"},"Search Aethercom":{"en":"Search Aethercom","ar":"البحث في Aethercom","zh":"搜索 Aethercom","da":"جستجو در Aethercom","de":"Aethercom durchsuchen","fa":"جستجو در Aethercom","fr":"Rechercher dans Aethercom","he":"חיפוש ב-Aethercom","hi":"Aethercom खोजें","ja":"Aethercomを検索","ko":"Aethercom 검색","ps":"په Aethercom کې لټون","ru":"Поиск в Aethercom","ur":"Aethercom میں تلاش"},"Aethercom now is online on GitHub platform.":{"en":"Aethercom is now online on the GitHub platform.","ar":"أصبح Aethercom متاحًا الآن على منصة GitHub.","zh":"Aethercom 现已上线 GitHub 平台。","da":"Aethercom اکنون روی پلتفرم GitHub آنلاین است.","de":"Aethercom ist jetzt auf der GitHub-Plattform online.","fa":"Aethercom اکنون روی پلتفرم GitHub آنلاین است.","fr":"Aethercom est désormais en ligne sur la plateforme GitHub.","he":"Aethercom זמין כעת בפלטפורמת GitHub.","hi":"Aethercom अब GitHub प्लेटफ़ॉर्म पर ऑनलाइन है।","ja":"AethercomがGitHubプラットフォームで公開されました。","ko":"Aethercom이 이제 GitHub 플랫폼에 온라인으로 공개되었습니다.","ps":"Aethercom اوس په GitHub پلاتفورم کې آنلاین دی.","ru":"Aethercom теперь доступен на платформе GitHub.","ur":"Aethercom اب GitHub پلیٹ فارم پر آن لائن ہے۔"},"With this change of heavy programs, they can not disrupt the performance of the entire device by over-using memory.":{"en":"With this change, heavy programs cannot disrupt the performance of the entire device by over-using memory. These restrictions, first implemented on Pixel phones, will reach more devices next year.","ar":"مع هذا التغيير، لن تتمكن البرامج الثقيلة من التأثير في أداء الجهاز بالكامل بسبب الإفراط في استخدام الذاكرة. وستصل هذه القيود إلى المزيد من الأجهزة العام المقبل.","zh":"通过这一变化，繁重程序无法因过度使用内存而影响整个设备的性能。这些限制明年将扩展到更多设备。","da":"با این تغییر، برنامه‌های سنگین نمی‌توانند با استفاده بیش‌ازحد از حافظه عملکرد کل دستگاه را مختل کنند. این محدودیت‌ها سال آینده به دستگاه‌های بیشتری می‌رسند.","de":"Durch diese Änderung können umfangreiche Programme die Leistung des gesamten Geräts nicht mehr durch übermäßige Speichernutzung beeinträchtigen. Diese Einschränkungen werden nächstes Jahr weitere Geräte erreichen.","fa":"با این تغییر، برنامه‌های سنگین نمی‌توانند با استفاده بیش‌ازحد از حافظه عملکرد کل دستگاه را مختل کنند. این محدودیت‌ها سال آینده به دستگاه‌های بیشتری می‌رسند.","fr":"Avec ce changement, les programmes lourds ne pourront plus perturber les performances de l’ensemble de l’appareil en utilisant excessivement la mémoire. Ces restrictions toucheront davantage d’appareils l’année prochaine.","he":"עם השינוי הזה, תוכניות כבדות לא יוכלו לפגוע בביצועי המכשיר כולו עקב שימוש מופרז בזיכרון. ההגבלות יגיעו למכשירים נוספים בשנה הבאה.","hi":"इस बदलाव के साथ, भारी प्रोग्राम मेमोरी के अत्यधिक उपयोग से पूरे डिवाइस के प्रदर्शन को बाधित नहीं कर पाएँगे। ये प्रतिबंध अगले वर्ष और अधिक उपकरणों तक पहुँचेंगे।","ja":"この変更により、重いプログラムがメモリを使いすぎて端末全体の性能を低下させることを防げます。これらの制限は来年さらに多くの端末に適用されます。","ko":"이번 변경으로 무거운 프로그램이 메모리를 과도하게 사용해 전체 기기 성능을 저하시키는 것을 막을 수 있습니다. 이 제한은 내년에 더 많은 기기로 확대됩니다.","ps":"د دې بدلون سره، درانه پروګرامونه به د حافظې د ډېرې کارونې له امله د ټولې وسیلې فعالیت ګډوډ نه کړي. دا محدودیتونه به راتلونکی کال نورو وسیلو ته هم ورسېږي.","ru":"Благодаря этому изменению тяжёлые программы не смогут нарушать работу всего устройства из-за чрезмерного использования памяти. В следующем году ограничения распространятся на большее число устройств.","ur":"اس تبدیلی کے ساتھ بھاری پروگرام میموری کے حد سے زیادہ استعمال سے پورے ڈیوائس کی کارکردگی متاثر نہیں کر سکیں گے۔ یہ پابندیاں اگلے سال مزید آلات تک پہنچیں گی۔"},"Qualcomm has confirmed that it will unveil two flagship chips of the 8 Elite series at Snapdragon Summit 2026. The company has not yet announced the names of the chips, but rumors have reported the 6th generation Snapdragon 8 and the higher-end version with the Pro extension, which are probably designed for flagship and ultra phones.":{"en":"Qualcomm has confirmed that it will unveil two flagship chips of the 8 Elite series at Snapdragon Summit 2026. The company has not yet announced the names of the chips, but rumors have reported the 6th generation Snapdragon 8 and the higher-end version with the Pro extension, which are probably designed for flagship and ultra phones.","ar":"أكدت Qualcomm أنها ستكشف عن شريحتين رائدتين من سلسلة 8 Elite في Snapdragon Summit 2026. ولم تعلن الشركة بعد أسماء الشرائح، لكن الشائعات تتحدث عن Snapdragon 8 من الجيل السادس وإصدار أعلى مع لاحقة Pro، ومن المحتمل أن تكونا مخصصتين للهواتف الرائدة وUltra.","zh":"Qualcomm 已确认将在 Snapdragon Summit 2026 上发布两款 8 Elite 系列旗舰芯片。该公司尚未公布芯片名称，但传闻称它们可能是第六代 Snapdragon 8 以及带 Pro 后缀的高端版本，可能面向旗舰和 Ultra 手机。","da":"کوالکام تأیید کرده است که در Snapdragon Summit 2026 دو تراشه پرچم‌دار از سری 8 Elite را معرفی خواهد کرد. این شرکت هنوز نام تراشه‌ها را اعلام نکرده، اما شایعات از Snapdragon 8 نسل ششم و نسخه رده‌بالاتر با پسوند Pro خبر داده‌اند که احتمالاً برای گوشی‌های پرچم‌دار و Ultra طراحی شده‌اند.","de":"Qualcomm hat bestätigt, dass das Unternehmen auf dem Snapdragon Summit 2026 zwei Flaggschips der 8-Elite-Serie vorstellen wird. Die Namen wurden noch nicht bekannt gegeben, aber Gerüchte sprechen vom Snapdragon 8 der sechsten Generation und einer höherwertigen Pro-Version, die vermutlich für Flaggschiff- und Ultra-Smartphones bestimmt sind.","fa":"کوالکام تأیید کرده است که در Snapdragon Summit 2026 دو تراشه پرچم‌دار از سری 8 Elite را معرفی خواهد کرد. این شرکت هنوز نام تراشه‌ها را اعلام نکرده، اما شایعات از Snapdragon 8 نسل ششم و نسخه رده‌بالاتر با پسوند Pro خبر داده‌اند که احتمالاً برای گوشی‌های پرچم‌دار و Ultra طراحی شده‌اند.","fr":"Qualcomm a confirmé qu’elle dévoilera deux puces phares de la série 8 Elite au Snapdragon Summit 2026. L’entreprise n’a pas encore annoncé leurs noms, mais des rumeurs évoquent le Snapdragon 8 de sixième génération et une version haut de gamme avec le suffixe Pro, probablement destinées aux smartphones phares et Ultra.","he":"Qualcomm אישרה שתחשוף שני שבבי דגל מסדרת 8 Elite ב-Snapdragon Summit 2026. החברה עדיין לא הכריזה על שמות השבבים, אך שמועות מדברות על Snapdragon 8 מהדור השישי ועל גרסה מתקדמת יותר עם סיומת Pro, שכנראה מיועדות לטלפוני דגל ו-Ultra.","hi":"Qualcomm ने पुष्टि की है कि वह Snapdragon Summit 2026 में 8 Elite सीरीज़ के दो फ्लैगशिप चिप पेश करेगी। कंपनी ने अभी चिप के नाम घोषित नहीं किए हैं, लेकिन अफवाहों में छठी पीढ़ी के Snapdragon 8 और Pro प्रत्यय वाले उच्च-स्तरीय संस्करण की बात है, जो संभवतः फ्लैगशिप और Ultra फ़ोन के लिए बनाए गए हैं।","ja":"QualcommはSnapdragon Summit 2026で8 Eliteシリーズのフラッグシップチップ2種を発表すると確認しました。チップ名はまだ発表されていませんが、第6世代Snapdragon 8とProを冠する上位版との噂があり、フラッグシップおよびUltraスマートフォン向けとみられています。","ko":"Qualcomm은 Snapdragon Summit 2026에서 8 Elite 시리즈의 플래그십 칩 2종을 공개할 것이라고 확인했습니다. 회사는 아직 칩 이름을 발표하지 않았지만, 6세대 Snapdragon 8과 Pro 접미사가 붙은 상위 버전이라는 소문이 있으며 플래그십 및 Ultra 스마트폰용으로 설계된 것으로 보입니다.","ps":"Qualcomm تایید کړې چې په Snapdragon Summit 2026 کې به د 8 Elite لړۍ دوه پرچم‌دار چپس معرفي کړي. شرکت لا تر اوسه د چپس نومونه نه دي اعلان کړي، خو اوازې د شپږم نسل Snapdragon 8 او د Pro پسوند لرونکي لوړې کچې نسخې په اړه دي، چې ښايي د پرچم‌دارو او Ultra تلیفونونو لپاره ډیزاین شوي وي.","ru":"Qualcomm подтвердила, что представит два флагманских чипа серии 8 Elite на Snapdragon Summit 2026. Названия компания пока не объявила, но, по слухам, это Snapdragon 8 шестого поколения и более продвинутая версия с суффиксом Pro, вероятно предназначенные для флагманских и Ultra-смартфонов.","ur":"Qualcomm نے تصدیق کی ہے کہ وہ Snapdragon Summit 2026 میں 8 Elite سیریز کی دو فلیگ شپ چپس پیش کرے گی۔ کمپنی نے ابھی چپس کے نام ظاہر نہیں کیے، لیکن افواہوں میں چھٹی نسل Snapdragon 8 اور Pro لاحقے والی اعلیٰ درجے کی قسم کا ذکر ہے، جو غالباً فلیگ شپ اور Ultra فونز کے لیے بنائی گئی ہیں۔"},"Google Books come in a variety of sizes and designs with premium hardware, and all will be equipped with a common Glowbar feature. Asus, HP, Lenovo and Dell are the first hardware partners of Google, and reporters will have the opportunity to test and run benchmarks on devices at this event.":{"en":"Google Books come in a variety of sizes and designs with premium hardware, and all will be equipped with a common Glowbar feature. Asus, HP, Lenovo and Dell are the first hardware partners of Google, and reporters will have the opportunity to test and run benchmarks on devices at this event.","ar":"تأتي Google Books بأحجام وتصاميم متنوعة مع عتاد متميز، وستُجهز جميعها بميزة Glowbar مشتركة. وتُعد Asus وHP وLenovo وDell أول شركاء Google في مجال العتاد، وسيحظى الصحفيون بفرصة اختبار الأجهزة وإجراء اختبارات الأداء عليها في هذا الحدث.","zh":"Google Books 将提供多种尺寸和设计，并配备高端硬件，所有产品都将搭载统一的 Glowbar 功能。Asus、HP、Lenovo 和 Dell 是 Google 首批硬件合作伙伴，记者将在此次活动中有机会测试设备并运行基准测试。","da":"Google Books در اندازه‌ها و طراحی‌های متنوع با سخت‌افزار رده‌بالا عرضه می‌شود و همه به قابلیت مشترک Glowbar مجهز خواهند بود. Asus، HP، Lenovo و Dell نخستین شرکای سخت‌افزاری Google هستند و خبرنگاران در این رویداد فرصت آزمایش دستگاه‌ها و اجرای بنچمارک را خواهند داشت.","de":"Google Books wird in verschiedenen Größen und Designs mit hochwertiger Hardware angeboten und alle werden mit einer gemeinsamen Glowbar-Funktion ausgestattet sein. Asus, HP, Lenovo und Dell sind die ersten Hardwarepartner von Google, und Reporter können auf der Veranstaltung Geräte testen und Benchmarks durchführen.","fa":"Google Books در اندازه‌ها و طراحی‌های متنوع با سخت‌افزار رده‌بالا عرضه می‌شود و همه به قابلیت مشترک Glowbar مجهز خواهند بود. Asus، HP، Lenovo و Dell نخستین شرکای سخت‌افزاری Google هستند و خبرنگاران در این رویداد فرصت آزمایش دستگاه‌ها و اجرای بنچمارک را خواهند داشت.","fr":"Google Books sera proposé dans différentes tailles et designs avec un matériel haut de gamme, tous équipés d’une fonction Glowbar commune. Asus, HP, Lenovo et Dell sont les premiers partenaires matériels de Google, et les journalistes pourront tester les appareils et effectuer des benchmarks lors de cet événement.","he":"Google Books יגיע במגוון גדלים ועיצובים עם חומרה מתקדמת, וכולם יצוידו בתכונת Glowbar משותפת. Asus, HP, Lenovo ו-Dell הם שותפות החומרה הראשונות של Google, ולעיתונאים תהיה הזדמנות לבדוק מכשירים ולהריץ מבחני ביצועים באירוע.","hi":"Google Books विभिन्न आकारों और डिज़ाइनों में प्रीमियम हार्डवेयर के साथ आएँगे और सभी में एक समान Glowbar सुविधा होगी। Asus, HP, Lenovo और Dell Google के पहले हार्डवेयर साझेदार हैं और पत्रकारों को इस कार्यक्रम में उपकरणों का परीक्षण और बेंचमार्क चलाने का अवसर मिलेगा।","ja":"Google Booksはプレミアムハードウェアを備えたさまざまなサイズとデザインで登場し、すべてに共通のGlowbar機能が搭載されます。Asus、HP、Lenovo、DellはGoogle初のハードウェアパートナーで、記者はこのイベントで端末をテストしベンチマークを実行できます。","ko":"Google Books는 다양한 크기와 디자인의 프리미엄 하드웨어로 제공되며 모두 공통 Glowbar 기능을 탑재합니다. Asus, HP, Lenovo, Dell은 Google의 첫 하드웨어 파트너이며 기자들은 이 행사에서 기기를 테스트하고 벤치마크를 실행할 수 있습니다.","ps":"Google Books د بېلابېلو اندازو او ډیزاینونو له پریمیم هارډویر سره راځي او ټول به د Glowbar ګډه ځانګړنه ولري. Asus، HP، Lenovo او Dell د Google لومړني هارډویر شریکان دي، او خبریالان به په دې مراسمو کې د وسیلو د ازموینې او بنچمارک چلولو فرصت ولري.","ru":"Google Books будут выпускаться в разных размерах и дизайнах с премиальным оборудованием, и все модели получат общую функцию Glowbar. Asus, HP, Lenovo и Dell — первые аппаратные партнёры Google, а журналисты смогут протестировать устройства и запустить бенчмарки на мероприятии.","ur":"Google Books مختلف سائز اور ڈیزائن میں پریمیم ہارڈویئر کے ساتھ آئیں گی اور سب میں مشترک Glowbar فیچر ہوگا۔ Asus، HP، Lenovo اور Dell Google کے پہلے ہارڈویئر پارٹنرز ہیں، اور صحافیوں کو اس تقریب میں ڈیوائسز ٹیسٹ کرنے اور بینچ مارکس چلانے کا موقع ملے گا۔"},"Samsung has scheduled its next event for August 27. The Galaxy S26 FE is expected to be unveiled at the event.":{"en":"Samsung has scheduled its next event for August 27. The Galaxy S26 FE is expected to be unveiled at the event.","ar":"حددت Samsung فعاليتها التالية في 27 أغسطس. ومن المتوقع الكشف عن Galaxy S26 FE في الحدث.","zh":"Samsung 已将下一场活动安排在 8 月 27 日。预计 Galaxy S26 FE 将在活动中亮相。","da":"سامسونگ رویداد بعدی خود را برای ۲۷ آگوست برنامه‌ریزی کرده است. انتظار می‌رود Galaxy S26 FE در این رویداد معرفی شود.","de":"Samsung hat seine nächste Veranstaltung für den 27. August angesetzt. Das Galaxy S26 FE wird voraussichtlich auf der Veranstaltung vorgestellt.","fa":"سامسونگ رویداد بعدی خود را برای ۲۷ آگوست برنامه‌ریزی کرده است. انتظار می‌رود Galaxy S26 FE در این رویداد معرفی شود.","fr":"Samsung a programmé son prochain événement pour le 27 août. Le Galaxy S26 FE devrait y être dévoilé.","he":"Samsung קבעה את האירוע הבא שלה ל-27 באוגוסט. הצפי הוא שה-Galaxy S26 FE יוצג באירוע.","hi":"Samsung ने अपना अगला कार्यक्रम 27 अगस्त के लिए निर्धारित किया है। Galaxy S26 FE के इस कार्यक्रम में पेश होने की उम्मीद है।","ja":"Samsungは次回イベントを8月27日に予定しています。Galaxy S26 FEがこのイベントで発表される見込みです。","ko":"Samsung은 다음 행사를 8월 27일로 예정했습니다. Galaxy S26 FE가 이 행사에서 공개될 것으로 예상됩니다.","ps":"Samsung خپله راتلونکې غونډه د اګست په ۲۷مه ټاکلې ده. تمه ده چې Galaxy S26 FE به په دې غونډه کې معرفي شي.","ru":"Samsung назначила следующее мероприятие на 27 августа. Ожидается, что на нём будет представлен Galaxy S26 FE.","ur":"Samsung نے اپنا اگلا ایونٹ 27 اگست کے لیے مقرر کیا ہے۔ توقع ہے کہ Galaxy S26 FE اسی تقریب میں متعارف کرایا جائے گا۔"},"With this change of heavy programs, they can not disrupt the performance of the entire device by over-using memory. These restrictions, which first implemented on Pixel phones, will reach more devices with 4 to more than 16 GB of RAM next year.":["With this change of heavy programs, they cannot disrupt the performance of the entire device by over-using memory. These restrictions, first implemented on Pixel phones, will reach more devices with 4 to more than 16 GB of RAM next year.","مع هذا التغيير، لن تتمكن البرامج الثقيلة من التأثير في أداء الجهاز بالكامل بسبب الإفراط في استخدام الذاكرة. وستصل هذه القيود، التي طُبقت أولًا على هواتف Pixel، إلى المزيد من الأجهزة التي تتراوح ذاكرة RAM فيها من 4 إلى أكثر من 16 جيجابايت العام المقبل.","通过这一变化，繁重的程序无法因过度使用内存而影响整个设备的性能。这些最先在 Pixel 手机上实施的限制将于明年扩展到更多配备 4GB 至超过 16GB RAM 的设备。","د دې بدلون سره، درانه پروګرامونه به د حافظې د ډېرې کارونې له امله د ټولې وسیلې فعالیت ګډوډ نه کړي. دا محدودیتونه چې لومړی په Pixel تلیفونونو کې پلي شوي وو، راتلونکی کال به له ۴ څخه تر ۱۶GB څخه ډېرو RAM لرونکو نورو وسیلو ته هم ورسېږي.","Durch diese Änderung können umfangreiche Programme die Leistung des gesamten Geräts nicht mehr durch übermäßige Speichernutzung beeinträchtigen. Diese Einschränkungen, die zuerst auf Pixel-Smartphones eingeführt wurden, werden nächstes Jahr weitere Geräte mit 4 bis über 16 GB RAM erreichen.","با این تغییر، برنامه‌های سنگین نمی‌توانند با استفاده بیش‌ازحد از حافظه عملکرد کل دستگاه را مختل کنند. این محدودیت‌ها که نخستین‌بار روی گوشی‌های Pixel اجرا شدند، سال آینده به دستگاه‌های بیشتری با ۴ تا بیش از ۱۶ گیگابایت RAM می‌رسند.","Avec ce changement, les programmes lourds ne pourront pas perturber les performances de l’ensemble de l’appareil en utilisant excessivement la mémoire. Ces restrictions, d’abord mises en œuvre sur les téléphones Pixel, s’étendront l’année prochaine à davantage d’appareils disposant de 4 à plus de 16 Go de RAM.","עם השינוי הזה, תוכניות כבדות לא יוכלו לפגוע בביצועי המכשיר כולו עקב שימוש מופרז בזיכרון. הגבלות אלה, שיושמו לראשונה בטלפוני Pixel, יגיעו בשנה הבאה למכשירים נוספים עם 4 ועד יותר מ-16GB RAM.","इस बदलाव के साथ, भारी प्रोग्राम मेमोरी के अत्यधिक उपयोग से पूरे डिवाइस के प्रदर्शन को बाधित नहीं कर पाएँगे। Pixel फ़ोन पर पहली बार लागू की गई ये पाबंदियाँ अगले वर्ष 4 से लेकर 16GB से अधिक RAM वाले और अधिक उपकरणों तक पहुँचेंगी।","この変更により、重いプログラムがメモリを使いすぎて端末全体の性能を低下させることを防げます。Pixelスマートフォンで初めて実装されたこれらの制限は、来年4GBから16GB超のRAMを搭載するさらに多くの端末に適用されます。","이번 변경으로 무거운 프로그램이 메모리를 과도하게 사용해 전체 기기 성능을 저하시키는 것을 막을 수 있습니다. Pixel 휴대전화에 처음 적용된 이 제한은 내년에 4GB에서 16GB를 초과하는 RAM을 탑재한 더 많은 기기로 확대됩니다.","د دې بدلون سره، درانه پروګرامونه به د حافظې د ډېرې کارونې له امله د ټولې وسیلې فعالیت ګډوډ نه کړي. دا محدودیتونه چې لومړی په Pixel تلیفونونو کې پلي شوي وو، راتلونکی کال به له ۴ څخه تر ۱۶GB څخه ډېرو RAM لرونکو نورو وسیلو ته هم ورسېږي.","Благодаря этому изменению тяжёлые программы не смогут нарушать работу всего устройства из-за чрезмерного использования памяти. Эти ограничения, впервые применённые на телефонах Pixel, в следующем году распространятся на большее число устройств с 4–16 ГБ и более RAM.","اس تبدیلی کے ساتھ بھاری پروگرام میموری کے حد سے زیادہ استعمال سے پورے ڈیوائس کی کارکردگی متاثر نہیں کر سکیں گے۔ یہ پابندیاں، جو پہلی بار Pixel فونز پر نافذ کی گئی تھیں، اگلے سال 4 سے 16GB سے زیادہ RAM والے مزید آلات تک پہنچیں گی۔"],"meta ai logo on phone":{"en":"Meta AI logo on phone","ar":"شعار Meta AI على الهاتف","zh":"手机上的 Meta AI 标志","da":"لوگوی Meta AI روی گوشی","de":"Meta-AI-Logo auf dem Telefon","fa":"لوگوی Meta AI روی گوشی","fr":"Logo Meta AI sur téléphone","he":"לוגו Meta AI בטלפון","hi":"फ़ोन पर Meta AI लोगो","ja":"スマートフォン上のMeta AIロゴ","ko":"휴대전화의 Meta AI 로고","ps":"په تلیفون کې د Meta AI لوګو","ru":"Логотип Meta AI на телефоне","ur":"فون پر Meta AI لوگو"},"android 17 icon on android phone":{"en":"Android 17 icon on Android phone","ar":"أيقونة Android 17 على هاتف Android","zh":"Android 手机上 Android 17 图标","da":"آیکون Android 17 روی گوشی اندرویدی","de":"Android-17-Symbol auf einem Android-Telefon","fa":"آیکون Android 17 روی گوشی اندرویدی","fr":"Icône Android 17 sur un téléphone Android","he":"סמל Android 17 בטלפון Android","hi":"Android फ़ोन पर Android 17 आइकन","ja":"Androidスマートフォン上のAndroid 17アイコン","ko":"안드로이드 휴대전화의 Android 17 아이콘","ps":"په Android تلیفون کې د Android 17 نښه","ru":"Значок Android 17 на телефоне Android","ur":"اینڈرائیڈ فون پر Android 17 آئیکن"},"google laptop back":{"en":"Back of Google laptop","ar":"الجهة الخلفية لحاسوب Google المحمول","zh":"Google 笔记本电脑背面","da":"پشت لپ‌تاپ Google","de":"Rückseite eines Google-Laptops","fa":"پشت لپ‌تاپ Google","fr":"Arrière d’un ordinateur portable Google","he":"גב מחשב נייד של Google","hi":"Google लैपटॉप का पिछला भाग","ja":"Googleノートパソコンの背面","ko":"Google 노트북 뒷면","ps":"د Google لپټاپ شا","ru":"Задняя часть ноутбука Google","ur":"Google لیپ ٹاپ کا پچھلا حصہ"},"samsung galaxy s26 fe":{"en":"Samsung Galaxy S26 FE","ar":"Samsung Galaxy S26 FE","zh":"Samsung Galaxy S26 FE","da":"Samsung Galaxy S26 FE","de":"Samsung Galaxy S26 FE","fa":"Samsung Galaxy S26 FE","fr":"Samsung Galaxy S26 FE","he":"Samsung Galaxy S26 FE","hi":"Samsung Galaxy S26 FE","ja":"Samsung Galaxy S26 FE","ko":"Samsung Galaxy S26 FE","ps":"Samsung Galaxy S26 FE","ru":"Samsung Galaxy S26 FE","ur":"Samsung Galaxy S26 FE"},"aethercom":{"en":"Aethercom","ar":"Aethercom","zh":"Aethercom","da":"Aethercom","de":"Aethercom","fa":"Aethercom","fr":"Aethercom","he":"Aethercom","hi":"Aethercom","ja":"Aethercom","ko":"Aethercom","ps":"Aethercom","ru":"Aethercom","ur":"Aethercom"},"aethercom logo":{"en":"Aethercom logo","ar":"Aethercom logo","zh":"Aethercom logo","da":"Aethercom logo","de":"Aethercom logo","fa":"Aethercom logo","fr":"Aethercom logo","he":"Aethercom logo","hi":"Aethercom logo","ja":"Aethercom logo","ko":"Aethercom logo","ps":"Aethercom logo","ru":"Aethercom logo","ur":"Aethercom logo"}};
+const AETHERCOM_LANGS = {
+ en:{name:"English",flag:"🇺🇸",dir:"ltr"}, ar:{name:"العربية",flag:"🇸🇦",dir:"rtl"},
+ zh:{name:"中文",flag:"🇨🇳",dir:"ltr"}, da:{name:"دری",flag:"🇦🇫",dir:"rtl"},
+ de:{name:"Deutsch",flag:"🇩🇪",dir:"ltr"}, fa:{name:"فارسی",flag:"🇮🇷",dir:"rtl"},
+ fr:{name:"Français",flag:"🇫🇷",dir:"ltr"}, he:{name:"עברית",flag:"🇮🇱",dir:"rtl"},
+ hi:{name:"हिन्दी",flag:"🇮🇳",dir:"ltr"}, ja:{name:"日本語",flag:"🇯🇵",dir:"ltr"},
+ ko:{name:"한국어",flag:"🇰🇷",dir:"ltr"}, ps:{name:"پښتو",flag:"🇦🇫",dir:"rtl"},
+ ru:{name:"Русский",flag:"🇷🇺",dir:"ltr"}, ur:{name:"اردو",flag:"🇵🇰",dir:"rtl"}
+};
+(function(){
+ const textOriginal=new WeakMap(), attrOriginal=new WeakMap();
+ const attrs=["title","aria-label","placeholder","alt"];
+ function remember(el){
+   if(!textOriginal.has(el) && el.childNodes.length===1 && el.firstChild.nodeType===3)
+     textOriginal.set(el,el.textContent.trim());
+   if(!attrOriginal.has(el)){const a={};attrs.forEach(x=>{if(el.hasAttribute(x))a[x]=el.getAttribute(x)});attrOriginal.set(el,a);}
+ }
+ function apply(lang){
+   if(!AETHERCOM_LANGS[lang]) lang="en";
+   const d=AETHERCOM_TRANSLATIONS;
+   document.querySelectorAll("body *").forEach(el=>{
+     if(el.tagName==="SCRIPT"||el.tagName==="STYLE") return;
+     remember(el);
+     const t=textOriginal.get(el);
+     if(t && d[t] && d[t][lang]) el.textContent=d[t][lang];
+     const a=attrOriginal.get(el);
+     if(a) Object.entries(a).forEach(([n,v])=>{if(d[v]&&d[v][lang])el.setAttribute(n,d[v][lang]);});
+   });
+   document.documentElement.lang=lang;
+   document.documentElement.dir=AETHERCOM_LANGS[lang].dir;
+   const flag=document.getElementById("languageFlag"); if(flag) flag.textContent=AETHERCOM_LANGS[lang].flag;
+   const select=document.getElementById("languageSelect"); if(select) select.value=lang;
+   try{localStorage.setItem("aethercom-language",lang)}catch(e){}
+ }
+ function init(){
+   const select=document.getElementById("languageSelect");
+   if(select){
+     select.innerHTML="";
+     Object.entries(AETHERCOM_LANGS).forEach(([code,info])=>{
+       const o=document.createElement("option");o.value=code;o.textContent=info.name;select.appendChild(o);
+     });
+     select.addEventListener("change",()=>apply(select.value));
+   }
+   let saved="en";try{saved=localStorage.getItem("aethercom-language")||"en"}catch(e){}
+   apply(saved);
+ }
+ if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",init); else init();
+ window.AethercomTranslate=apply;
+ window.AETHERCOM_TRANSLATIONS=AETHERCOM_TRANSLATIONS;
+})();
+</script>
     <div id="story-viewer" class="story-viewer">
         <button class="story-close" onclick="closeStory()">×</button>
         <div class="story-progress"></div>
         <img id="story-image" src="" alt="">
-        <video id="story-video" controls></video>
+        <video id="story-video" controls>
+        
+        </video>
         </div>
     </body>
 </html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#01010f">
+        <title>Aethercom | About</title>
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="512x512" href="./favicon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon.png">
+    </head>
+    <body style="padding: 30px; margin-top: 60px;">
+        <header class="navbar">
+                    <div class="profile-btn" onclick="openProfile(event)">
+                        <img src="assets/images/Aethercom Edit-Glass.png" class="profile-pic" alt="Aethercom logo">
+                    </div>
+                    <div class="brand-font"><a href="index.html" class="normal-link"><img src="assets/svg/Aethercom Text.png" class="logo-text" alt="Aethercom text logo"></a></div>
+                    <!-- Search Button -->
+                    <button
+                        class="aether-search-btn"
+                        id="aetherSearchButton"
+                        type="button"
+                        aria-label="Search"
+                        title="Search"
+                        aria-controls="aetherSearchPanel"
+                        aria-expanded="false"
+                    >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle
+                                cx="10.8"
+                                cy="10.8"
+                                r="6.8"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+                            <path
+                                d="M16 16L21 21"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </button>
+
+                    <!-- Search Overlay -->
+                    <div
+                        class="aether-search-overlay"
+                        id="aetherSearchOverlay"
+                        aria-hidden="true"
+                    ></div>
+
+                    <!-- Search Panel -->
+                    <aside
+                        class="aether-search-panel"
+                        id="aetherSearchPanel"
+                        aria-hidden="true"
+                    >
+
+                        <div class="aether-search-inner">
+
+                            <!-- Search Header -->
+                            <div class="aether-search-header">
+
+                                <div class="aether-search-heading">
+                                    <span class="aether-search-heading-icon">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <circle
+                                                cx="10.8"
+                                                cy="10.8"
+                                                r="6.8"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                            />
+                                            <path
+                                                d="M16 16L21 21"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                    </span>
+
+                                    <div>
+                                        <h2>Search</h2>
+                                        <p>Explore Aethercom</p>
+                                    </div>
+                                </div>
+
+                                <!-- Close -->
+                                <button
+                                    class="aether-search-close"
+                                    id="aetherSearchClose"
+                                    type="button"
+                                    aria-label="Close Search"
+                                    title="Close"
+                                >
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M6 6L18 18M18 6L6 18"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                        />
+                                    </svg>
+                                </button>
+
+                            </div>
+
+                            <!-- Search Input -->
+                            <div class="aether-search-input-wrapper">
+
+                                <svg
+                                    class="aether-search-input-icon"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+                                    <circle
+                                        cx="10.8"
+                                        cy="10.8"
+                                        r="6.8"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    />
+                                    <path
+                                        d="M16 16L21 21"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+
+                                <input
+                                    id="aetherSearchInput"
+                                    class="aether-search-input"
+                                    type="search"
+                                    placeholder="Search Aethercom..."
+                                    autocomplete="off"
+                                    spellcheck="false"
+                                    aria-label="Search Aethercom"
+                                />
+
+                                <button
+                                    id="aetherSearchClear"
+                                    class="aether-search-clear"
+                                    type="button"
+                                    aria-label="Clear search"
+                                    title="Clear"
+                                >
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path
+                                            d="M6 6L18 18M18 6L6 18"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                        />
+                                    </svg>
+                                </button>
+
+                            </div>
+
+                            <!-- Search Hint -->
+                            <div class="aether-search-hint">
+                                <span>Press</span>
+                                <kbd>ESC</kbd>
+                                <span>to close</span>
+                            </div>
+
+                            <!-- Results -->
+                            <div
+                                class="aether-search-results"
+                                id="aetherSearchResults"
+                                aria-live="polite"
+                            >
+
+                                <!-- Initial State -->
+                                <div class="aether-search-state" id="aetherSearchInitial">
+
+                                    <div class="aether-search-state-icon">
+                                        <svg viewBox="0 0 24 24">
+                                            <circle
+                                                cx="10.8"
+                                                cy="10.8"
+                                                r="6.8"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="1.7"
+                                            />
+                                            <path
+                                                d="M16 16L21 21"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="1.7"
+                                                stroke-linecap="round"
+                                            />
+                                        </svg>
+                                    </div>
+
+                                    <h3>Search Aethercom</h3>
+                                    <p>
+                                        Find pages, projects and other content.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+        </header>
+        <main class="page-term">
+        <div class="topline-term">
+            <a class="back-term" href="javascript:history.back()" data-i18n="back">Back</a>
+            <div class="language-term">
+            <label for="languageSelector" data-i18n="language">Language</label>
+            <select id="languageSelector"><option value="en">English</option>
+        <option value="ar">العربية</option>
+                    <option value="zh">中文</option>
+                    <option value="dari">دری</option>
+                    <option value="en">English</option>
+                    <option value="fa">فارسی</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option></select>
+            </div>
+        </div>
+        <section class="hero-terms">
+            <div class="eyebrow-term" data-i18n="eyebrow_about">AETHERCOM / ABOUT</div>
+
+        <h1 data-i18n="about_h">Beyond the Stars</h1>
+        <p data-i18n="about_p"></p>
+        </section>
+        <section class="grid-term">
+        <article class="card-term full-term"><p data-i18n="about_p2"></p></article>
+        <article class="card-term full-term">
+            <h2 data-i18n="principles">Principles</h2>
+            <div class="principles">
+            <div class="principle"><span>01</span><p data-i18n="p1"></p></div>
+            <div class="principle"><span>02</span><p data-i18n="p2"></p></div>
+            <div class="principle"><span>03</span><p data-i18n="p3"></p></div>
+            <div class="principle"><span>04</span><p data-i18n="p4"></p></div>
+            </div>
+        </article>
+        <article class="card-term full-term">
+            <h2 data-i18n="contact_h">Contact Aethercom</h2>
+            <p data-i18n="contact_p"></p>
+            <div class="contact-list-term">
+            <a class="contact-term normal-link" href="https://t.me/AethercomHub" target="_blank" rel="noopener noreferrer"><strong data-i18n="telegram">Telegram</strong><span>@AethercomHub</span></a>
+            <a class="contact-term normal-link" href="https://instagram.com/AethercomHub" target="_blank" rel="noopener noreferrer"><strong data-i18n="website">Instagram</strong><span>@AethercomHub</span></a>
+            <a class="contact-term normal-link" href="mailto:AethercomCEO@Gmail.com"><strong data-i18n="email">Email</strong><span>AethercomCEO@Gmail.com</span></a>
+            </div>
+        </article>
+        </section>
+
+        </main>
+        <footer class="site-footer">
+                    <!-- Main Footer Brand -->
+                    <div class="footer-brand">
+                        <!-- Aethercom Logo -->
+                        <div class="footer-logo" aria-label="Aethercom">
+                            <img src="assets/svg/Aethercom.svg" title="Aethercom" alt="Aethercom logo">
+                        </div>
+                        <img src="assets/svg/Aethercom Text.png" title="Aethercom Brand" alt="aethercom text logo" class="logo-text">
+                        <p class="footer-slogan">Beyond the Stars</p>
+                        <!-- Social Icons -->
+                        <div class="footer-socials">
+                            <!-- Telegram -->
+                            <a href="https://t.me/AethercomHub" class="social-link" aria-label="Telegram">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21.5 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.04-3.72-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.34-8.44c.41-.36-.09-.56-.64-.2L5.38 13.49.43 11.94c-1.08-.34-1.1-1.08.23-1.59L20.02 3.08c.88-.32 1.65.2 1.48.42Z"></path>
+                                </svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://instagram.com/AethercomHub" class="social-link" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="3" y="3" width="18" height="18" rx="5"
+                                        fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="4"
+                                            fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+                                </svg>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://GitHub.com/Aethercom" class="social-link" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.7 1.2 3.4.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0c2.1-1.4 3.1-1.1 3.1-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.7 1 .7 1.9v2.8c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/>
+                                </svg>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:AethercomCEO@Gmail.com" class="social-link" aria-label="Email">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"
+                                        fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <path d="m4 7 8 6 8-6"
+                                        fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- Footer Navigation -->
+                    <div class="footer-navigation">
+
+                        <!-- Explore -->
+                        <div class="footer-column explore-column">
+                            <h3>Explore</h3>
+
+                            <nav class="footer-links">
+                                <a href="index.html">Home</a>
+                                <a href="services.html">Services</a>
+                                <a href="terms.html">Terms</a>
+                                <a href="support.html">Support</a>
+                                <a href="about.html">About</a>
+                            </nav>
+                        </div>
+
+                        <!-- Settings -->
+                        <div class="footer-column settings-column">
+                            <h3>Settings</h3>
+
+                            <div class="settings-list">
+
+                                <!-- Light Mode -->
+                                <div class="setting-row">
+                                    <span class="setting-label">Dark Mode</span>
+
+                                    <button
+                                        class="toggle-switch"
+                                        id="themeToggle"
+                                        type="button"
+                                        aria-label="Toggle Light Mode"
+                                        aria-pressed="false"
+                                    >
+                                        <span class="toggle-circle"></span>
+                                    </button>
+                                </div>
+
+                                <!-- Notifications -->
+                                <div class="setting-row">
+                                    <span class="setting-label">Notifications</span>
+
+                                    <button
+                                        class="icon-setting-btn"
+                                        id="notificationToggle"
+                                        type="button"
+                                        aria-label="Toggle Notifications"
+                                        aria-pressed="false"
+                                    >
+                                        <svg viewBox="0 0 24 24">
+                                            <path
+                                                d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Custom Setting -->
+                                <div class="setting-row">
+                                    <span class="setting-label">Back to Top</span>
+
+                                    <button
+                                class="icon-setting-btn"
+                                onclick="backToTop()"
+                                type="button"
+                                aria-label="Back to top"
+                            >
+                                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="16 12 12 8 8 12"></polyline>
+                                    <line x1="12" y1="16" x2="12" y2="8"></line>
+                                </svg>
+
+                            </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Copyright -->
+                    <div class="footer-bottom">
+                        <p>© 2026 Aethercom. All rights reserved.</p>
+                    </div>
+        </footer>
+    <script>
+        const translations = {"en": {"title_support": "Support", "title_terms": "Terms", "title_services": "Services", "title_about": "About", "eyebrow_support": "AETHERCOM / SUPPORT", "eyebrow_terms": "AETHERCOM / TERMS", "eyebrow_services": "AETHERCOM / SERVICES", "eyebrow_about": "AETHERCOM / ABOUT", "support_h": "How can we help?", "support_p": "For questions, feedback, reports or general contact, use one of the channels below. Aethercom is currently a static web project, so response time and availability may vary.", "contact": "Contact", "telegram": "Telegram", "website": "Instagram", "email": "Email", "open": "Open", "copy": "Copy", "copied": "Copied", "copy_fail": "Copy failed", "support_note": "For security or copyright reports, include enough context to identify the relevant page or material. Do not send passwords or other sensitive credentials.", "terms_h": "Terms of Use", "terms_intro": "These terms describe the basic rules for using Aethercom. They are written as general website terms and are not legal advice. Applicable law may differ by jurisdiction.", "acceptable": "Acceptable use", "acceptable_p": "Use the site lawfully and do not use it to distribute malware, conduct unauthorized access, impersonate others, interfere with services, spam users, or facilitate unlawful activity.", "copyright": "Copyright and content", "copyright_p": "Aethercom-authored text, code, graphics and other original material may be protected by applicable copyright law. Do not copy, republish or redistribute protected material beyond what the law permits or a rights holder authorizes.", "privacy": "Privacy", "privacy_p": "If Aethercom processes personal data in a particular feature, it should be limited to what is necessary, used for a stated purpose, kept only as needed, and protected against unauthorized access. Where privacy laws such as the GDPR apply, additional obligations may apply.", "external": "External links", "external_p": "Aethercom may link to third-party services. Those services have their own terms and privacy practices; Aethercom does not control their content or operation.", "availability": "Availability", "availability_p": "Pages and features may change, be unavailable, or be discontinued as the project develops. No guarantee is made that every feature will always be available or error-free.", "changes": "Changes", "changes_p": "These terms may be updated when the project or its practices change. The current version published on this page is the version to consult.", "services_h": "What Aethercom covers", "services_p": "Aethercom is a digital creation project. The areas below describe the kinds of work and experiences the project may publish, build or explore; they do not promise that every item is currently offered as a paid service.", "web": "Web & software", "web_p": "Static websites, interfaces, prototypes and small software experiences.", "media": "Media & creative", "media_p": "Articles, visual work, editing, presentation and other digital media experiments.", "research": "Technology & research", "research_p": "Exploration of web technologies, software concepts, digital tools and technical subjects.", "community": "Community", "community_p": "Open discussion, sharing and collaborative digital projects where appropriate.", "about_h": "Beyond the Stars", "about_p": "Aethercom is a digital technology and creation project focused on software, media, ideas and digital experiences.", "about_p2": "The project is designed to grow gradually: publish useful work, experiment with interfaces and technology, and build a coherent digital space without exposing private personal details.", "principles": "Principles", "p1": "Build useful things.", "p2": "Keep interfaces clear and restrained.", "p3": "Respect creators, users and privacy.", "p4": "Learn, test and improve openly.", "contact_h": "Contact Aethercom", "contact_p": "For general questions, feedback, corrections or project-related messages, use the official contact channels listed below.", "back": "Back", "language": "Language", "last_updated": "Last updated: September 2026", "legal_note": "General information only; not legal advice."}, "fa": {"title_support": "پشتیبانی", "title_terms": "قوانین", "title_services": "خدمات", "title_about": "درباره", "eyebrow_support": "AETHERCOM / پشتیبانی", "eyebrow_terms": "AETHERCOM / قوانین", "eyebrow_services": "AETHERCOM / خدمات", "eyebrow_about": "AETHERCOM / درباره", "support_h": "چطور می‌توانیم کمک کنیم؟", "support_p": "برای پرسش، بازخورد، گزارش یا ارتباط عمومی می‌توانید از یکی از راه‌های زیر استفاده کنید. اترکام در حال حاضر یک پروژهٔ وب ایستا است؛ بنابراین زمان پاسخ و دسترس‌پذیری ممکن است متفاوت باشد.", "contact": "ارتباط", "telegram": "تلگرام", "website": "اینستاگرام", "email": "ایمیل", "open": "باز کردن", "copy": "کپی", "copied": "کپی شد", "copy_fail": "کپی ناموفق بود", "support_note": "برای گزارش امنیتی یا حق‌نشر، اطلاعات کافی برای شناسایی صفحه یا محتوای مربوط را ارسال کنید. رمز عبور یا اطلاعات حساس حساب را ارسال نکنید.", "terms_h": "شرایط استفاده", "terms_intro": "این شرایط، قواعد پایهٔ استفاده از اترکام را توضیح می‌دهد. این متن شرایط عمومی وب‌سایت است و مشاورهٔ حقوقی محسوب نمی‌شود. قوانین قابل اجرا ممکن است بر اساس حوزهٔ قضایی متفاوت باشند.", "acceptable": "استفادهٔ مجاز", "acceptable_p": "از سایت به شکل قانونی استفاده کنید و از آن برای انتشار بدافزار، دسترسی غیرمجاز، جعل هویت، اختلال در خدمات، هرزنامه یا تسهیل فعالیت غیرقانونی استفاده نکنید.", "copyright": "حق‌نشر و محتوا", "copyright_p": "متن، کد، گرافیک و سایر آثار اصیل ایجادشده برای اترکام ممکن است تحت قوانین قابل اجرا از حق‌نشر برخوردار باشند. مطالب حفاظت‌شده را خارج از حدود قانونی یا بدون اجازهٔ صاحب حق کپی، بازنشر یا توزیع نکنید.", "privacy": "حریم خصوصی", "privacy_p": "اگر اترکام در بخشی دادهٔ شخصی پردازش کند، داده باید به مقدار لازم محدود، برای هدف مشخص استفاده، فقط به مدت لازم نگهداری و در برابر دسترسی غیرمجاز محافظت شود. در صورت اعمال قوانینی مانند GDPR، الزامات بیشتری ممکن است وجود داشته باشد.", "external": "پیوندهای خارجی", "external_p": "اترکام ممکن است به سرویس‌های دیگر پیوند بدهد. این سرویس‌ها شرایط و سیاست‌های حریم خصوصی خود را دارند و اترکام کنترل محتوای آن‌ها را در اختیار ندارد.", "availability": "دسترس‌پذیری", "availability_p": "صفحات و قابلیت‌ها ممکن است در جریان توسعه تغییر کنند، موقتاً در دسترس نباشند یا متوقف شوند. تضمینی دربارهٔ بدون‌خطا بودن یا همیشگی بودن همهٔ قابلیت‌ها ارائه نمی‌شود.", "changes": "تغییرات", "changes_p": "با تغییر پروژه یا شیوهٔ کار آن، این شرایط نیز ممکن است به‌روزرسانی شود. نسخهٔ منتشرشده در همین صفحه نسخهٔ قابل استناد فعلی است.", "services_h": "حوزه‌های فعالیت اترکام", "services_p": "اترکام یک پروژهٔ فناوری و خلق دیجیتال است. موارد زیر حوزه‌هایی را نشان می‌دهند که پروژه می‌تواند در آن‌ها محتوا، نمونه، محصول یا تجربهٔ دیجیتال منتشر یا آزمایش کند؛ این فهرست به معنی ارائهٔ قطعی همهٔ موارد به‌صورت تجاری نیست.", "web": "وب و نرم‌افزار", "web_p": "وب‌سایت‌های ایستا، رابط‌ها، نمونه‌های اولیه و تجربه‌های نرم‌افزاری کوچک.", "media": "رسانه و خلاقیت", "media_p": "مقاله، کارهای بصری، ویرایش، ارائه و آزمایش‌های مختلف رسانهٔ دیجیتال.", "research": "فناوری و پژوهش", "research_p": "بررسی فناوری‌های وب، مفاهیم نرم‌افزاری، ابزارهای دیجیتال و موضوعات فنی.", "community": "جامعه", "community_p": "گفت‌وگو، اشتراک‌گذاری و پروژه‌های دیجیتال مشارکتی در صورت امکان.", "about_h": "فراتر از ستارگان", "about_p": "اترکام یک پروژهٔ فناوری و خلق دیجیتال با تمرکز بر نرم‌افزار، رسانه، ایده‌ها و تجربه‌های دیجیتال است.", "about_p2": "این پروژه به‌صورت تدریجی رشد می‌کند: انتشار کارهای مفید، آزمایش رابط و فناوری و ساختن یک فضای دیجیتال منسجم، بدون نمایش اطلاعات خصوصی افراد.", "principles": "اصول", "p1": "چیزهای مفید بساز.", "p2": "رابط‌ها را روشن و متعادل نگه دار.", "p3": "به سازندگان، کاربران و حریم خصوصی احترام بگذار.", "p4": "یاد بگیر، آزمایش کن و بهترش کن.", "contact_h": "ارتباط با اترکام", "contact_p": "برای پرسش عمومی، بازخورد، اصلاح اطلاعات یا پیام‌های مرتبط با پروژه، از راه‌های رسمی زیر استفاده کنید.", "back": "بازگشت", "language": "زبان", "last_updated": "آخرین به‌روزرسانی: سپتامبر ۲۰۲۶", "legal_note": "اطلاعات عمومی است و مشاورهٔ حقوقی نیست."}, "dari": {"title_support": "پشتیبانی", "title_terms": "قوانین", "title_services": "خدمات", "title_about": "درباره", "eyebrow_support": "AETHERCOM / پشتیبانی", "eyebrow_terms": "AETHERCOM / قوانین", "eyebrow_services": "AETHERCOM / خدمات", "eyebrow_about": "AETHERCOM / درباره", "support_h": "چگونه کمک کنیم؟", "support_p": "برای پرسش، نظر، گزارش یا تماس عمومی از راه‌های زیر استفاده کنید. اترکام فعلاً یک پروژهٔ وب ایستا است و زمان پاسخ ممکن است متفاوت باشد.", "contact": "تماس", "telegram": "تلگرام", "website": "اینستاگرام", "email": "ایمیل", "open": "باز کردن", "copy": "کپی", "copied": "کپی شد", "copy_fail": "کپی نشد", "support_note": "برای گزارش امنیتی یا حق‌نشر، اطلاعات لازم برای یافتن صفحه یا محتوا را بفرستید. رمز عبور و اطلاعات حساس را نفرستید.", "terms_h": "شرایط استفاده", "terms_intro": "این شرایط قواعد عمومی استفاده از اترکام را توضیح می‌دهد و مشورهٔ حقوقی نیست. قوانین قابل اجرا ممکن است در هر حوزهٔ قضایی متفاوت باشد.", "acceptable": "استفادهٔ مجاز", "acceptable_p": "از سایت به‌صورت قانونی استفاده کنید و برای بدافزار، دسترسی غیرمجاز، جعل هویت، ایجاد اختلال، هرزنامه یا فعالیت غیرقانونی از آن استفاده نکنید.", "copyright": "حق نشر و محتوا", "copyright_p": "متن، کد، گرافیک و آثار اصلی اترکام ممکن است تحت قانون حق نشر محافظت شوند. محتوای محافظت‌شده را بدون اجازه یا خارج از حدود قانونی کپی یا بازنشر نکنید.", "privacy": "حریم خصوصی", "privacy_p": "اگر اترکام دادهٔ شخصی را پردازش کند، باید فقط به اندازهٔ لازم و برای هدف مشخص باشد و در برابر دسترسی غیرمجاز محافظت شود. در صورت تطبیق قوانین مانند GDPR، الزامات بیشتری ممکن است وجود داشته باشد.", "external": "پیوندهای خارجی", "external_p": "اترکام ممکن است به خدمات دیگر لینک بدهد. آن خدمات قوانین و سیاست‌های خود را دارند و اترکام کنترل محتوای آن‌ها را ندارد.", "availability": "دسترس‌پذیری", "availability_p": "صفحات و قابلیت‌ها ممکن است در جریان توسعه تغییر، موقتاً غیرقابل دسترس یا متوقف شوند. تضمینی برای همیشه فعال بودن یا بدون خطا بودن همهٔ قابلیت‌ها وجود ندارد.", "changes": "تغییرات", "changes_p": "این شرایط ممکن است با تغییر پروژه به‌روزرسانی شود. نسخهٔ منتشرشده در همین صفحه نسخهٔ فعلی است.", "services_h": "حوزه‌های فعالیت اترکام", "services_p": "اترکام یک پروژهٔ فناوری و خلق دیجیتال است. موارد زیر حوزه‌هایی هستند که پروژه می‌تواند در آن‌ها محتوا یا تجربهٔ دیجیتال بسازد یا بررسی کند و به معنی ارائهٔ قطعی همهٔ آن‌ها نیست.", "web": "وب و نرم‌افزار", "web_p": "وب‌سایت‌های ایستا، رابط‌ها، نمونه‌های اولیه و تجربه‌های نرم‌افزاری کوچک.", "media": "رسانه و خلاقیت", "media_p": "مقاله، کار بصری، ویرایش، ارائه و تجربه‌های رسانه‌ای.", "research": "فناوری و پژوهش", "research_p": "فناوری وب، مفاهیم نرم‌افزاری، ابزارهای دیجیتال و موضوعات فنی.", "community": "جامعه", "community_p": "گفت‌وگو، اشتراک‌گذاری و پروژه‌های دیجیتال مشارکتی در صورت امکان.", "about_h": "فراتر از ستارگان", "about_p": "اترکام یک پروژهٔ فناوری و خلق دیجیتال با تمرکز بر نرم‌افزار، رسانه، ایده‌ها و تجربه‌های دیجیتال است.", "about_p2": "پروژه به‌تدریج رشد می‌کند: کارهای مفید منتشر می‌کند، رابط و فناوری را آزمایش می‌کند و یک فضای دیجیتال منسجم می‌سازد، بدون نمایش اطلاعات خصوصی افراد.", "principles": "اصول", "p1": "چیزهای مفید بساز.", "p2": "رابط‌ها را ساده و روشن نگه دار.", "p3": "به سازندگان، کاربران و حریم خصوصی احترام بگذار.", "p4": "یاد بگیر، آزمایش کن و بهترش کن.", "contact_h": "تماس با اترکام", "contact_p": "برای پرسش، نظر، اصلاح اطلاعات یا پیام‌های پروژه از راه‌های رسمی زیر استفاده کنید.", "back": "بازگشت", "language": "زبان", "last_updated": "آخرین به‌روزرسانی: سپتامبر ۲۰۲۶", "legal_note": "اطلاعات عمومی؛ مشورهٔ حقوقی نیست."}, "ar": {"title_support": "الدعم", "title_terms": "الشروط", "title_services": "الخدمات", "title_about": "حول المشروع", "eyebrow_support": "AETHERCOM / الدعم", "eyebrow_terms": "AETHERCOM / الشروط", "eyebrow_services": "AETHERCOM / الخدمات", "eyebrow_about": "AETHERCOM / حول", "support_h": "كيف يمكننا المساعدة؟", "support_p": "للأسئلة أو الملاحظات أو البلاغات أو التواصل العام، استخدم إحدى القنوات التالية. Aethercom حالياً مشروع ويب ثابت، لذلك قد يختلف وقت الاستجابة والتوفر.", "contact": "التواصل", "telegram": "تلغرام", "website": "انستاغرام", "email": "البريد الإلكتروني", "open": "فتح", "copy": "نسخ", "copied": "تم النسخ", "copy_fail": "تعذر النسخ", "support_note": "للبلاغات الأمنية أو المتعلقة بحقوق النشر، أرسل معلومات كافية لتحديد الصفحة أو المادة. لا ترسل كلمات المرور أو بيانات الاعتماد الحساسة.", "terms_h": "شروط الاستخدام", "terms_intro": "توضح هذه الشروط القواعد الأساسية لاستخدام Aethercom. وهي شروط عامة للموقع وليست استشارة قانونية، وقد تختلف القوانين حسب الاختصاص.", "acceptable": "الاستخدام المقبول", "acceptable_p": "استخدم الموقع بشكل قانوني ولا تستخدمه لنشر البرمجيات الخبيثة أو الوصول غير المصرح به أو انتحال الهوية أو تعطيل الخدمات أو إرسال الرسائل المزعجة أو تسهيل نشاط غير قانوني.", "copyright": "حقوق النشر والمحتوى", "copyright_p": "قد تكون النصوص والأكواد والرسومات والمواد الأصلية الخاصة بـAethercom محمية بموجب قوانين حقوق النشر المعمول بها. لا تنسخ أو تعيد نشر أو توزع المواد المحمية خارج ما يسمح به القانون أو صاحب الحق.", "privacy": "الخصوصية", "privacy_p": "إذا عالج Aethercom بيانات شخصية في ميزة معينة، فينبغي أن يقتصر ذلك على ما يلزم ولغرض محدد وأن تُحفظ البيانات عند الحاجة فقط وتحمي من الوصول غير المصرح به. عند انطباق قوانين مثل GDPR قد توجد التزامات إضافية.", "external": "الروابط الخارجية", "external_p": "قد يحتوي Aethercom على روابط لخدمات خارجية. لهذه الخدمات شروط وسياسات خصوصية خاصة بها، ولا يتحكم Aethercom في محتواها أو تشغيلها.", "availability": "التوفر", "availability_p": "قد تتغير الصفحات والميزات أو تتوقف مؤقتاً أو نهائياً أثناء تطوير المشروع. لا يوجد ضمان بأن جميع الميزات ستظل متاحة أو خالية من الأخطاء.", "changes": "التغييرات", "changes_p": "قد يتم تحديث هذه الشروط عند تغير المشروع أو ممارساته. النسخة المنشورة في هذه الصفحة هي النسخة الحالية.", "services_h": "مجالات Aethercom", "services_p": "Aethercom مشروع للتقنية والإبداع الرقمي. تصف المجالات التالية أنواع الأعمال والتجارب التي قد ينشرها أو يبنيها أو يستكشفها المشروع، ولا تعني أن كل عنصر متاح تجارياً الآن.", "web": "الويب والبرمجيات", "web_p": "مواقع ثابتة وواجهات ونماذج أولية وتجارب برمجية صغيرة.", "media": "الإعلام والإبداع", "media_p": "مقالات وأعمال بصرية وتحرير وعروض وتجارب إعلامية رقمية.", "research": "التقنية والبحث", "research_p": "استكشاف تقنيات الويب ومفاهيم البرمجيات والأدوات الرقمية والموضوعات التقنية.", "community": "المجتمع", "community_p": "النقاش والمشاركة والمشاريع الرقمية التعاونية عند الإمكان.", "about_h": "ما وراء النجوم", "about_p": "Aethercom مشروع للتقنية والإبداع الرقمي يركز على البرمجيات والإعلام والأفكار والتجارب الرقمية.", "about_p2": "ينمو المشروع تدريجياً عبر نشر أعمال مفيدة وتجربة الواجهات والتقنيات وبناء مساحة رقمية متماسكة دون عرض معلومات شخصية خاصة.", "principles": "المبادئ", "p1": "ابنِ أشياء مفيدة.", "p2": "اجعل الواجهات واضحة وهادئة.", "p3": "احترم المبدعين والمستخدمين والخصوصية.", "p4": "تعلّم واختبر وحسّن.", "contact_h": "تواصل مع Aethercom", "contact_p": "للأسئلة العامة أو الملاحظات أو التصحيحات أو الرسائل المتعلقة بالمشروع، استخدم قنوات الاتصال الرسمية أدناه.", "back": "رجوع", "language": "اللغة", "last_updated": "آخر تحديث: سبتمبر 2026", "legal_note": "معلومات عامة وليست استشارة قانونية."}, "zh": {"title_support": "支持", "title_terms": "使用条款", "title_services": "服务", "title_about": "关于", "eyebrow_support": "AETHERCOM / 支持", "eyebrow_terms": "AETHERCOM / 条款", "eyebrow_services": "AETHERCOM / 服务", "eyebrow_about": "AETHERCOM / 关于", "support_h": "我们可以怎样帮助？", "support_p": "如有问题、反馈或报告，请使用以下渠道。Aethercom 目前是静态网站项目，响应时间可能有所不同。", "contact": "联系", "telegram": "Telegram", "website": "Instagram", "email": "电子邮件", "open": "打开", "copy": "复制", "copied": "已复制", "copy_fail": "复制失败", "support_note": "提交安全或版权报告时，请提供足以定位相关页面或内容的信息。不要发送密码或敏感凭据。", "terms_h": "使用条款", "terms_intro": "这些条款说明使用 Aethercom 的基本规则。它们是一般网站条款，不构成法律意见；适用法律可能因司法管辖区而不同。", "acceptable": "合理使用", "acceptable_p": "请合法使用网站，不得用于恶意软件、未经授权的访问、冒充他人、干扰服务、垃圾信息或违法活动。", "copyright": "版权与内容", "copyright_p": "Aethercom 原创的文字、代码、图形及其他材料可能受适用版权法保护。未经许可或超出法律允许范围，不得复制、再发布或分发受保护内容。", "privacy": "隐私", "privacy_p": "如果某项功能处理个人数据，应限于必要范围、用于明确目的、仅在需要时保存，并防止未经授权的访问。适用 GDPR 等隐私法律时可能有额外要求。", "external": "外部链接", "external_p": "Aethercom 可能链接到第三方服务。第三方有自己的条款和隐私政策，Aethercom 不控制其内容或运营。", "availability": "可用性", "availability_p": "随着项目发展，页面和功能可能更改、暂时不可用或停止。我们不保证所有功能始终可用或无错误。", "changes": "变更", "changes_p": "项目或做法发生变化时，这些条款可能更新。本页面发布的版本是当前版本。", "services_h": "Aethercom 的领域", "services_p": "Aethercom 是一个数字技术与创作项目。以下内容描述项目可能发布、构建或探索的方向，并不表示所有项目都已作为付费服务提供。", "web": "网站与软件", "web_p": "静态网站、界面、原型和小型软件体验。", "media": "媒体与创意", "media_p": "文章、视觉作品、编辑、展示和数字媒体实验。", "research": "技术与研究", "research_p": "探索 Web 技术、软件概念、数字工具和技术主题。", "community": "社区", "community_p": "在适当情况下进行讨论、分享和协作数字项目。", "about_h": "超越群星", "about_p": "Aethercom 是一个专注于软件、媒体、创意和数字体验的数字技术与创作项目。", "about_p2": "项目将逐步成长：发布有用作品、探索界面与技术，并构建一致的数字空间，同时避免展示私人个人信息。", "principles": "原则", "p1": "创造有用的东西。", "p2": "保持界面清晰克制。", "p3": "尊重创作者、用户和隐私。", "p4": "学习、测试并改进。", "contact_h": "联系 Aethercom", "contact_p": "如需一般咨询、反馈、纠错或项目相关联系，请使用以下官方渠道。", "back": "返回", "language": "语言", "last_updated": "最后更新：2026 年 9 月", "legal_note": "仅供一般信息参考，不构成法律意见。"}, "ja": {"title_support": "サポート", "title_terms": "利用規約", "title_services": "サービス", "title_about": "概要", "eyebrow_support": "AETHERCOM / サポート", "eyebrow_terms": "AETHERCOM / 利用規約", "eyebrow_services": "AETHERCOM / サービス", "eyebrow_about": "AETHERCOM / 概要", "support_h": "どのようなサポートが必要ですか？", "support_p": "質問、フィードバック、報告、一般的な連絡には以下の窓口をご利用ください。Aethercom は現在静的なウェブプロジェクトのため、返信や利用可能性は変わる場合があります。", "contact": "連絡先", "telegram": "Telegram", "website": "Instagram", "email": "メール", "open": "開く", "copy": "コピー", "copied": "コピーしました", "copy_fail": "コピーに失敗しました", "support_note": "セキュリティや著作権の報告では、対象ページや素材を特定できる情報を含めてください。パスワードなどの機密情報は送らないでください。", "terms_h": "利用規約", "terms_intro": "本規約は Aethercom の基本的な利用ルールを示します。一般的なサイト規約であり、法的助言ではありません。適用法は地域により異なります。", "acceptable": "適切な利用", "acceptable_p": "合法的に利用し、マルウェア、不正アクセス、なりすまし、サービス妨害、迷惑行為、違法行為の助長に使用しないでください。", "copyright": "著作権とコンテンツ", "copyright_p": "Aethercom が作成した文章、コード、グラフィックなどは適用される著作権法で保護される場合があります。許可または法律で認められる範囲を超えて複製・再公開・配布しないでください。", "privacy": "プライバシー", "privacy_p": "個人データを扱う機能では、必要な範囲に限定し、目的を明確にし、必要な期間だけ保存し、不正アクセスから保護することを基本とします。GDPR などが適用される場合は追加の義務があります。", "external": "外部リンク", "external_p": "Aethercom は第三者サービスへリンクすることがあります。各サービスには独自の規約とプライバシー方針があり、Aethercom はその内容や運営を管理しません。", "availability": "可用性", "availability_p": "プロジェクトの発展に伴い、ページや機能は変更、停止、一時的な利用不能となる場合があります。すべての機能が常に利用できることや無エラーであることは保証しません。", "changes": "変更", "changes_p": "プロジェクトや運用方法の変更に応じて本規約を更新することがあります。このページの公開版が現在の版です。", "services_h": "Aethercom の領域", "services_p": "Aethercom はデジタル技術と創作のプロジェクトです。以下はプロジェクトが公開、制作、研究する可能性のある分野であり、すべてが現在有料サービスとして提供されることを意味しません。", "web": "Web とソフトウェア", "web_p": "静的サイト、インターフェース、プロトタイプ、小規模なソフトウェア体験。", "media": "メディアとクリエイティブ", "media_p": "記事、ビジュアル制作、編集、プレゼンテーション、デジタルメディアの実験。", "research": "技術と研究", "research_p": "Web 技術、ソフトウェア概念、デジタルツール、技術分野の探究。", "community": "コミュニティ", "community_p": "可能な範囲での議論、共有、協働型デジタルプロジェクト。", "about_h": "Beyond the Stars", "about_p": "Aethercom はソフトウェア、メディア、アイデア、デジタル体験に焦点を当てたデジタル技術・創作プロジェクトです。", "about_p2": "有用な作品を公開し、インターフェースと技術を試し、個人の非公開情報を示さずに一貫したデジタル空間を作ることを目指して段階的に成長します。", "principles": "原則", "p1": "役立つものを作る。", "p2": "明確で控えめなインターフェースにする。", "p3": "創作者、ユーザー、プライバシーを尊重する。", "p4": "学び、試し、改善する。", "contact_h": "Aethercom に連絡", "contact_p": "一般的な質問、フィードバック、訂正、プロジェクト関連の連絡には以下の公式窓口をご利用ください。", "back": "戻る", "language": "言語", "last_updated": "最終更新：2026年9月", "legal_note": "一般情報であり、法的助言ではありません。"}, "ko": {"title_support": "지원", "title_terms": "이용 약관", "title_services": "서비스", "title_about": "소개", "eyebrow_support": "AETHERCOM / 지원", "eyebrow_terms": "AETHERCOM / 약관", "eyebrow_services": "AETHERCOM / 서비스", "eyebrow_about": "AETHERCOM / 소개", "support_h": "어떻게 도와드릴까요?", "support_p": "질문, 피드백, 신고 또는 일반 문의는 아래 채널을 이용하세요. Aethercom은 현재 정적 웹 프로젝트이므로 응답 시간과 이용 가능 여부가 달라질 수 있습니다.", "contact": "연락처", "telegram": "Telegram", "website": "Instagram", "email": "이메일", "open": "열기", "copy": "복사", "copied": "복사됨", "copy_fail": "복사 실패", "support_note": "보안 또는 저작권 신고에는 해당 페이지나 자료를 식별할 수 있는 정보를 포함하세요. 비밀번호나 민감한 인증 정보를 보내지 마세요.", "terms_h": "이용 약관", "terms_intro": "이 약관은 Aethercom 이용의 기본 규칙을 설명합니다. 일반적인 웹사이트 약관이며 법률 자문이 아닙니다. 적용 법률은 관할 지역에 따라 다를 수 있습니다.", "acceptable": "허용되는 사용", "acceptable_p": "사이트를 합법적으로 사용하고 악성 코드, 무단 접근, 사칭, 서비스 방해, 스팸 또는 불법 활동을 위해 사용하지 마세요.", "copyright": "저작권 및 콘텐츠", "copyright_p": "Aethercom이 작성한 글, 코드, 그래픽 및 기타 원본 자료는 관련 저작권법의 보호를 받을 수 있습니다. 법률이나 권리자가 허용하지 않는 범위에서 복제·재게시·배포하지 마세요.", "privacy": "개인정보", "privacy_p": "개인정보를 처리하는 기능이 있다면 필요한 범위로 제한하고 명확한 목적에 사용하며 필요한 기간만 보관하고 무단 접근으로부터 보호해야 합니다. GDPR 등 관련 법이 적용되는 경우 추가 의무가 있을 수 있습니다.", "external": "외부 링크", "external_p": "Aethercom은 제3자 서비스로 연결되는 링크를 제공할 수 있습니다. 해당 서비스는 자체 약관과 개인정보 정책을 가지며 Aethercom은 그 운영을 통제하지 않습니다.", "availability": "서비스 이용 가능성", "availability_p": "프로젝트 개발에 따라 페이지와 기능이 변경되거나 일시적으로 사용할 수 없거나 중단될 수 있습니다. 모든 기능이 항상 이용 가능하거나 오류가 없음을 보장하지 않습니다.", "changes": "변경", "changes_p": "프로젝트 또는 운영 방식이 변경되면 약관이 업데이트될 수 있습니다. 이 페이지에 게시된 버전이 현재 버전입니다.", "services_h": "Aethercom의 분야", "services_p": "Aethercom은 디지털 기술 및 창작 프로젝트입니다. 아래 항목은 프로젝트가 제작하거나 탐구할 수 있는 분야이며 모든 항목이 현재 유료 서비스로 제공된다는 의미는 아닙니다.", "web": "웹 및 소프트웨어", "web_p": "정적 웹사이트, 인터페이스, 프로토타입 및 소규모 소프트웨어 경험.", "media": "미디어 및 크리에이티브", "media_p": "기사, 시각 작업, 편집, 프레젠테이션 및 디지털 미디어 실험.", "research": "기술 및 연구", "research_p": "웹 기술, 소프트웨어 개념, 디지털 도구 및 기술 주제 탐구.", "community": "커뮤니티", "community_p": "가능한 범위에서 토론, 공유 및 협업 디지털 프로젝트.", "about_h": "Beyond the Stars", "about_p": "Aethercom은 소프트웨어, 미디어, 아이디어 및 디지털 경험에 초점을 둔 디지털 기술·창작 프로젝트입니다.", "about_p2": "유용한 작업을 공개하고 인터페이스와 기술을 실험하며 개인 정보를 노출하지 않는 일관된 디지털 공간을 만들기 위해 단계적으로 성장합니다.", "principles": "원칙", "p1": "유용한 것을 만든다.", "p2": "명확하고 절제된 인터페이스를 유지한다.", "p3": "창작자, 사용자, 개인정보를 존중한다.", "p4": "배우고, 시험하고, 개선한다.", "contact_h": "Aethercom 문의", "contact_p": "일반 질문, 피드백, 수정 요청 또는 프로젝트 관련 문의는 아래 공식 채널을 이용하세요.", "back": "뒤로", "language": "언어", "last_updated": "최종 업데이트: 2026년 9월", "legal_note": "일반 정보이며 법률 자문이 아닙니다."}, "he": {"title_support": "תמיכה", "title_terms": "תנאי שימוש", "title_services": "שירותים", "title_about": "אודות", "eyebrow_support": "AETHERCOM / תמיכה", "eyebrow_terms": "AETHERCOM / תנאים", "eyebrow_services": "AETHERCOM / שירותים", "eyebrow_about": "AETHERCOM / אודות", "support_h": "איך אפשר לעזור?", "support_p": "לשאלות, משוב ודיווחים השתמשו בערוצים הבאים. Aethercom הוא כרגע פרויקט אתר סטטי, ולכן זמני המענה עשויים להשתנות.", "contact": "יצירת קשר", "telegram": "Telegram", "website": "Instagram", "email": "דוא״ל", "open": "פתיחה", "copy": "העתקה", "copied": "הועתק", "copy_fail": "ההעתקה נכשלה", "support_note": "For security or copyright reports, include enough context to identify the relevant page or material. Do not send passwords or other sensitive credentials.", "terms_h": "Terms of Use", "terms_intro": "These terms describe the basic rules for using Aethercom. They are written as general website terms and are not legal advice. Applicable law may differ by jurisdiction.", "acceptable": "Acceptable use", "acceptable_p": "Use the site lawfully and do not use it to distribute malware, conduct unauthorized access, impersonate others, interfere with services, spam users, or facilitate unlawful activity.", "copyright": "Copyright and content", "copyright_p": "Aethercom-authored text, code, graphics and other original material may be protected by applicable copyright law. Do not copy, republish or redistribute protected material beyond what the law permits or a rights holder authorizes.", "privacy": "Privacy", "privacy_p": "If Aethercom processes personal data in a particular feature, it should be limited to what is necessary, used for a stated purpose, kept only as needed, and protected against unauthorized access. Where privacy laws such as the GDPR apply, additional obligations may apply.", "external": "External links", "external_p": "Aethercom may link to third-party services. Those services have their own terms and privacy practices; Aethercom does not control their content or operation.", "availability": "Availability", "availability_p": "Pages and features may change, be unavailable, or be discontinued as the project develops. No guarantee is made that every feature will always be available or error-free.", "changes": "Changes", "changes_p": "These terms may be updated when the project or its practices change. The current version published on this page is the version to consult.", "services_h": "What Aethercom covers", "services_p": "Aethercom is a digital creation project. The areas below describe the kinds of work and experiences the project may publish, build or explore; they do not promise that every item is currently offered as a paid service.", "web": "Web & software", "web_p": "Static websites, interfaces, prototypes and small software experiences.", "media": "Media & creative", "media_p": "Articles, visual work, editing, presentation and other digital media experiments.", "research": "Technology & research", "research_p": "Exploration of web technologies, software concepts, digital tools and technical subjects.", "community": "Community", "community_p": "Open discussion, sharing and collaborative digital projects where appropriate.", "about_h": "Beyond the Stars", "about_p": "Aethercom is a digital technology and creation project focused on software, media, ideas and digital experiences.", "about_p2": "The project is designed to grow gradually: publish useful work, experiment with interfaces and technology, and build a coherent digital space without exposing private personal details.", "principles": "עקרונות", "p1": "לבנות דברים שימושיים.", "p2": "לשמור על ממשקים ברורים ומאופקים.", "p3": "לכבד יוצרים, משתמשים ופרטיות.", "p4": "ללמוד, לבדוק ולשפר.", "contact_h": "יצירת קשר עם Aethercom", "contact_p": "לשאלות כלליות, משוב, תיקונים או הודעות הקשורות לפרויקט, השתמשו בערוצים הרשמיים למטה.", "back": "חזרה", "language": "שפה", "last_updated": "עדכון אחרון: ספטמבר 2026", "legal_note": "מידע כללי בלבד; לא ייעוץ משפטי."}, "ru": {"title_support": "Поддержка", "title_terms": "Условия", "title_services": "Сервисы", "title_about": "О проекте", "eyebrow_support": "AETHERCOM / ПОДДЕРЖКА", "eyebrow_terms": "AETHERCOM / УСЛОВИЯ", "eyebrow_services": "AETHERCOM / СЕРВИСЫ", "eyebrow_about": "AETHERCOM / О ПРОЕКТЕ", "support_h": "Чем мы можем помочь?", "support_p": "Для вопросов, отзывов и сообщений используйте указанные каналы. Aethercom сейчас является статическим веб-проектом, поэтому время ответа может различаться.", "contact": "Контакты", "telegram": "Telegram", "website": "Instagram", "email": "Почта", "open": "Открыть", "copy": "Копировать", "copied": "Скопировано", "copy_fail": "Не удалось скопировать", "support_note": "For security or copyright reports, include enough context to identify the relevant page or material. Do not send passwords or other sensitive credentials.", "terms_h": "Terms of Use", "terms_intro": "These terms describe the basic rules for using Aethercom. They are written as general website terms and are not legal advice. Applicable law may differ by jurisdiction.", "acceptable": "Acceptable use", "acceptable_p": "Use the site lawfully and do not use it to distribute malware, conduct unauthorized access, impersonate others, interfere with services, spam users, or facilitate unlawful activity.", "copyright": "Copyright and content", "copyright_p": "Aethercom-authored text, code, graphics and other original material may be protected by applicable copyright law. Do not copy, republish or redistribute protected material beyond what the law permits or a rights holder authorizes.", "privacy": "Privacy", "privacy_p": "If Aethercom processes personal data in a particular feature, it should be limited to what is necessary, used for a stated purpose, kept only as needed, and protected against unauthorized access. Where privacy laws such as the GDPR apply, additional obligations may apply.", "external": "External links", "external_p": "Aethercom may link to third-party services. Those services have their own terms and privacy practices; Aethercom does not control their content or operation.", "availability": "Availability", "availability_p": "Pages and features may change, be unavailable, or be discontinued as the project develops. No guarantee is made that every feature will always be available or error-free.", "changes": "Changes", "changes_p": "These terms may be updated when the project or its practices change. The current version published on this page is the version to consult.", "services_h": "What Aethercom covers", "services_p": "Aethercom is a digital creation project. The areas below describe the kinds of work and experiences the project may publish, build or explore; they do not promise that every item is currently offered as a paid service.", "web": "Web & software", "web_p": "Static websites, interfaces, prototypes and small software experiences.", "media": "Media & creative", "media_p": "Articles, visual work, editing, presentation and other digital media experiments.", "research": "Technology & research", "research_p": "Exploration of web technologies, software concepts, digital tools and technical subjects.", "community": "Community", "community_p": "Open discussion, sharing and collaborative digital projects where appropriate.", "about_h": "Beyond the Stars", "about_p": "Aethercom is a digital technology and creation project focused on software, media, ideas and digital experiences.", "about_p2": "The project is designed to grow gradually: publish useful work, experiment with interfaces and technology, and build a coherent digital space without exposing private personal details.", "principles": "Принципы", "p1": "Создавать полезные вещи.", "p2": "Сохранять ясные и сдержанные интерфейсы.", "p3": "Уважать авторов, пользователей и приватность.", "p4": "Учиться, тестировать и улучшать.", "contact_h": "Связаться с Aethercom", "contact_p": "Для общих вопросов, отзывов, исправлений или сообщений о проекте используйте официальные каналы ниже.", "back": "Назад", "language": "Язык", "last_updated": "Последнее обновление: сентябрь 2026", "legal_note": "Общая информация, не юридическая консультация."}, "hi": {"title_support": "सहायता", "title_terms": "शर्तें", "title_services": "सेवाएँ", "title_about": "हमारे बारे में", "eyebrow_support": "AETHERCOM / सहायता", "eyebrow_terms": "AETHERCOM / शर्तें", "eyebrow_services": "AETHERCOM / सेवाएँ", "eyebrow_about": "AETHERCOM / परिचय", "support_h": "हम कैसे मदद कर सकते हैं?", "support_p": "प्रश्न, प्रतिक्रिया या रिपोर्ट के लिए नीचे दिए गए चैनलों का उपयोग करें। Aethercom अभी एक स्थिर वेब प्रोजेक्ट है, इसलिए प्रतिक्रिया का समय अलग हो सकता है।", "contact": "संपर्क", "telegram": "Telegram", "Instagram": "वेबसाइट", "email": "ईमेल", "open": "खोलें", "copy": "कॉपी", "copied": "कॉपी हो गया", "copy_fail": "कॉपी विफल", "support_note": "For security or copyright reports, include enough context to identify the relevant page or material. Do not send passwords or other sensitive credentials.", "terms_h": "Terms of Use", "terms_intro": "These terms describe the basic rules for using Aethercom. They are written as general website terms and are not legal advice. Applicable law may differ by jurisdiction.", "acceptable": "Acceptable use", "acceptable_p": "Use the site lawfully and do not use it to distribute malware, conduct unauthorized access, impersonate others, interfere with services, spam users, or facilitate unlawful activity.", "copyright": "Copyright and content", "copyright_p": "Aethercom-authored text, code, graphics and other original material may be protected by applicable copyright law. Do not copy, republish or redistribute protected material beyond what the law permits or a rights holder authorizes.", "privacy": "Privacy", "privacy_p": "If Aethercom processes personal data in a particular feature, it should be limited to what is necessary, used for a stated purpose, kept only as needed, and protected against unauthorized access. Where privacy laws such as the GDPR apply, additional obligations may apply.", "external": "External links", "external_p": "Aethercom may link to third-party services. Those services have their own terms and privacy practices; Aethercom does not control their content or operation.", "availability": "Availability", "availability_p": "Pages and features may change, be unavailable, or be discontinued as the project develops. No guarantee is made that every feature will always be available or error-free.", "changes": "Changes", "changes_p": "These terms may be updated when the project or its practices change. The current version published on this page is the version to consult.", "services_h": "What Aethercom covers", "services_p": "Aethercom is a digital creation project. The areas below describe the kinds of work and experiences the project may publish, build or explore; they do not promise that every item is currently offered as a paid service.", "web": "Web & software", "web_p": "Static websites, interfaces, prototypes and small software experiences.", "media": "Media & creative", "media_p": "Articles, visual work, editing, presentation and other digital media experiments.", "research": "Technology & research", "research_p": "Exploration of web technologies, software concepts, digital tools and technical subjects.", "community": "Community", "community_p": "Open discussion, sharing and collaborative digital projects where appropriate.", "about_h": "Beyond the Stars", "about_p": "Aethercom is a digital technology and creation project focused on software, media, ideas and digital experiences.", "about_p2": "The project is designed to grow gradually: publish useful work, experiment with interfaces and technology, and build a coherent digital space without exposing private personal details.", "principles": "सिद्धांत", "p1": "उपयोगी चीज़ें बनाना।", "p2": "स्पष्ट और संयमित इंटरफ़ेस रखना।", "p3": "निर्माताओं, उपयोगकर्ताओं और गोपनीयता का सम्मान करना।", "p4": "सीखना, परीक्षण करना और सुधारना।", "contact_h": "Aethercom से संपर्क", "contact_p": "सामान्य प्रश्न, प्रतिक्रिया, सुधार या परियोजना संबंधी संदेशों के लिए नीचे दिए गए आधिकारिक माध्यमों का उपयोग करें.", "back": "वापस", "language": "भाषा", "last_updated": "अंतिम अपडेट: सितंबर 2026", "legal_note": "सामान्य जानकारी; कानूनी सलाह नहीं।"}, "de": {"title_support": "Support", "title_terms": "Nutzungsbedingungen", "title_services": "Services", "title_about": "Über uns", "eyebrow_support": "AETHERCOM / SUPPORT", "eyebrow_terms": "AETHERCOM / BEDINGUNGEN", "eyebrow_services": "AETHERCOM / SERVICES", "eyebrow_about": "AETHERCOM / ÜBER UNS", "support_h": "Wie können wir helfen?", "support_p": "Für Fragen, Feedback oder Meldungen können Sie die folgenden Kanäle nutzen. Aethercom ist derzeit ein statisches Webprojekt, daher kann die Antwortzeit variieren.", "contact": "Kontakt", "telegram": "Telegram", "website": "Instagram", "email": "E-Mail", "open": "Öffnen", "copy": "Kopieren", "copied": "Kopiert", "copy_fail": "Kopieren fehlgeschlagen", "support_note": "For security or copyright reports, include enough context to identify the relevant page or material. Do not send passwords or other sensitive credentials.", "terms_h": "Terms of Use", "terms_intro": "These terms describe the basic rules for using Aethercom. They are written as general website terms and are not legal advice. Applicable law may differ by jurisdiction.", "acceptable": "Acceptable use", "acceptable_p": "Use the site lawfully and do not use it to distribute malware, conduct unauthorized access, impersonate others, interfere with services, spam users, or facilitate unlawful activity.", "copyright": "Copyright and content", "copyright_p": "Aethercom-authored text, code, graphics and other original material may be protected by applicable copyright law. Do not copy, republish or redistribute protected material beyond what the law permits or a rights holder authorizes.", "privacy": "Privacy", "privacy_p": "If Aethercom processes personal data in a particular feature, it should be limited to what is necessary, used for a stated purpose, kept only as needed, and protected against unauthorized access. Where privacy laws such as the GDPR apply, additional obligations may apply.", "external": "External links", "external_p": "Aethercom may link to third-party services. Those services have their own terms and privacy practices; Aethercom does not control their content or operation.", "availability": "Availability", "availability_p": "Pages and features may change, be unavailable, or be discontinued as the project develops. No guarantee is made that every feature will always be available or error-free.", "changes": "Changes", "changes_p": "These terms may be updated when the project or its practices change. The current version published on this page is the version to consult.", "services_h": "What Aethercom covers", "services_p": "Aethercom is a digital creation project. The areas below describe the kinds of work and experiences the project may publish, build or explore; they do not promise that every item is currently offered as a paid service.", "web": "Web & software", "web_p": "Static websites, interfaces, prototypes and small software experiences.", "media": "Media & creative", "media_p": "Articles, visual work, editing, presentation and other digital media experiments.", "research": "Technology & research", "research_p": "Exploration of web technologies, software concepts, digital tools and technical subjects.", "community": "Community", "community_p": "Open discussion, sharing and collaborative digital projects where appropriate.", "about_h": "Beyond the Stars", "about_p": "Aethercom is a digital technology and creation project focused on software, media, ideas and digital experiences.", "about_p2": "The project is designed to grow gradually: publish useful work, experiment with interfaces and technology, and build a coherent digital space without exposing private personal details.", "principles": "Grundsätze", "p1": "Nützliche Dinge bauen.", "p2": "Klare und zurückhaltende Oberflächen gestalten.", "p3": "Urheber, Nutzer und Privatsphäre respektieren.", "p4": "Lernen, testen und verbessern.", "contact_h": "Aethercom kontaktieren", "contact_p": "Für allgemeine Fragen, Feedback, Korrekturen oder projektbezogene Nachrichten nutzen Sie die offiziellen Kanäle unten.", "back": "Zurück", "language": "Sprache", "last_updated": "Zuletzt aktualisiert: September 2026", "legal_note": "Allgemeine Informationen, keine Rechtsberatung."}, "fr": {"title_support": "Assistance", "title_terms": "Conditions", "title_services": "Services", "title_about": "À propos", "eyebrow_support": "AETHERCOM / ASSISTANCE", "eyebrow_terms": "AETHERCOM / CONDITIONS", "eyebrow_services": "AETHERCOM / SERVICES", "eyebrow_about": "AETHERCOM / À PROPOS", "support_h": "Comment pouvons-nous aider ?", "support_p": "Pour les questions, retours ou signalements, utilisez les canaux ci-dessous. Aethercom est actuellement un projet web statique, donc le délai de réponse peut varier.", "contact": "Contact", "telegram": "Telegram", "website": "Instagram", "email": "E-mail", "open": "Ouvrir", "copy": "Copier", "copied": "Copié", "copy_fail": "Échec de la copie", "support_note": "For security or copyright reports, include enough context to identify the relevant page or material. Do not send passwords or other sensitive credentials.", "terms_h": "Terms of Use", "terms_intro": "These terms describe the basic rules for using Aethercom. They are written as general website terms and are not legal advice. Applicable law may differ by jurisdiction.", "acceptable": "Acceptable use", "acceptable_p": "Use the site lawfully and do not use it to distribute malware, conduct unauthorized access, impersonate others, interfere with services, spam users, or facilitate unlawful activity.", "copyright": "Copyright and content", "copyright_p": "Aethercom-authored text, code, graphics and other original material may be protected by applicable copyright law. Do not copy, republish or redistribute protected material beyond what the law permits or a rights holder authorizes.", "privacy": "Privacy", "privacy_p": "If Aethercom processes personal data in a particular feature, it should be limited to what is necessary, used for a stated purpose, kept only as needed, and protected against unauthorized access. Where privacy laws such as the GDPR apply, additional obligations may apply.", "external": "External links", "external_p": "Aethercom may link to third-party services. Those services have their own terms and privacy practices; Aethercom does not control their content or operation.", "availability": "Availability", "availability_p": "Pages and features may change, be unavailable, or be discontinued as the project develops. No guarantee is made that every feature will always be available or error-free.", "changes": "Changes", "changes_p": "These terms may be updated when the project or its practices change. The current version published on this page is the version to consult.", "services_h": "What Aethercom covers", "services_p": "Aethercom is a digital creation project. The areas below describe the kinds of work and experiences the project may publish, build or explore; they do not promise that every item is currently offered as a paid service.", "web": "Web & software", "web_p": "Static websites, interfaces, prototypes and small software experiences.", "media": "Media & creative", "media_p": "Articles, visual work, editing, presentation and other digital media experiments.", "research": "Technology & research", "research_p": "Exploration of web technologies, software concepts, digital tools and technical subjects.", "community": "Community", "community_p": "Open discussion, sharing and collaborative digital projects where appropriate.", "about_h": "Beyond the Stars", "about_p": "Aethercom is a digital technology and creation project focused on software, media, ideas and digital experiences.", "about_p2": "The project is designed to grow gradually: publish useful work, experiment with interfaces and technology, and build a coherent digital space without exposing private personal details.", "principles": "Principes", "p1": "Créer des choses utiles.", "p2": "Garder des interfaces claires et sobres.", "p3": "Respecter les créateurs, les utilisateurs et la vie privée.", "p4": "Apprendre, tester et améliorer.", "contact_h": "Contacter Aethercom", "contact_p": "Pour les questions générales, retours, corrections ou messages liés au projet, utilisez les canaux officiels ci-dessous.", "back": "Retour", "language": "Langue", "last_updated": "Dernière mise à jour : septembre 2026", "legal_note": "Informations générales, pas un avis juridique."}, "ur": {"title_support": "مدد", "title_terms": "شرائط", "title_services": "خدمات", "title_about": "تعارف", "eyebrow_support": "AETHERCOM / مدد", "eyebrow_terms": "AETHERCOM / شرائط", "eyebrow_services": "AETHERCOM / خدمات", "eyebrow_about": "AETHERCOM / تعارف", "support_h": "ہم کیسے مدد کر سکتے ہیں؟", "support_p": "سوالات، رائے یا رپورٹس کے لیے نیچے دیے گئے ذرائع استعمال کریں۔ Aethercom فی الحال ایک جامد ویب منصوبہ ہے، اس لیے جواب کا وقت مختلف ہو سکتا ہے۔", "contact": "رابطہ", "telegram": "ٹیلیگرام", "website": "انستاگیرام", "email": "ای میل", "open": "کھولیں", "copy": "کاپی", "copied": "کاپی ہوگیا", "copy_fail": "کاپی ناکام", "support_note": "For security or copyright reports, include enough context to identify the relevant page or material. Do not send passwords or other sensitive credentials.", "terms_h": "Terms of Use", "terms_intro": "These terms describe the basic rules for using Aethercom. They are written as general website terms and are not legal advice. Applicable law may differ by jurisdiction.", "acceptable": "Acceptable use", "acceptable_p": "Use the site lawfully and do not use it to distribute malware, conduct unauthorized access, impersonate others, interfere with services, spam users, or facilitate unlawful activity.", "copyright": "Copyright and content", "copyright_p": "Aethercom-authored text, code, graphics and other original material may be protected by applicable copyright law. Do not copy, republish or redistribute protected material beyond what the law permits or a rights holder authorizes.", "privacy": "Privacy", "privacy_p": "If Aethercom processes personal data in a particular feature, it should be limited to what is necessary, used for a stated purpose, kept only as needed, and protected against unauthorized access. Where privacy laws such as the GDPR apply, additional obligations may apply.", "external": "External links", "external_p": "Aethercom may link to third-party services. Those services have their own terms and privacy practices; Aethercom does not control their content or operation.", "availability": "Availability", "availability_p": "Pages and features may change, be unavailable, or be discontinued as the project develops. No guarantee is made that every feature will always be available or error-free.", "changes": "Changes", "changes_p": "These terms may be updated when the project or its practices change. The current version published on this page is the version to consult.", "services_h": "What Aethercom covers", "services_p": "Aethercom is a digital creation project. The areas below describe the kinds of work and experiences the project may publish, build or explore; they do not promise that every item is currently offered as a paid service.", "web": "Web & software", "web_p": "Static websites, interfaces, prototypes and small software experiences.", "media": "Media & creative", "media_p": "Articles, visual work, editing, presentation and other digital media experiments.", "research": "Technology & research", "research_p": "Exploration of web technologies, software concepts, digital tools and technical subjects.", "community": "Community", "community_p": "Open discussion, sharing and collaborative digital projects where appropriate.", "about_h": "Beyond the Stars", "about_p": "Aethercom is a digital technology and creation project focused on software, media, ideas and digital experiences.", "about_p2": "The project is designed to grow gradually: publish useful work, experiment with interfaces and technology, and build a coherent digital space without exposing private personal details.", "principles": "اصول", "p1": "مفید چیزیں بنائیں۔", "p2": "واضح اور سادہ انٹرفیس رکھیں۔", "p3": "تخلیق کاروں، صارفین اور رازداری کا احترام کریں۔", "p4": "سیکھیں، آزمائیں اور بہتر بنائیں۔", "contact_h": "Aethercom سے رابطہ", "contact_p": "عمومی سوالات، رائے، اصلاحات یا منصوبے سے متعلق پیغامات کے لیے نیچے دیے گئے سرکاری ذرائع استعمال کریں۔", "back": "واپس", "language": "زبان", "last_updated": "آخری اپ ڈیٹ: ستمبر 2026", "legal_note": "عمومی معلومات؛ قانونی مشورہ نہیں۔"}, "ps": {"title_support": "ملاتړ", "title_terms": "شرایط", "title_services": "خدمتونه", "title_about": "زموږ په اړه", "eyebrow_support": "AETHERCOM / ملاتړ", "eyebrow_terms": "AETHERCOM / شرایط", "eyebrow_services": "AETHERCOM / خدمتونه", "eyebrow_about": "AETHERCOM / زموږ په اړه", "support_h": "څنګه مرسته درسره وکړو؟", "support_p": "د پوښتنو، نظرونو او راپورونو لپاره لاندې لارې وکاروئ. Aethercom اوس یو ثابت ویب پروژه ده، نو د ځواب وخت بدلېدلی شي.", "contact": "اړیکه", "telegram": "ټیلیګرام", "website": "انستاگیرام", "email": "برېښنالیک", "open": "خلاصول", "copy": "کاپي", "copied": "کاپي شو", "copy_fail": "کاپي ناکامه شوه", "support_note": "For security or copyright reports, include enough context to identify the relevant page or material. Do not send passwords or other sensitive credentials.", "terms_h": "Terms of Use", "terms_intro": "These terms describe the basic rules for using Aethercom. They are written as general website terms and are not legal advice. Applicable law may differ by jurisdiction.", "acceptable": "Acceptable use", "acceptable_p": "Use the site lawfully and do not use it to distribute malware, conduct unauthorized access, impersonate others, interfere with services, spam users, or facilitate unlawful activity.", "copyright": "Copyright and content", "copyright_p": "Aethercom-authored text, code, graphics and other original material may be protected by applicable copyright law. Do not copy, republish or redistribute protected material beyond what the law permits or a rights holder authorizes.", "privacy": "Privacy", "privacy_p": "If Aethercom processes personal data in a particular feature, it should be limited to what is necessary, used for a stated purpose, kept only as needed, and protected against unauthorized access. Where privacy laws such as the GDPR apply, additional obligations may apply.", "external": "External links", "external_p": "Aethercom may link to third-party services. Those services have their own terms and privacy practices; Aethercom does not control their content or operation.", "availability": "Availability", "availability_p": "Pages and features may change, be unavailable, or be discontinued as the project develops. No guarantee is made that every feature will always be available or error-free.", "changes": "Changes", "changes_p": "These terms may be updated when the project or its practices change. The current version published on this page is the version to consult.", "services_h": "What Aethercom covers", "services_p": "Aethercom is a digital creation project. The areas below describe the kinds of work and experiences the project may publish, build or explore; they do not promise that every item is currently offered as a paid service.", "web": "Web & software", "web_p": "Static websites, interfaces, prototypes and small software experiences.", "media": "Media & creative", "media_p": "Articles, visual work, editing, presentation and other digital media experiments.", "research": "Technology & research", "research_p": "Exploration of web technologies, software concepts, digital tools and technical subjects.", "community": "Community", "community_p": "Open discussion, sharing and collaborative digital projects where appropriate.", "about_h": "Beyond the Stars", "about_p": "Aethercom is a digital technology and creation project focused on software, media, ideas and digital experiences.", "about_p2": "The project is designed to grow gradually: publish useful work, experiment with interfaces and technology, and build a coherent digital space without exposing private personal details.", "principles": "اصول", "p1": "ګټور شیان جوړول.", "p2": "روښانه او ساده انٹرفېس ساتل.", "p3": "د جوړونکو، کاروونکو او محرمیت درناوی.", "p4": "زده کړه، ازموینه او ښه والی.", "contact_h": "له Aethercom سره اړیکه", "contact_p": "د عمومي پوښتنو، نظرونو، سمونونو یا د پروژې اړوند پیغامونو لپاره لاندې رسمي لارې وکاروئ.", "back": "شاته", "language": "ژبه", "last_updated": "وروستی تازه‌کول: سپتمبر ۲۰۲۶", "legal_note": "عمومي معلومات؛ حقوقي مشوره نه ده."}};
+        const page = "about";
+        const selector = document.getElementById("languageSelector");
+
+        function applyLanguage(lang) {
+        const dict = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+        document.querySelector("main").dir = ["fa","dari","ar","he","ur","ps"].includes(lang) ? "rtl" : "ltr";
+
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.dataset.i18n;
+            if (dict[key] !== undefined) el.textContent = dict[key];
+        });
+
+        document.title = dict["title_" + page] + " | Aethercom";
+        if (selector) selector.value = lang;
+        localStorage.setItem("aethercom-language", lang);
+        }
+
+        selector.addEventListener("change", e => applyLanguage(e.target.value));
+
+        document.querySelectorAll("[data-copy]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+            const value = btn.dataset.copy;
+            const dict = translations[selector.value] || translations.en;
+            try {
+            await navigator.clipboard.writeText(value);
+            const old = btn.textContent;
+            btn.textContent = dict.copied;
+            setTimeout(() => btn.textContent = old, 1300);
+            } catch {
+            btn.textContent = dict.copy_fail;
+            setTimeout(() => btn.textContent = dict.copy, 1300);
+            }
+        });
+        });
+
+        applyLanguage(localStorage.getItem("aethercom-language") || "en");
+    </script>
+    <div id="page-transition"></div>
+    <script src="js/script.js"></script>
+    </body>
+</html>
